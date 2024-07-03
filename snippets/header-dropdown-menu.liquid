@@ -8,16 +8,16 @@
 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
   <div class="navbar-nav mx-auto">
     {%- for link in section.settings.menu.links -%}
-      <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
+      {% comment %} <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a> {% endcomment %}
       {{ link.links }}
-      {% if link.links %}
+      {% comment %} {% if link.links %}
         <div class="nav-link dropdown-toggle">
           <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
           {%- for childlink in link.links -%}
             <a href="cart.html" class="dropdown-item">{{ childlink.title | escape }}</a>
           {% endfor %}
         </div>
-      {% endif %}
+      {% endif %} {% endcomment %}
     {% endfor %}
   </div>
 </div>
