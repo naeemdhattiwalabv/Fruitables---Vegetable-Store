@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+<link
+  rel="stylesheet"
+  href="{{ 'component-cart-notification.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -10,7 +15,7 @@
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-{%- if settings.cart_type == "drawer" -%}
+{%- if settings.cart_type == 'drawer' -%}
   {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
   {{ 'component-cart.css' | asset_url | stylesheet_tag }}
   {{ 'component-totals.css' | asset_url | stylesheet_tag }}
@@ -106,7 +111,7 @@
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
-{%- if settings.cart_type == "drawer" -%}
+{%- if settings.cart_type == 'drawer' -%}
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 <div class="container-fluid fixed-top">
@@ -118,7 +123,8 @@
           <a href="#" class="text-white">123 Street, New York</a></small
         >
         <small class="me-3"
-          ><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small
+          ><i class="fas fa-envelope me-2 text-secondary"></i
+          ><a href="#" class="text-white">Email@Example.com</a></small
         >
       </div>
       <div class="top-link pe-2">
@@ -130,98 +136,75 @@
   </div>
   <div class="container px-0">
     <nav class="navbar navbar-light bg-white navbar-expand-xl">
-          <h1 class="text-primary display-6">{{ shop.name }}</h1>
-          <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-            <div class="navbar-nav mx-auto">
-              {%- for link in section.settings.menu.links -%}
-                {% if link.links.size > 0 %}
-                  <div class="nav-item dropdown">
-                    <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
-                    <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                      {%- for childlink in link.links -%}
-                        <a href="{{- childlink.url | escape -}}" class="dropdown-item">{{ childlink.title | escape }}</a>
-                      {% endfor %}
-                    </div>
-                  </div>
-                {% else %}
-                  <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
-                {% endif %}
-              {% endfor %}
-            </div>
-            <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} d-flex m-3 me-0">
-              <div class="desktop-localization-wrapper">
-                {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-                  <localization-form class="small-hide medium-hide" data-prevent-hide>
-                    {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                        {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-                      </div>
-                    {%- endform -%}
-                  </localization-form>
-                {% endif %}
-
-                {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-                  <localization-form class="small-hide medium-hide" data-prevent-hide>
-                    {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
-                        {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
-                      </div>
-                    {%- endform -%}
-                  </localization-form>
-                {%- endif -%}
+      <h1 class="text-primary display-6">{{ shop.name }}</h1>
+      <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+        <div class="navbar-nav mx-auto">
+          {%- for link in section.settings.menu.links -%}
+            {% if link.links.size > 0 %}
+              <div class="nav-item dropdown">
+                <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
+                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                  {%- for childlink in link.links -%}
+                    <a href="{{- childlink.url | escape -}}" class="dropdown-item">{{ childlink.title | escape }}</a>
+                  {% endfor %}
+                </div>
               </div>
-              {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
-              <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-
-              {%- for block in section.blocks -%}
-                {%- case block.type -%}
-                  {%- when '@app' -%}
-                    {% render block %}
-                {%- endcase -%}
-              {%- endfor -%}
-
-              <a href="{{ routes.cart_url }}" class="position-relative me-4 my-auto">
-                  <i class="fa fa-shopping-bag fa-2x"></i>
-                  {%- if cart != empty -%}
-                    {%- if cart.item_count < 100 -%}
-                  <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">{{ cart.item_count }}</span>
-                  {% endif %}
-                {% endif %}
-              </a>
-
-              {%- if shop.customer_accounts_enabled -%}
-                <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-                  {%- if section.settings.enable_customer_avatar -%}
-                    <account-icon>
-                      {%- if customer and customer.has_avatar? -%}
-                        {{ customer | avatar }}
-                      {%- else -%}
-                        {% render 'icon-account-new' %}
-                      {%- endif -%}
-                    </account-icon>
+            {% else %}
+              <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="d-flex m-3 me-0">
+          {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
+          <button
+            class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
+            data-bs-toggle="modal"
+            data-bs-target="#searchModal"
+          >
+            <i class="fas fa-search text-primary"></i>
+          </button>
+          <a href="{{ routes.cart_url }}" class="position-relative me-4 my-auto">
+            <i class="fa fa-shopping-bag fa-2x"></i>
+            {%- if cart != empty -%}
+              {%- if cart.item_count < 100 -%}
+                <span
+                  class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                  style="top: -5px; left: 15px; height: 20px; min-width: 20px;"
+                >
+                  {{- cart.item_count -}}
+                </span>
+              {% endif %}
+            {% endif %}
+          </a>
+          {%- if shop.customer_accounts_enabled -%}
+            <a
+              href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+              class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+            >
+              {%- if section.settings.enable_customer_avatar -%}
+                <account-icon>
+                  {%- if customer and customer.has_avatar? -%}
+                    {{ customer | avatar }}
                   {%- else -%}
                     {% render 'icon-account-new' %}
                   {%- endif -%}
-                  <span class="visually-hidden">
-                    {%- liquid
-                      if customer
-                        echo 'customer.account_fallback' | t
-                      else
-                        echo 'customer.log_in' | t
-                      endif
-                    -%}
-                  </span>
-                </a>
+                </account-icon>
+              {%- else -%}
+                {% render 'icon-account-new' %}
               {%- endif -%}
-            </div>
-          </div>
-        </header>
-      </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
-      {%- if settings.cart_type == "notification" -%}
-        {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
-      {%- endif -%}
+              <span class="visually-hidden">
+                {%- liquid
+                  if customer
+                    echo 'customer.account_fallback' | t
+                  else
+                    echo 'customer.log_in' | t
+                  endif
+                -%}
+              </span>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
     </nav>
   </div>
 </div>
@@ -234,7 +217,9 @@
 
     connectedCallback() {
       this.header = document.querySelector('.section-header');
-      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
+      this.headerIsAlwaysSticky =
+        this.getAttribute('data-sticky-type') === 'always' ||
+        this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
 
       this.setHeaderHeight();
@@ -243,14 +228,14 @@
 
       if (this.headerIsAlwaysSticky) {
         this.header.classList.add('shopify-section-header-sticky');
-      };
+      }
 
       this.currentScrollTop = 0;
       this.preventReveal = false;
       this.predictiveSearch = this.querySelector('predictive-search');
 
       this.onScrollHandler = this.onScroll.bind(this);
-      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+      this.hideHeaderOnScrollUp = () => (this.preventReveal = true);
 
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.addEventListener('scroll', this.onScrollHandler, false);
@@ -326,7 +311,7 @@
 
     closeMenuDisclosure() {
       this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
-      this.disclosures.forEach(disclosure => disclosure.close());
+      this.disclosures.forEach((disclosure) => disclosure.close());
     }
 
     closeSearchModal() {
@@ -362,7 +347,7 @@
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
