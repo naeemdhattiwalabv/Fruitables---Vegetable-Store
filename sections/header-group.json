@@ -39,7 +39,6 @@
     "custom_liquid_JcJeAe": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{{ \"test\" }}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
