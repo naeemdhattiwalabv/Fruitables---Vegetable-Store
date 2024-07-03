@@ -10,7 +10,7 @@
     {%- for link in section.settings.menu.links -%}
       {% if link.links.size > 0 %}
         <div class="nav-link dropdown-toggle">
-          <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
+          <a href="index.html" class="nav-item nav-link">{{- link.url | escape -}}</a>
           <div class="dropdown-menu m-0 bg-secondary rounded-0">
             {%- for childlink in link.links -%}
               <a href="cart.html" class="dropdown-item">{{ childlink.title | escape }}</a>
