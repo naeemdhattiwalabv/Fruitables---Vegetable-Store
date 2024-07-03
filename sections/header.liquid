@@ -182,13 +182,11 @@
               class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
             >
               {%- if section.settings.enable_customer_avatar -%}
-                <account-icon>
-                  {%- if customer and customer.has_avatar? -%}
-                    {{ customer | avatar }}
-                  {%- else -%}
-                    {% render 'icon-account-new' %}
-                  {%- endif -%}
-                </account-icon>
+                {%- if customer and customer.has_avatar? -%}
+                  {{ customer | avatar }}
+                {%- else -%}
+                  {% render 'icon-account-new' %}
+                {%- endif -%}
               {%- else -%}
                 {% render 'icon-account-new' %}
               {%- endif -%}
