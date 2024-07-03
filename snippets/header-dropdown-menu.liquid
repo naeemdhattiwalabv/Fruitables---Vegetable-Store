@@ -9,12 +9,9 @@
   <div class="navbar-nav mx-auto">
     {%- for link in section.settings.menu.links -%}
       <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
-      <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
         {%- for childlink in link.links -%}
           <a href="cart.html" class="dropdown-item">{{ childlink.title | escape }}</a>
         {% endfor %}
-      </div>
     {% endfor %}
   </div>
 </div>
