@@ -15,6 +15,8 @@
             <a href="cart.html" class="dropdown-item">{{ childlink.title | escape }}</a>
           {% endfor %}
         </div>
+      {% else %}
+        <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
       {% endif %}
     {% endfor %}
   </div>
