@@ -289,11 +289,11 @@
                   {%- if customer and customer.has_avatar? -%}
                     {{ customer | avatar }}
                   {%- else -%}
-                    {% render 'icon-account' %}
+                    {% render 'icon-account-new' %}
                   {%- endif -%}
                 </account-icon>
               {%- else -%}
-                {% render 'icon-account' %}
+                {% render 'icon-account-new' %}
               {%- endif -%}
               <span class="visually-hidden">
                 {%- liquid
