@@ -1,151 +1,177 @@
-(function ($) {
-    "use strict";
-
-    // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        }, 1);
-    };
-    spinner(0);
-
-
-    // Fixed Navbar
-    $(window).scroll(function () {
-        if ($(window).width() < 992) {
-            if ($(this).scrollTop() > 55) {
-                $('.fixed-top').addClass('shadow');
-            } else {
-                $('.fixed-top').removeClass('shadow');
-            }
-        } else {
-            if ($(this).scrollTop() > 55) {
-                $('.fixed-top').addClass('shadow').css('top', -55);
-            } else {
-                $('.fixed-top').removeClass('shadow').css('top', 0);
-            }
-        } 
-    });
-    
-    
-   // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
+export class Utils {
+    constructor(selector) {
+        this.elements = Utils.getSelector(selector);
+        this.element = this.get(0);
+        return this;
     }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
 
-
-    // Testimonial carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 2000,
-        center: false,
-        dots: true,
-        loop: true,
-        margin: 25,
-        nav : true,
-        navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
-        ],
-        responsiveClass: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:1
-            },
-            992:{
-                items:2
-            },
-            1200:{
-                items:2
-            }
-        }
-    });
-
-
-    // vegetable carousel
-    $(".vegetable-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        center: false,
-        dots: true,
-        loop: true,
-        margin: 25,
-        nav : true,
-        navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
-        ],
-        responsiveClass: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
-            },
-            1200:{
-                items:4
-            }
-        }
-    });
-
-
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
+    removeClass(classNames) {
+        this.each((el) => {
+            // IE doesn't support multiple arguments
+            classNames.split(' ').forEach((className) => {
+                el.classList.remove(className);
+            });
         });
-        console.log($videoSrc);
+        return this;
+    }
+    width() {
+        if (!this.element) {
+            return 0;
+        }
+        const style = window.getComputedStyle(this.element, null);
+        return parseFloat(style.width.replace('px', ''));
+    }
+    addClass(classNames = '') {
+        this.each((el) => {
+            // IE doesn't support multiple arguments
+            classNames.split(' ').forEach((className) => {
+                el.classList.add(className);
+            });
+        });
+        return this;
+    }
+    css(css, value) {
+        if (value !== undefined) {
+            this.each((el) => {
+                Utils.setCss(el, css, value);
+            });
+            return this;
+        }
+        if (typeof css === 'object') {
+            for (const property in css) {
+                if (Object.prototype.hasOwnProperty.call(css, property)) {
+                    this.each((el) => {
+                        Utils.setCss(el, property, css[property]);
+                    });
+                }
+            }
+            return this;
+        }
+        const cssProp = Utils.camelCase(css);
+        const property = Utils.styleSupport(cssProp);
+        return getComputedStyle(this.element)[property];
+    }
+    data(name, value) {
+        return this.attr('data-' + name, value);
+    }
+    on(events, listener) {
+        events.split(' ').forEach((eventName) => {
+            this.each((el) => {
+                const tNEventName = Utils.setEventName(el, eventName);
+                if (!Array.isArray(Utils.eventListeners[tNEventName])) {
+                    Utils.eventListeners[tNEventName] = [];
+                }
+                Utils.eventListeners[tNEventName].push(listener);
 
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
+                // https://github.com/microsoft/TypeScript/issues/28357
+                if (el) {
+                    el.addEventListener(eventName.split('.')[0], listener);
+                }
+            });
+        });
 
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
-    });
+        return this;
+    }
+    attr(name, value) {
+        if (value === undefined) {
+            if (!this.element) {
+                return '';
+            }
+            return this.element.getAttribute(name);
+        }
+        this.each((el) => {
+            el.setAttribute(name, value);
+        });
+        return this;
+    }
+    static getSelector(selector, context) {
+        if (selector && typeof selector !== 'string') {
+            if (selector.length !== undefined) {
+                return selector;
+            }
+            return [selector];
+        }
+        context = context || document;
 
+        // For performance reasons, use getElementById
+        // eslint-disable-next-line no-control-regex
+        const idRegex = /^#(?:[\w-]|\\.|[^\x00-\xa0])*$/;
+        if (idRegex.test(selector)) {
+            const el = document.getElementById(selector.substring(1));
+            return el ? [el] : [];
+        }
+        return [].slice.call(context.querySelectorAll(selector) || []);
+    }
+    get(index) {
+        if (index !== undefined) {
+            return this.elements[index];
+        }
+        return this.elements;
+    }
+    each(func) {
+        if (!this.elements.length) {
+            return this;
+        }
+        this.elements.forEach((el, index) => {
+            func.call(el, el, index);
+        });
+        return this;
+    }
+    static setCss(el, prop, value) {
+        // prettier-ignore
+        let cssProperty = Utils.camelCase(prop);
+        cssProperty = Utils.styleSupport(cssProperty);
+        el.style[cssProperty] = value;
+    }
+    static camelCase(text) {
+        return text.replace(/-([a-z])/gi, (s, group1) => group1.toUpperCase());
+    }
+    static styleSupport(prop) {
+        let vendorProp;
+        let supportedProp;
+        const capProp = prop.charAt(0).toUpperCase() + prop.slice(1);
+        const prefixes = ['Moz', 'Webkit', 'O', 'ms'];
+        let div = document.createElement('div');
 
-
-    // Product Quantity
-    $('.quantity button').on('click', function () {
-        var button = $(this);
-        var oldValue = button.parent().parent().find('input').val();
-        if (button.hasClass('btn-plus')) {
-            var newVal = parseFloat(oldValue) + 1;
+        if (prop in div.style) {
+            supportedProp = prop;
         } else {
-            if (oldValue > 0) {
-                var newVal = parseFloat(oldValue) - 1;
-            } else {
-                newVal = 0;
+            for (let i = 0; i < prefixes.length; i++) {
+                vendorProp = prefixes[i] + capProp;
+                if (vendorProp in div.style) {
+                    supportedProp = vendorProp;
+                    break;
+                }
             }
         }
-        button.parent().parent().find('input').val(newVal);
-    });
 
-})(jQuery);
+        div = null;
+        return supportedProp;
+    }
+    static setEventName(el, eventName) {
+        // Need to verify https://stackoverflow.com/questions/1915341/whats-wrong-with-adding-properties-to-dom-element-objects
+        const elementUUId = el.eventEmitterUUID;
+        const uuid = elementUUId || Utils.generateUUID();
+        // eslint-disable-next-line no-param-reassign
+        el.eventEmitterUUID = uuid;
+        return Utils.getEventName(eventName, uuid);
+    }
+    static generateUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+            // eslint-disable-next-line no-bitwise
+            const r = (Math.random() * 16) | 0;
+            // eslint-disable-next-line no-bitwise
+            const v = c === 'x' ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+        });
+    }
+    static getEventName(eventName, uuid) {
+        return eventName + '__EVENT_EMITTER__' + uuid;
+    }
+}
 
+Utils.eventListeners = {};
+
+export default function $utils(selector) {
+    return new Utils(selector);
+}
