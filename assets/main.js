@@ -1,45 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     "use strict";
-    // Spinner
-   
-
-
-    // Fixed Navbar
-    document.addEventListener("DOMContentLoaded", function () {
-        // Fixed Navbar
-        window.addEventListener("scroll", function () {
-            const fixedTop = document.querySelector('.fixed-top');
-            if (window.innerWidth < 992) {
-                if (window.scrollY > 55) {
-                    fixedTop.classList.add('shadow');
-                } else {
-                    fixedTop.classList.remove('shadow');
-                }
-            } else {
-                if (window.scrollY > 55) {
-                    fixedTop.classList.add('shadow');
-                    fixedTop.style.top = '-55px';
-                } else {
-                    fixedTop.classList.remove('shadow');
-                    fixedTop.style.top = '0';
-                }
-            }
-        });
-    });
-    
-    
-   // Back to top button
-   document.querySelector(window).scroll(function () {
-    if (document.querySelector(this).scrollTop() > 300) {
-        document.querySelector('.back-to-top').fadeIn('slow');
-    } else {
-        document.querySelector('.back-to-top').fadeOut('slow');
-    }
-    });
-    document.querySelector('.back-to-top').click(function () {
-        document.querySelector('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
 
 
     // Testimonial carousel
