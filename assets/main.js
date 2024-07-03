@@ -1,14 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     "use strict";
     // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if (document.querySelector('#spinner').length > 0) {
-                document.querySelector('#spinner').removeClass('show');
-            }
-        }, 1);
-    };
-    spinner(0);
+   
 
 
     // Fixed Navbar
