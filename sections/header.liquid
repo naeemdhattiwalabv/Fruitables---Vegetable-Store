@@ -129,7 +129,7 @@
         >
       </div>
       <div class="top-link pe-2">
-        {%- for link in section.settings.header.links -%}
+        {%- for link in section.settings.header -%}
           <a href="{{- link.url | escape -}}" class="text-white">
             <small class="text-white mx-2">{{- link.title | escape -}}</small>
           </a>
