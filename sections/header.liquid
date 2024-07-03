@@ -207,16 +207,6 @@
               </h1>
             {%- endif -%}
           {%- endif -%}
-
-          {% comment %} {%- liquid
-            if section.settings.menu != blank
-              if section.settings.menu_type_desktop == 'dropdown'
-                render 'header-dropdown-menu'
-              elsif section.settings.menu_type_desktop != 'drawer'
-                render 'header-mega-menu'
-              endif
-            endif
-          %} {% endcomment %}
           <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
             <div class="navbar-nav mx-auto">
               {%- for link in section.settings.menu.links -%}
@@ -234,75 +224,74 @@
                 {% endif %}
               {% endfor %}
             </div>
+            <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} d-flex m-3 me-0">
+              <div class="desktop-localization-wrapper">
+                {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+                  <localization-form class="small-hide medium-hide" data-prevent-hide>
+                    {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                      <div>
+                        <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                        {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                      </div>
+                    {%- endform -%}
+                  </localization-form>
+                {% endif %}
 
-          <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} d-flex m-3 me-0">
-            <div class="desktop-localization-wrapper">
-              {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-                <localization-form class="small-hide medium-hide" data-prevent-hide>
-                  {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-                    <div>
-                      <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                      {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-                    </div>
-                  {%- endform -%}
-                </localization-form>
-              {% endif %}
+                {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+                  <localization-form class="small-hide medium-hide" data-prevent-hide>
+                    {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+                      <div>
+                        <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                        {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+                      </div>
+                    {%- endform -%}
+                  </localization-form>
+                {%- endif -%}
+              </div>
+              {% render 'header-search', input_id: 'Search-In-Modal' %}
 
-              {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-                <localization-form class="small-hide medium-hide" data-prevent-hide>
-                  {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
-                    <div>
-                      <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
-                      {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
-                    </div>
-                  {%- endform -%}
-                </localization-form>
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when '@app' -%}
+                    {% render block %}
+                {%- endcase -%}
+              {%- endfor -%}
+
+              <a href="{{ routes.cart_url }}" class="position-relative me-4 my-auto">
+                  <i class="fa fa-shopping-bag fa-2x"></i>
+                  {%- if cart != empty -%}
+                    {%- if cart.item_count < 100 -%}
+                  <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">{{ cart.item_count }}</span>
+                  {% endif %}
+                {% endif %}
+              </a>
+
+              {%- if shop.customer_accounts_enabled -%}
+                <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+                  {%- if section.settings.enable_customer_avatar -%}
+                    <account-icon>
+                      {%- if customer and customer.has_avatar? -%}
+                        {{ customer | avatar }}
+                      {%- else -%}
+                        {% render 'icon-account-new' %}
+                      {%- endif -%}
+                    </account-icon>
+                  {%- else -%}
+                    {% render 'icon-account-new' %}
+                  {%- endif -%}
+                  <span class="visually-hidden">
+                    {%- liquid
+                      if customer
+                        echo 'customer.account_fallback' | t
+                      else
+                        echo 'customer.log_in' | t
+                      endif
+                    -%}
+                  </span>
+                </a>
               {%- endif -%}
             </div>
-            {% render 'header-search', input_id: 'Search-In-Modal' %}
-
-            {%- for block in section.blocks -%}
-              {%- case block.type -%}
-                {%- when '@app' -%}
-                  {% render block %}
-              {%- endcase -%}
-            {%- endfor -%}
-
-            <a href="{{ routes.cart_url }}" class="position-relative me-4 my-auto">
-                <i class="fa fa-shopping-bag fa-2x"></i>
-                {%- if cart != empty -%}
-                  {%- if cart.item_count < 100 -%}
-                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">{{ cart.item_count }}</span>
-                {% endif %}
-              {% endif %}
-            </a>
-
-            {%- if shop.customer_accounts_enabled -%}
-              <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-                {%- if section.settings.enable_customer_avatar -%}
-                  <account-icon>
-                    {%- if customer and customer.has_avatar? -%}
-                      {{ customer | avatar }}
-                    {%- else -%}
-                      {% render 'icon-account-new' %}
-                    {%- endif -%}
-                  </account-icon>
-                {%- else -%}
-                  {% render 'icon-account-new' %}
-                {%- endif -%}
-                <span class="visually-hidden">
-                  {%- liquid
-                    if customer
-                      echo 'customer.account_fallback' | t
-                    else
-                      echo 'customer.log_in' | t
-                    endif
-                  -%}
-                </span>
-              </a>
-            {%- endif -%}
           </div>
-        </div>
         </header>
       </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
