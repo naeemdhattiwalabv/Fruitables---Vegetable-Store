@@ -9,7 +9,7 @@
   <div class="navbar-nav mx-auto">
     {%- for link in section.settings.menu.links -%}
       {% comment %} <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a> {% endcomment %}
-      {{ link.links }}
+      {{ link.links.title }}
       {% comment %} {% if link.links %}
         <div class="nav-link dropdown-toggle">
           <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
