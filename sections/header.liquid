@@ -130,7 +130,9 @@
       </div>
       <div class="top-link pe-2">
         {%- for link in section.settings['header-link'] -%}
-          <a href="{{ link.url }}" class="text-white"><small class="text-white mx-2">{{ link.title }}</small>/</a>
+          <a href="{{ link.url }}" class="text-white"
+            ><small class="text-white mx-2">{{ link.title }}</small>/</a
+          >
         {% endfor %}
       </div>
     </div>
