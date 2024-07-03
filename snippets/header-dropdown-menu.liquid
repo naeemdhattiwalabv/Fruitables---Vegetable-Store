@@ -8,8 +8,8 @@
 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
   <div class="navbar-nav mx-auto">
     {%- for link in section.settings.menu.links -%}
-      {{  link.links.size }}
-      {% if link.links.size > 0 %}
+      {{ link.links.size }}
+      {% comment %} {% if link.links.size > 0 %}
         <div class="nav-link dropdown-toggle">
           <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
           {%- for childlink in link.links -%}
@@ -18,7 +18,7 @@
         </div>
       {% else %}
         <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
-      {% endif %}
+      {% endif %} {% endcomment %}
     {% endfor %}
   </div>
 </div>
