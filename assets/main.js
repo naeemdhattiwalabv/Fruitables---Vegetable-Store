@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Modal Video
     document.querySelector(document).ready(function () {
-        var document.querySelectorvideoSrc;
         document.querySelector('.btn-play').click(function () {
             document.querySelectorvideoSrc = document.querySelector(this).data("src");
         });
