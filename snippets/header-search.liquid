@@ -10,7 +10,7 @@
 
 <details-modal class="header__search">
   <details>
-    <summary
+    {% comment %} <summary
       class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle"
       aria-haspopup="dialog"
       aria-label="{{ 'general.search.search' | t }}"
@@ -23,7 +23,7 @@
           <use href="#icon-close">
         </svg>
       </span>
-    </summary>
+    </summary> {% endcomment %}
     <button
       class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
       data-bs-toggle="modal"
