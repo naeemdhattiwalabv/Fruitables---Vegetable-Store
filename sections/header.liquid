@@ -145,7 +145,6 @@
           <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
         </symbol>
       </svg>
-
       {%- liquid
         for block in section.blocks
           if block.type == '@app'
@@ -211,7 +210,7 @@
             <div class="navbar-nav mx-auto">
               {%- for link in section.settings.menu.links -%}
                 {% if link.links.size > 0 %}
-                  <div class="nav-link dropdown-toggle">
+                  <div class="nav-item dropdown">
                     <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
                     <div class="dropdown-menu m-0 bg-secondary rounded-0">
                       {%- for childlink in link.links -%}
@@ -248,7 +247,8 @@
                   </localization-form>
                 {%- endif -%}
               </div>
-              {% render 'header-search', input_id: 'Search-In-Modal' %}
+              {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
+              <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
 
               {%- for block in section.blocks -%}
                 {%- case block.type -%}
@@ -300,6 +300,7 @@
     </nav>
   </div>
 </div>
+
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
