@@ -1,177 +1,151 @@
-export class Utils {
-    constructor(selector) {
-        this.elements = Utils.getSelector(selector);
-        this.element = this.get(0);
-        return this;
-    }
+(function (document.querySelector) {
+    "use strict";
 
-    removeClass(classNames) {
-        this.each((el) => {
-            // IE doesn't support multiple arguments
-            classNames.split(' ').forEach((className) => {
-                el.classList.remove(className);
-            });
-        });
-        return this;
-    }
-    width() {
-        if (!this.element) {
-            return 0;
-        }
-        const style = window.getComputedStyle(this.element, null);
-        return parseFloat(style.width.replace('px', ''));
-    }
-    addClass(classNames = '') {
-        this.each((el) => {
-            // IE doesn't support multiple arguments
-            classNames.split(' ').forEach((className) => {
-                el.classList.add(className);
-            });
-        });
-        return this;
-    }
-    css(css, value) {
-        if (value !== undefined) {
-            this.each((el) => {
-                Utils.setCss(el, css, value);
-            });
-            return this;
-        }
-        if (typeof css === 'object') {
-            for (const property in css) {
-                if (Object.prototype.hasOwnProperty.call(css, property)) {
-                    this.each((el) => {
-                        Utils.setCss(el, property, css[property]);
-                    });
-                }
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if (document.querySelector('#spinner').length > 0) {
+                document.querySelector('#spinner').removeClass('show');
             }
-            return this;
-        }
-        const cssProp = Utils.camelCase(css);
-        const property = Utils.styleSupport(cssProp);
-        return getComputedStyle(this.element)[property];
-    }
-    data(name, value) {
-        return this.attr('data-' + name, value);
-    }
-    on(events, listener) {
-        events.split(' ').forEach((eventName) => {
-            this.each((el) => {
-                const tNEventName = Utils.setEventName(el, eventName);
-                if (!Array.isArray(Utils.eventListeners[tNEventName])) {
-                    Utils.eventListeners[tNEventName] = [];
-                }
-                Utils.eventListeners[tNEventName].push(listener);
+        }, 1);
+    };
+    spinner(0);
 
-                // https://github.com/microsoft/TypeScript/issues/28357
-                if (el) {
-                    el.addEventListener(eventName.split('.')[0], listener);
-                }
-            });
-        });
 
-        return this;
-    }
-    attr(name, value) {
-        if (value === undefined) {
-            if (!this.element) {
-                return '';
+    // Fixed Navbar
+    document.querySelector(window).scroll(function () {
+        if (document.querySelector(window).width() < 992) {
+            if (document.querySelector(this).scrollTop() > 55) {
+                document.querySelector('.fixed-top').addClass('shadow');
+            } else {
+                document.querySelector('.fixed-top').removeClass('shadow');
             }
-            return this.element.getAttribute(name);
-        }
-        this.each((el) => {
-            el.setAttribute(name, value);
-        });
-        return this;
-    }
-    static getSelector(selector, context) {
-        if (selector && typeof selector !== 'string') {
-            if (selector.length !== undefined) {
-                return selector;
-            }
-            return [selector];
-        }
-        context = context || document;
-
-        // For performance reasons, use getElementById
-        // eslint-disable-next-line no-control-regex
-        const idRegex = /^#(?:[\w-]|\\.|[^\x00-\xa0])*$/;
-        if (idRegex.test(selector)) {
-            const el = document.getElementById(selector.substring(1));
-            return el ? [el] : [];
-        }
-        return [].slice.call(context.querySelectorAll(selector) || []);
-    }
-    get(index) {
-        if (index !== undefined) {
-            return this.elements[index];
-        }
-        return this.elements;
-    }
-    each(func) {
-        if (!this.elements.length) {
-            return this;
-        }
-        this.elements.forEach((el, index) => {
-            func.call(el, el, index);
-        });
-        return this;
-    }
-    static setCss(el, prop, value) {
-        // prettier-ignore
-        let cssProperty = Utils.camelCase(prop);
-        cssProperty = Utils.styleSupport(cssProperty);
-        el.style[cssProperty] = value;
-    }
-    static camelCase(text) {
-        return text.replace(/-([a-z])/gi, (s, group1) => group1.toUpperCase());
-    }
-    static styleSupport(prop) {
-        let vendorProp;
-        let supportedProp;
-        const capProp = prop.charAt(0).toUpperCase() + prop.slice(1);
-        const prefixes = ['Moz', 'Webkit', 'O', 'ms'];
-        let div = document.createElement('div');
-
-        if (prop in div.style) {
-            supportedProp = prop;
         } else {
-            for (let i = 0; i < prefixes.length; i++) {
-                vendorProp = prefixes[i] + capProp;
-                if (vendorProp in div.style) {
-                    supportedProp = vendorProp;
-                    break;
-                }
+            if (document.querySelector(this).scrollTop() > 55) {
+                document.querySelector('.fixed-top').addClass('shadow').css('top', -55);
+            } else {
+                document.querySelector('.fixed-top').removeClass('shadow').css('top', 0);
+            }
+        } 
+    });
+    
+    
+   // Back to top button
+   document.querySelector(window).scroll(function () {
+    if (document.querySelector(this).scrollTop() > 300) {
+        document.querySelector('.back-to-top').fadeIn('slow');
+    } else {
+        document.querySelector('.back-to-top').fadeOut('slow');
+    }
+    });
+    document.querySelector('.back-to-top').click(function () {
+        document.querySelector('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+
+
+    // Testimonial carousel
+    document.querySelector(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 2000,
+        center: false,
+        dots: true,
+        loop: true,
+        margin: 25,
+        nav : true,
+        navText : [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
+        responsiveClass: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:1
+            },
+            992:{
+                items:2
+            },
+            1200:{
+                items:2
             }
         }
+    });
 
-        div = null;
-        return supportedProp;
-    }
-    static setEventName(el, eventName) {
-        // Need to verify https://stackoverflow.com/questions/1915341/whats-wrong-with-adding-properties-to-dom-element-objects
-        const elementUUId = el.eventEmitterUUID;
-        const uuid = elementUUId || Utils.generateUUID();
-        // eslint-disable-next-line no-param-reassign
-        el.eventEmitterUUID = uuid;
-        return Utils.getEventName(eventName, uuid);
-    }
-    static generateUUID() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-            // eslint-disable-next-line no-bitwise
-            const r = (Math.random() * 16) | 0;
-            // eslint-disable-next-line no-bitwise
-            const v = c === 'x' ? r : (r & 0x3) | 0x8;
-            return v.toString(16);
+
+    // vegetable carousel
+    document.querySelector(".vegetable-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1500,
+        center: false,
+        dots: true,
+        loop: true,
+        margin: 25,
+        nav : true,
+        navText : [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
+        responsiveClass: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            },
+            1200:{
+                items:4
+            }
+        }
+    });
+
+
+    // Modal Video
+    document.querySelector(document).ready(function () {
+        var document.querySelectorvideoSrc;
+        document.querySelector('.btn-play').click(function () {
+            document.querySelectorvideoSrc = document.querySelector(this).data("src");
         });
-    }
-    static getEventName(eventName, uuid) {
-        return eventName + '__EVENT_EMITTER__' + uuid;
-    }
-}
+        console.log(document.querySelectorvideoSrc);
 
-Utils.eventListeners = {};
+        document.querySelector('#videoModal').on('shown.bs.modal', function (e) {
+            document.querySelector("#video").attr('src', document.querySelectorvideoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+        })
 
-export default function $utils(selector) {
-    return new Utils(selector);
-}
+        document.querySelector('#videoModal').on('hide.bs.modal', function (e) {
+            document.querySelector("#video").attr('src', document.querySelectorvideoSrc);
+        })
+    });
+
+
+
+    // Product Quantity
+    document.querySelector('.quantity button').on('click', function () {
+        var button = document.querySelector(this);
+        var oldValue = button.parent().parent().find('input').val();
+        if (button.hasClass('btn-plus')) {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 0;
+            }
+        }
+        button.parent().parent().find('input').val(newVal);
+    });
+
+})(document.querySelector);
+
