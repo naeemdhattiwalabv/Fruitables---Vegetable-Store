@@ -136,74 +136,74 @@
         {% endfor %}
       </div>
     </div>
-    <div class="container px-0">
-      <nav class="navbar navbar-light bg-white navbar-expand-xl">
-        <a href="/" class="navbar-brand">
-          <h1 class="text-primary display-6">{{ shop.name }}</h1>
-        </a>
-        <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-          <div class="navbar-nav mx-auto">
-            {%- for link in section.settings.menu.links -%}
-              {% if link.links.size > 0 %}
-                <div class="nav-item dropdown">
-                  <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
-                  <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                    {%- for childlink in link.links -%}
-                      <a href="{{- childlink.url | escape -}}" class="dropdown-item">{{ childlink.title | escape }}</a>
-                    {% endfor %}
-                  </div>
+  </div>
+  <div class="container px-0">
+    <nav class="navbar navbar-light bg-white navbar-expand-xl">
+      <a href="/" class="navbar-brand">
+        <h1 class="text-primary display-6">{{ shop.name }}</h1>
+      </a>
+      <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+        <div class="navbar-nav mx-auto">
+          {%- for link in section.settings.menu.links -%}
+            {% if link.links.size > 0 %}
+              <div class="nav-item dropdown">
+                <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
+                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                  {%- for childlink in link.links -%}
+                    <a href="{{- childlink.url | escape -}}" class="dropdown-item">{{ childlink.title | escape }}</a>
+                  {% endfor %}
                 </div>
-              {% else %}
-                <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
+              </div>
+            {% else %}
+              <a href="index.html" class="nav-item nav-link">{{- link.title | escape -}}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="d-flex m-3 me-0">
+          {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
+          <button
+            class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
+            data-bs-toggle="modal"
+            data-bs-target="#searchModal"
+          >
+            <i class="fas fa-search text-primary"></i>
+          </button>
+          <a href="{{ routes.cart_url }}" class="position-relative me-4 my-auto">
+            <i class="fa fa-shopping-bag fa-2x"></i>
+            {%- if cart != empty -%}
+              {%- if cart.item_count < 100 -%}
+                <span
+                  class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                  style="top: -5px; left: 15px; height: 20px; min-width: 20px;"
+                >
+                  {{- cart.item_count -}}
+                </span>
               {% endif %}
-            {% endfor %}
-          </div>
-          <div class="d-flex m-3 me-0">
-            {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
-            <button
-              class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
-              data-bs-toggle="modal"
-              data-bs-target="#searchModal"
-            >
-              <i class="fas fa-search text-primary"></i>
-            </button>
-            <a href="{{ routes.cart_url }}" class="position-relative me-4 my-auto">
-              <i class="fa fa-shopping-bag fa-2x"></i>
-              {%- if cart != empty -%}
-                {%- if cart.item_count < 100 -%}
-                  <span
-                    class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                    style="top: -5px; left: 15px; height: 20px; min-width: 20px;"
-                  >
-                    {{- cart.item_count -}}
-                  </span>
-                {% endif %}
-              {% endif %}
-            </a>
-            {%- if shop.customer_accounts_enabled -%}
-              {%- if section.settings.enable_customer_avatar -%}
-                {%- if customer and customer.has_avatar? -%}
-                  {{ customer | avatar }}
-                {%- else -%}
-                  {% render 'icon-account-new' %}
-                {%- endif -%}
+            {% endif %}
+          </a>
+          {%- if shop.customer_accounts_enabled -%}
+            {%- if section.settings.enable_customer_avatar -%}
+              {%- if customer and customer.has_avatar? -%}
+                {{ customer | avatar }}
               {%- else -%}
                 {% render 'icon-account-new' %}
               {%- endif -%}
-              <span class="visually-hidden">
-                {%- liquid
-                  if customer
-                    echo 'customer.account_fallback' | t
-                  else
-                    echo 'customer.log_in' | t
-                  endif
-                -%}
-              </span>
+            {%- else -%}
+              {% render 'icon-account-new' %}
             {%- endif -%}
-          </div>
+            <span class="visually-hidden">
+              {%- liquid
+                if customer
+                  echo 'customer.account_fallback' | t
+                else
+                  echo 'customer.log_in' | t
+                endif
+              -%}
+            </span>
+          {%- endif -%}
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </div>
 </div>
 {% javascript %}
