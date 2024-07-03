@@ -254,9 +254,7 @@
               </localization-form>
             {%- endif -%}
           </div>
-          {% render 'header-search', input_id: 'Search-In-Modal' %} 
-          <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            
+          {% render 'header-search', input_id: 'Search-In-Modal' %}
           {%- if shop.customer_accounts_enabled -%}
             <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
               {%- if section.settings.enable_customer_avatar -%}
@@ -315,19 +313,6 @@
       {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
     {%- endif -%}
   </nav>
-</div>
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content rounded-0">
-          <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex align-items-center">
-              <div class="input-group w-75 mx-auto d-flex">
-          </div>
-      </div>
-  </div>
 </div>
 {% javascript %}
   class StickyHeader extends HTMLElement {
