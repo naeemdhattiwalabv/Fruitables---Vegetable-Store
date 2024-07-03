@@ -5,20 +5,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Fixed Navbar
-    document.querySelector(window).scroll(function () {
-        if (document.querySelector(window).width() < 992) {
-            if (document.querySelector(this).scrollTop() > 55) {
-                document.querySelector('.fixed-top').addClass('shadow');
+    document.addEventListener("DOMContentLoaded", function () {
+        // Fixed Navbar
+        window.addEventListener("scroll", function () {
+            const fixedTop = document.querySelector('.fixed-top');
+            if (window.innerWidth < 992) {
+                if (window.scrollY > 55) {
+                    fixedTop.classList.add('shadow');
+                } else {
+                    fixedTop.classList.remove('shadow');
+                }
             } else {
-                document.querySelector('.fixed-top').removeClass('shadow');
+                if (window.scrollY > 55) {
+                    fixedTop.classList.add('shadow');
+                    fixedTop.style.top = '-55px';
+                } else {
+                    fixedTop.classList.remove('shadow');
+                    fixedTop.style.top = '0';
+                }
             }
-        } else {
-            if (document.querySelector(this).scrollTop() > 55) {
-                document.querySelector('.fixed-top').addClass('shadow').css('top', -55);
-            } else {
-                document.querySelector('.fixed-top').removeClass('shadow').css('top', 0);
-            }
-        } 
+        });
     });
     
     
