@@ -1,4 +1,9 @@
-{{ 'test2' }}
+{% for block in section.blocks %}
+  {%- case block.type -%}
+    {%- when "heading" -%}
+      <h1>{{ block.settings.heafeatured_iconding }}</h1>
+  {% endcase %}
+{% endfor %}
 
 {% schema %}
 {
