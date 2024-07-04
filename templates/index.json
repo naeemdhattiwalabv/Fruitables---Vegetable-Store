@@ -51,12 +51,20 @@
     "featured_section": {
       "type": "featured-section",
       "blocks": {
+        "featured_section_TeHTEN": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"><\/i>",
+            "featured_heading": "Free Shipping",
+            "featured_content": "Free on order over $300"
+          }
+        },
         "featured_section_UVXiCk": {
           "type": "featured_section",
           "settings": {
-            "featured_icon": "",
-            "featured_heading": "",
-            "featured_content": ""
+            "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"><\/i>",
+            "featured_heading": "Security Payment",
+            "featured_content": "100% security payment"
           }
         },
         "featured_section_Wmr38c": {
@@ -74,21 +82,13 @@
             "featured_heading": "",
             "featured_content": ""
           }
-        },
-        "featured_section_TeHTEN": {
-          "type": "featured_section",
-          "settings": {
-            "featured_icon": "",
-            "featured_heading": "",
-            "featured_content": ""
-          }
         }
       },
       "block_order": [
+        "featured_section_TeHTEN",
         "featured_section_UVXiCk",
         "featured_section_Wmr38c",
-        "featured_section_eVbX7G",
-        "featured_section_TeHTEN"
+        "featured_section_eVbX7G"
       ],
       "settings": {
       }
