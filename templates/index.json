@@ -82,7 +82,7 @@
       }
     },
     "home_page_products_collection": {
-      "type": "featured-section",
+      "type": "home-page-products-collection",
       "settings": {
       }
     }
