@@ -95,6 +95,45 @@
     },
     "home_page_products_collection": {
       "type": "home-page-products-collection",
+      "blocks": {
+        "product_collection_AG3PjA": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "all-products"
+          }
+        },
+        "product_collection_AbWtqL": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "vegetables"
+          }
+        },
+        "product_collection_DUJDjC": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "fruits"
+          }
+        },
+        "product_collection_VpreMb": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "bread"
+          }
+        },
+        "product_collection_VArKhW": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "meat"
+          }
+        }
+      },
+      "block_order": [
+        "product_collection_AG3PjA",
+        "product_collection_AbWtqL",
+        "product_collection_DUJDjC",
+        "product_collection_VpreMb",
+        "product_collection_VArKhW"
+      ],
       "settings": {
       }
     },
