@@ -496,6 +496,8 @@
 /*** Footer End ***/
 
 
-.display-6 {
-    font-size: 4.5rem;
+@media (min-width: 1200px) {
+    .display-6 {
+        font-size: 2.5rem !important;
+    }
 }
