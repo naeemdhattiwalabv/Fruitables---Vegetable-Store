@@ -82,8 +82,8 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Free Shipping",
+            "text": "<p>Free on order over $300<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -91,7 +91,7 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "Security Payment",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -100,7 +100,7 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "30 Day Return",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -109,7 +109,7 @@
         "column4": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "24\/7 Support",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
