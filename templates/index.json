@@ -58,10 +58,19 @@
             "featured_heading": "Free Shipping",
             "featured_content": "Free on order over $300"
           }
+        },
+        "featured_section_TXjW3x": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"><\/i>",
+            "featured_heading": "Security Payment",
+            "featured_content": "100% security payment"
+          }
         }
       },
       "block_order": [
-        "featured_section_9Pzgem"
+        "featured_section_9Pzgem",
+        "featured_section_TXjW3x"
       ],
       "settings": {
       }
