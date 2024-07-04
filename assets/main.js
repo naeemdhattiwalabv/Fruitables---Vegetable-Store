@@ -1,9 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
+(function ($) {
     "use strict";
+
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
+            }
+        }, 1);
+    };
+    spinner(0);
+
+
+    // Fixed Navbar
+    $(window).scroll(function () {
+        if ($(window).width() < 992) {
+            if ($(this).scrollTop() > 55) {
+                $('.fixed-top').addClass('shadow');
+            } else {
+                $('.fixed-top').removeClass('shadow');
+            }
+        } else {
+            if ($(this).scrollTop() > 55) {
+                $('.fixed-top').addClass('shadow').css('top', -55);
+            } else {
+                $('.fixed-top').removeClass('shadow').css('top', 0);
+            }
+        } 
+    });
+    
+    
+   // Back to top button
+   $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+        $('.back-to-top').fadeIn('slow');
+    } else {
+        $('.back-to-top').fadeOut('slow');
+    }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
 
 
     // Testimonial carousel
-    document.querySelector(".testimonial-carousel").owlCarousel({
+    $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 2000,
         center: false,
@@ -37,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // vegetable carousel
-    document.querySelector(".vegetable-carousel").owlCarousel({
+    $(".vegetable-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
         center: false,
@@ -71,26 +113,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Modal Video
-    document.querySelector(document).ready(function () {
-        document.querySelector('.btn-play').click(function () {
-            document.querySelectorvideoSrc = document.querySelector(this).data("src");
+    $(document).ready(function () {
+        var $videoSrc;
+        $('.btn-play').click(function () {
+            $videoSrc = $(this).data("src");
         });
-        console.log(document.querySelectorvideoSrc);
+        console.log($videoSrc);
 
-        document.querySelector('#videoModal').on('shown.bs.modal', function (e) {
-            document.querySelector("#video").attr('src', document.querySelectorvideoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+        $('#videoModal').on('shown.bs.modal', function (e) {
+            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
         })
 
-        document.querySelector('#videoModal').on('hide.bs.modal', function (e) {
-            document.querySelector("#video").attr('src', document.querySelectorvideoSrc);
+        $('#videoModal').on('hide.bs.modal', function (e) {
+            $("#video").attr('src', $videoSrc);
         })
     });
 
 
 
     // Product Quantity
-    document.querySelector('.quantity button').on('click', function () {
-        var button = document.querySelector(this);
+    $('.quantity button').on('click', function () {
+        var button = $(this);
         var oldValue = button.parent().parent().find('input').val();
         if (button.hasClass('btn-plus')) {
             var newVal = parseFloat(oldValue) + 1;
@@ -104,4 +147,5 @@ document.addEventListener("DOMContentLoaded", function () {
         button.parent().parent().find('input').val(newVal);
     });
 
-});
+})(jQuery);
+
