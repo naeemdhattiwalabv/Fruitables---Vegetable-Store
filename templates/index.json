@@ -77,65 +77,9 @@
       }
     },
     "featured_section": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Free on order over $300<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Security Payment",
-            "text": "<p>100% security payment<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "30 Day Return",
-            "text": "<p>30 day money guarantee<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column4": {
-          "type": "column",
-          "settings": {
-            "title": "24\/7 Support",
-            "text": "<p>Support every time fast<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3",
-        "column4"
-      ],
+      "type": "featured-section",
       "settings": {
-        "title": "",
-        "heading_size": "",
-        "image_width": "",
-        "image_ratio": "",
-        "columns_desktop": 4,
-        "column_alignment": "",
-        "background_style": "",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
+        "padding_top": 44,
         "padding_bottom": 36
       }
     }
