@@ -48,6 +48,24 @@
         "show_text_below": false
       }
     },
+    "featured_section": {
+      "type": "featured-section",
+      "blocks": {
+        "featured_section_9Pzgem": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"><\/i>",
+            "featured_heading": "Free Shipping",
+            "featured_content": "Free on order over $300"
+          }
+        }
+      },
+      "block_order": [
+        "featured_section_9Pzgem"
+      ],
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -74,11 +92,6 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "featured_section": {
-      "type": "featured-section",
-      "settings": {
       }
     }
   },
