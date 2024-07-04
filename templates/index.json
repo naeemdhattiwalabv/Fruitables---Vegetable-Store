@@ -74,12 +74,21 @@
             "featured_heading": "30 Day Return",
             "featured_content": "30 day money guarantee"
           }
+        },
+        "featured_section_Hk6cTb": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fa fa-phone-alt fa-3x text-white\"><\/i>",
+            "featured_heading": "24\/7 Support",
+            "featured_content": "Support every time fast"
+          }
         }
       },
       "block_order": [
         "featured_section_9Pzgem",
         "featured_section_TXjW3x",
-        "featured_section_qfRacb"
+        "featured_section_qfRacb",
+        "featured_section_Hk6cTb"
       ],
       "settings": {
       }
