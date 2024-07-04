@@ -1,8 +1,20 @@
 {{ 'test' }}
 
-
 {% schema %}
 {
-    "name":"home_page_collection"
+  "name": "home_page_collection",
+  "blocks": [
+    {
+      "type": "product_collection",
+      "name": "Select",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "product_collection",
+          "label": "Product Collection",
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
