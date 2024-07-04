@@ -79,7 +79,7 @@
     "featured_section": {
       "type": "multicolumn",
       "blocks": {
-        "column_fjhM4G": {
+        "column1": {
           "type": "column",
           "settings": {
             "title": "Column",
@@ -88,7 +88,7 @@
             "link": ""
           }
         },
-        "column_McqK3q": {
+        "column2": {
           "type": "column",
           "settings": {
             "title": "Column",
@@ -97,7 +97,7 @@
             "link": ""
           }
         },
-        "column_xam9Bj": {
+        "column3": {
           "type": "column",
           "settings": {
             "title": "Column",
@@ -106,7 +106,7 @@
             "link": ""
           }
         },
-        "column_WziPJr": {
+        "column4": {
           "type": "column",
           "settings": {
             "title": "Column",
@@ -117,10 +117,10 @@
         }
       },
       "block_order": [
-        "column_fjhM4G",
-        "column_McqK3q",
-        "column_xam9Bj",
-        "column_WziPJr"
+        "column1",
+        "column2",
+        "column3",
+        "column4"
       ],
       "settings": {
         "title": "Multicolumn",
