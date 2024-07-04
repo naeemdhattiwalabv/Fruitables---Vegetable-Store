@@ -48,51 +48,6 @@
         "show_text_below": false
       }
     },
-    "featured_section": {
-      "type": "featured-section",
-      "blocks": {
-        "featured_section_9Pzgem": {
-          "type": "featured_section",
-          "settings": {
-            "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"><\/i>",
-            "featured_heading": "Free Shipping",
-            "featured_content": "Free on order over $300"
-          }
-        },
-        "featured_section_TXjW3x": {
-          "type": "featured_section",
-          "settings": {
-            "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"><\/i>",
-            "featured_heading": "Security Payment",
-            "featured_content": "100% security payment"
-          }
-        },
-        "featured_section_qfRacb": {
-          "type": "featured_section",
-          "settings": {
-            "featured_icon": "<i class=\"fas fa-exchange-alt fa-3x text-white\"><\/i>",
-            "featured_heading": "30 Day Return",
-            "featured_content": "30 day money guarantee"
-          }
-        },
-        "featured_section_Hk6cTb": {
-          "type": "featured_section",
-          "settings": {
-            "featured_icon": "<i class=\"fa fa-phone-alt fa-3x text-white\"><\/i>",
-            "featured_heading": "24\/7 Support",
-            "featured_content": "Support every time fast"
-          }
-        }
-      },
-      "block_order": [
-        "featured_section_9Pzgem",
-        "featured_section_TXjW3x",
-        "featured_section_qfRacb",
-        "featured_section_Hk6cTb"
-      ],
-      "settings": {
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -120,11 +75,22 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "featured_section": {
+      "type": "featured-section",
+      "settings": {
+      }
+    },
+    "home_page_products_collection": {
+      "type": "featured-section",
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_section",
-    "featured_collection"
+    "featured_collection",
+    "home_page_products_collection"
   ]
 }
