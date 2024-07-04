@@ -76,7 +76,7 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn_FmkBBj": {
+    "featured_section": {
       "type": "multicolumn",
       "blocks": {
         "column_fjhM4G": {
@@ -143,6 +143,6 @@
   "order": [
     "image_banner",
     "featured_collection",
-    "multicolumn_FmkBBj"
+    "featured_section"
   ]
 }
