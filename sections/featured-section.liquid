@@ -1,8 +1,5 @@
 {% for block in section.blocks %}
-  {%- case block.type -%}
-    {%- when "heading" -%}
-      <h1>{{ block.settings.heafeatured_iconding }}</h1>
-  {% endcase %}
+  <h1>{{ block.settings.featured_icon }}</h1>
 {% endfor %}
 
 {% schema %}
@@ -17,7 +14,7 @@
         {
           "type": "text",
           "id": "featured_icon",
-          "label": "Add Icon",
+          "label": "Add Icon"
         },
         {
           "type": "text",
