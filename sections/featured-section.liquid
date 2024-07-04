@@ -1,7 +1,5 @@
 {% for block in section.blocks %}
-  {%- case block.featured_section -%}
-      {{ block.settings.featured_icon }}
-  {% endcase %}
+  {{ block.settings.featured_heading }}
 {% endfor %}
 
 {% schema %}
