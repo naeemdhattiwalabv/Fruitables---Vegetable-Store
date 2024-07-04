@@ -42,7 +42,7 @@
                         <div class="rounded position-relative fruite-item">
                           <div class="fruite-img">
                             {% for image in product.images %}
-                              {{ image.src | image_url: width: 100 | image_tag: class: 'img-fluid w-100 rounded-top' }}
+                              {{ image.src | image_url: width: 300 | image_tag: class: 'img-fluid w-100 rounded-top' }}
                             {% endfor %}
                           </div>
                           <div
@@ -56,7 +56,9 @@
                             <p>{{ product.description }}</p>
                             <div class="d-flex justify-content-between flex-lg-wrap">
                               <p class="text-dark fs-5 fw-bold mb-0">{{ product.price | money }} / kg</p>
-                              <a href="{{ product.url }}" class="btn border border-secondary rounded-pill px-3 text-primary"
+                              <a
+                                href="{{ product.url }}"
+                                class="btn border border-secondary rounded-pill px-3 text-primary"
                                 ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
                               >
                             </div>
@@ -79,7 +81,7 @@
                         <div class="rounded position-relative fruite-item">
                           <div class="fruite-img">
                             {% for image in product.images %}
-                              {{ image.src | image_url: width: 300 | image_tag }}
+                              {{ image.src | image_url: width: 300 | image_tag: class: 'img-fluid w-100 rounded-top' }}
                             {% endfor %}
                           </div>
                           <div
@@ -93,7 +95,9 @@
                             <p>{{ product.description }}</p>
                             <div class="d-flex justify-content-between flex-lg-wrap">
                               <p class="text-dark fs-5 fw-bold mb-0">{{ product.price | money }} / kg</p>
-                              <a href="{{ product.url }}" class="btn border border-secondary rounded-pill px-3 text-primary"
+                              <a
+                                href="{{ product.url }}"
+                                class="btn border border-secondary rounded-pill px-3 text-primary"
                                 ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
                               >
                             </div>
