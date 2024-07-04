@@ -66,11 +66,20 @@
             "featured_heading": "Security Payment",
             "featured_content": "100% security payment"
           }
+        },
+        "featured_section_qfRacb": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fas fa-exchange-alt fa-3x text-white\"><\/i>",
+            "featured_heading": "30 Day Return",
+            "featured_content": "30 day money guarantee"
+          }
         }
       },
       "block_order": [
         "featured_section_9Pzgem",
-        "featured_section_TXjW3x"
+        "featured_section_TXjW3x",
+        "featured_section_qfRacb"
       ],
       "settings": {
       }
