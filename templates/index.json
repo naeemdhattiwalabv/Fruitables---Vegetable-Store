@@ -203,6 +203,14 @@
         "product_collection": "vegetables"
       }
     },
+    "custom_product_banner_jdBJW4": {
+      "type": "custom-product-banner",
+      "settings": {
+        "banner_product": "raspberries-copy-copy-copy",
+        "banner_paragraph_text": "in Our Store",
+        "banner_button_text": "BUY"
+      }
+    },
     "bestseller_product": {
       "type": "bestseller-product",
       "settings": {
@@ -297,14 +305,6 @@
         "testimonial_heading": "Our Testimonial",
         "testimonial_content": "Our Client Saying!"
       }
-    },
-    "custom_product_banner_jdBJW4": {
-      "type": "custom-product-banner",
-      "settings": {
-        "banner_product": "raspberries-copy-copy-copy",
-        "banner_paragraph_text": "in Our Store",
-        "banner_button_text": "BUY"
-      }
     }
   },
   "order": [
@@ -314,9 +314,9 @@
     "home_page_products_collection",
     "featured_collection",
     "vegetable_shop",
+    "custom_product_banner_jdBJW4",
     "bestseller_product",
     "fact_section",
-    "testimonial_section",
-    "custom_product_banner_jdBJW4"
+    "testimonial_section"
   ]
 }
