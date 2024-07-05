@@ -11,6 +11,19 @@
   "sections": {
     "home_page_banner": {
       "type": "homepage-banner",
+      "blocks": {
+        "homepage_banner_slider_9nKfyX": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/hero-img-1.png",
+            "slider_url": "shopify:\/\/collections\/fruits",
+            "button_text": "Fruits"
+          }
+        }
+      },
+      "block_order": [
+        "homepage_banner_slider_9nKfyX"
+      ],
       "settings": {
         "banner_header": "100% Organic Foods",
         "banner_content": "Organic Veggies & Fruits Foods"
