@@ -23,14 +23,21 @@
         <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
           <div class="carousel-inner" role="listbox">
             {% for block in section.blocks %}
-              <div class="carousel-item rounded">
-                {{
-                  block.settings.slider_image
-                  | image_url: width: 100
-                  | image_tag
-                }}
-                <a href="{{ block.settings.slider_url }}" class="btn px-4 py-2 text-white rounded">{{ block.settings.button_text }}</a>
-              </div>
+              {% if forloop.index == 1 %}
+                <div class="carousel-item active rounded">
+                  {{ block.settings.slider_image | image_url: width: 100 | image_tag }}
+                  <a href="{{ block.settings.slider_url }}" class="btn px-4 py-2 text-white rounded">
+                    {{- block.settings.button_text -}}
+                  </a>
+                </div>
+              {% else %}
+                <div class="carousel-item rounded">
+                  {{ block.settings.slider_image | image_url: width: 100 | image_tag }}
+                  <a href="{{ block.settings.slider_url }}" class="btn px-4 py-2 text-white rounded">
+                    {{- block.settings.button_text -}}
+                  </a>
+                </div>
+              {% endif %}
             {% endfor %}
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
