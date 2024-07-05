@@ -9,6 +9,13 @@
 */
 {
   "sections": {
+    "home_page_banner": {
+      "type": "homepage-banner",
+      "settings": {
+        "banner_header": "",
+        "banner_content": ""
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -167,9 +174,10 @@
         "padding_bottom": 36
       }
     },
-    "home_page_banner": {
-      "type": "homepage-banner",
+    "bestseller_product": {
+      "type": "bestseller-product",
       "settings": {
+        "product_collection": "all-products"
       }
     },
     "fact_section": {
@@ -180,11 +188,8 @@
     "testimonial_section": {
       "type": "testimonial-section",
       "settings": {
-      }
-    },
-    "bestseller_product": {
-      "type": "bestseller-product",
-      "settings": {
+        "testimonial_heading": "",
+        "testimonial_content": ""
       }
     }
   },
