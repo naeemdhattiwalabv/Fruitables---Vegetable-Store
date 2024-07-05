@@ -131,7 +131,7 @@
       <div class="top-link pe-2">
         {% for link in linklists.header.links %}
           <a href="{{- link.url | escape -}}" class="text-white">
-            <small class="text-white mx-2">{{- link.title | escape -}}</small>
+            <small class="text-white mx-2">{{- link.title | append: "/" | escape -}}</small>
           </a>
         {% endfor %}
       </div>
