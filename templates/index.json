@@ -221,7 +221,23 @@
     },
     "testimonial_section": {
       "type": "testimonial-section",
+      "blocks": {
+        "client_section_pHaWMW": {
+          "type": "client_section",
+          "settings": {
+            "client_comment": "",
+            "client_name": "",
+            "client_profession": "",
+            "client_rating": ""
+          }
+        }
+      },
+      "block_order": [
+        "client_section_pHaWMW"
+      ],
       "settings": {
+        "testimonial_heading": "Our Testimonial",
+        "testimonial_content": "Our Client Saying!"
       }
     }
   },
