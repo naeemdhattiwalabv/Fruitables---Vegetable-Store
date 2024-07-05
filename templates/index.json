@@ -9,6 +9,35 @@
 */
 {
   "sections": {
+    "home_page_banner": {
+      "type": "homepage-banner",
+      "blocks": {
+        "homepage_banner_slider_dAyzAf": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/hero-img-1.png",
+            "slider_url": "shopify:\/\/collections\/fruits",
+            "button_text": "Fruits"
+          }
+        },
+        "homepage_banner_slider_8NkaJr": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
+            "slider_url": "shopify:\/\/collections\/vegetables",
+            "button_text": "Vegtables"
+          }
+        }
+      },
+      "block_order": [
+        "homepage_banner_slider_dAyzAf",
+        "homepage_banner_slider_8NkaJr"
+      ],
+      "settings": {
+        "banner_header": "100% Organic Foods",
+        "banner_content": "Organic Veggies & Fruits Foods"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -166,12 +195,119 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "vegetable_shop": {
+      "type": "vegetable-shop",
+      "settings": {
+        "section_title": "Fresh Organic Vegetables",
+        "product_collection": "vegetables"
+      }
+    },
+    "bestseller_product": {
+      "type": "bestseller-product",
+      "settings": {
+        "product_collection": "all-products"
+      }
+    },
+    "fact_section": {
+      "type": "fact-section",
+      "blocks": {
+        "fact_section_GKteej": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "satisfied customers",
+            "fact_value": 1963
+          }
+        },
+        "fact_section_C8VwiF": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "quality of service",
+            "fact_value": 99
+          }
+        },
+        "fact_section_U3n9Vd": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "quality certificate",
+            "fact_value": 33
+          }
+        },
+        "fact_section_KX4CfM": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "Available Products",
+            "fact_value": 789
+          }
+        }
+      },
+      "block_order": [
+        "fact_section_GKteej",
+        "fact_section_C8VwiF",
+        "fact_section_U3n9Vd",
+        "fact_section_KX4CfM"
+      ],
+      "settings": {
+      }
+    },
+    "testimonial_section": {
+      "type": "testimonial-section",
+      "blocks": {
+        "client_section_rniGEE": {
+          "type": "client_section",
+          "settings": {
+            "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "client_name": "Leena",
+            "client_profession": "CEO",
+            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
+            "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
+          }
+        },
+        "client_section_3n8xRA": {
+          "type": "client_section",
+          "settings": {
+            "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "client_name": "Andy",
+            "client_profession": "CMO",
+            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
+            "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
+          }
+        },
+        "client_section_XeWrxC": {
+          "type": "client_section",
+          "settings": {
+            "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "client_name": "Reena",
+            "client_profession": "CTO",
+            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
+            "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
+          }
+        }
+      },
+      "block_order": [
+        "client_section_rniGEE",
+        "client_section_3n8xRA",
+        "client_section_XeWrxC"
+      ],
+      "settings": {
+        "testimonial_heading": "Our Testimonial",
+        "testimonial_content": "Our Client Saying!"
+      }
     }
   },
   "order": [
+    "home_page_banner",
     "image_banner",
     "featured_section",
     "home_page_products_collection",
-    "featured_collection"
+    "featured_collection",
+    "vegetable_shop",
+    "bestseller_product",
+    "fact_section",
+    "testimonial_section"
   ]
 }
