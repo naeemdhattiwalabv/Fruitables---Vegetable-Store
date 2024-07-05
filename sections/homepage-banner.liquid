@@ -22,14 +22,14 @@
       <div class="col-md-12 col-lg-5">
         <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
           <div class="carousel-inner" role="listbox">
-            {% for block in section.settings %}
-              <div class="carousel-item active rounded">
-                {% comment %} {{
-                  block.slider_image
+            {% for block in section.blocks %}
+              <div class="carousel-item rounded">
+                {{
+                  block.settings.slider_image
                   | image_url: width: 100
-                  | image_tag:
-                }} {% endcomment %}
-                <a href="{{ block.slider_url }}" class="btn px-4 py-2 text-white rounded">{{ block.button_text }}</a>
+                  | image_tag
+                }}
+                <a href="{{ block.settings.slider_url }}" class="btn px-4 py-2 text-white rounded">{{ block.settings.button_text }}</a>
               </div>
             {% endfor %}
           </div>
