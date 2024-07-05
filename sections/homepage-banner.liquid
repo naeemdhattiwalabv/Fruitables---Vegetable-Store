@@ -26,8 +26,8 @@
               <div class="carousel-item active rounded">
                 {{
                   block.slider_image
-                  | image_tag: width: 100
-                  | image_url: class: 'img-fluid w-100 h-100 bg-secondary rounded'
+                  | image_url: width: 100
+                  | image_tag: class: 'img-fluid w-100 h-100 bg-secondary rounded'
                 }}
                 <a href="{{ block.slider_url }}" class="btn px-4 py-2 text-white rounded">{{ block.button_text }}</a>
               </div>
