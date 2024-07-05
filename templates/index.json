@@ -9,35 +9,6 @@
 */
 {
   "sections": {
-    "home_page_banner": {
-      "type": "homepage-banner",
-      "blocks": {
-        "homepage_banner_slider_NRxCNp": {
-          "type": "homepage_banner_slider",
-          "settings": {
-            "slider_image": "shopify:\/\/shop_images\/hero-img-1.png",
-            "slider_url": "shopify:\/\/collections\/fruits",
-            "button_text": "Fruits"
-          }
-        },
-        "homepage_banner_slider_fqdUMM": {
-          "type": "homepage_banner_slider",
-          "settings": {
-            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
-            "slider_url": "shopify:\/\/collections\/vegetables",
-            "button_text": "Vegetables"
-          }
-        }
-      },
-      "block_order": [
-        "homepage_banner_slider_NRxCNp",
-        "homepage_banner_slider_fqdUMM"
-      ],
-      "settings": {
-        "banner_header": "100% Organic Food",
-        "banner_content": "Organic Veggies & Fruits Foods"
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -195,6 +166,16 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "home_page_banner": {
+      "type": "homepage-banner",
+      "settings": {
+      }
+    },
+    "fact_section": {
+      "type": "fact-section",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -202,6 +183,7 @@
     "image_banner",
     "featured_section",
     "home_page_products_collection",
-    "featured_collection"
+    "featured_collection",
+    "fact_section"
   ]
 }
