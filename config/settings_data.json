@@ -151,10 +151,10 @@
               "button_link": "shopify:\/\/pages\/contact"
             }
           },
-          "custom-footer-0": {
+          "link_list_pLExQ9": {
             "type": "link_list",
             "settings": {
-              "heading": "Why People Like us!",
+              "heading": "Shop Info",
               "menu": "footer"
             }
           },
@@ -170,7 +170,7 @@
         },
         "block_order": [
           "custom-footer-1",
-          "custom-footer-0",
+          "link_list_pLExQ9",
           "custom-footer-2"
         ],
         "settings": {
