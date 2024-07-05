@@ -19,10 +19,18 @@
             "slider_url": "shopify:\/\/collections\/fruits",
             "button_text": "Fruits"
           }
+        },
+        "homepage_banner_slider_WgErBB": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_url": "shopify:\/\/collections\/vegetables",
+            "button_text": "Vegetables"
+          }
         }
       },
       "block_order": [
-        "homepage_banner_slider_9nKfyX"
+        "homepage_banner_slider_9nKfyX",
+        "homepage_banner_slider_WgErBB"
       ],
       "settings": {
         "banner_header": "100% Organic Foods",
