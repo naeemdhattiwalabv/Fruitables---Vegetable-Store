@@ -11,6 +11,19 @@
   "sections": {
     "home_page_banner": {
       "type": "homepage-banner",
+      "blocks": {
+        "homepage_banner_slider_cM6wTb": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/hero-img-1.png",
+            "slider_url": "shopify:\/\/collections\/fruits",
+            "button_text": "Fruits"
+          }
+        }
+      },
+      "block_order": [
+        "homepage_banner_slider_cM6wTb"
+      ],
       "settings": {
         "banner_header": "",
         "banner_content": ""
