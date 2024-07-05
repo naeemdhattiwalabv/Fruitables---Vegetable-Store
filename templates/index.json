@@ -48,6 +48,95 @@
         "show_text_below": false
       }
     },
+    "featured_section": {
+      "type": "featured-section",
+      "blocks": {
+        "featured_section_MnfQE3": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"><\/i>",
+            "featured_heading": "Free Shipping",
+            "featured_content": "Free on order over $300"
+          }
+        },
+        "featured_section_CPaH8F": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"><\/i>",
+            "featured_heading": "Security Payment",
+            "featured_content": "100% security payment"
+          }
+        },
+        "featured_section_PidfC4": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fas fa-exchange-alt fa-3x text-white\"><\/i>",
+            "featured_heading": "30 Day Return",
+            "featured_content": "30 day money guarantee"
+          }
+        },
+        "featured_section_NYYgM3": {
+          "type": "featured_section",
+          "settings": {
+            "featured_icon": "<i class=\"fa fa-phone-alt fa-3x text-white\"><\/i>",
+            "featured_heading": "24\/7 Support",
+            "featured_content": "Support every time fast"
+          }
+        }
+      },
+      "block_order": [
+        "featured_section_MnfQE3",
+        "featured_section_CPaH8F",
+        "featured_section_PidfC4",
+        "featured_section_NYYgM3"
+      ],
+      "settings": {
+      }
+    },
+    "home_page_products_collection": {
+      "type": "home-page-products-collection",
+      "blocks": {
+        "product_collection_AG3PjA": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "all-products"
+          }
+        },
+        "product_collection_AbWtqL": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "vegetables"
+          }
+        },
+        "product_collection_DUJDjC": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "fruits"
+          }
+        },
+        "product_collection_VpreMb": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "bread"
+          }
+        },
+        "product_collection_VArKhW": {
+          "type": "product_collection",
+          "settings": {
+            "product_collection": "meat"
+          }
+        }
+      },
+      "block_order": [
+        "product_collection_AG3PjA",
+        "product_collection_AbWtqL",
+        "product_collection_DUJDjC",
+        "product_collection_VpreMb",
+        "product_collection_VArKhW"
+      ],
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -74,16 +163,6 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "featured_section": {
-      "type": "featured-section",
-      "settings": {
-      }
-    },
-    "home_page_products_collection": {
-      "type": "home-page-products-collection",
-      "settings": {
       }
     }
   },
