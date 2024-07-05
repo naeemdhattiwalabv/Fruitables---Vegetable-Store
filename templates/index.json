@@ -235,12 +235,21 @@
             "fact_name": "quality certificate",
             "fact_value": 33
           }
+        },
+        "fact_section_KX4CfM": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "Available Products",
+            "fact_value": 789
+          }
         }
       },
       "block_order": [
         "fact_section_GKteej",
         "fact_section_C8VwiF",
-        "fact_section_U3n9Vd"
+        "fact_section_U3n9Vd",
+        "fact_section_KX4CfM"
       ],
       "settings": {
       }
