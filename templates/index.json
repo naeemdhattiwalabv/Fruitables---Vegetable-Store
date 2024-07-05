@@ -11,9 +11,29 @@
   "sections": {
     "home_page_banner": {
       "type": "homepage-banner",
+      "blocks": {
+        "homepage_banner_slider_dAyzAf": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_url": "",
+            "button_text": ""
+          }
+        },
+        "homepage_banner_slider_8NkaJr": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "homepage_banner_slider_dAyzAf",
+        "homepage_banner_slider_8NkaJr"
+      ],
       "settings": {
-        "banner_header": "",
-        "banner_content": ""
+        "banner_header": "100% Organic Foods",
+        "banner_content": "Organic Veggies & Fruits Foods"
       }
     },
     "image_banner": {
