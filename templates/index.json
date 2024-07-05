@@ -222,12 +222,21 @@
             "fact_name": "quality certificates",
             "fact_value": 33
           }
+        },
+        "fact_section_djGkUc": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "Available Products",
+            "fact_value": 789
+          }
         }
       },
       "block_order": [
         "fact_section_7Nn9AK",
         "fact_section_bWqqdN",
-        "fact_section_YhFDrf"
+        "fact_section_YhFDrf",
+        "fact_section_djGkUc"
       ],
       "settings": {
       }
