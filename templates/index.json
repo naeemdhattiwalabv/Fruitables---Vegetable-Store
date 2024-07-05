@@ -256,9 +256,23 @@
     },
     "testimonial_section": {
       "type": "testimonial-section",
+      "blocks": {
+        "client_section_rniGEE": {
+          "type": "client_section",
+          "settings": {
+            "client_comment": "",
+            "client_name": "",
+            "client_profession": "",
+            "client_rating": ""
+          }
+        }
+      },
+      "block_order": [
+        "client_section_rniGEE"
+      ],
       "settings": {
-        "testimonial_heading": "",
-        "testimonial_content": ""
+        "testimonial_heading": "Our Testimonial",
+        "testimonial_content": "Our Client Saying!"
       }
     }
   },
