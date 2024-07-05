@@ -214,11 +214,20 @@
             "fact_name": "quality of service",
             "fact_value": 99
           }
+        },
+        "fact_section_YhFDrf": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "quality certificates",
+            "fact_value": 33
+          }
         }
       },
       "block_order": [
         "fact_section_7Nn9AK",
-        "fact_section_bWqqdN"
+        "fact_section_bWqqdN",
+        "fact_section_YhFDrf"
       ],
       "settings": {
       }
