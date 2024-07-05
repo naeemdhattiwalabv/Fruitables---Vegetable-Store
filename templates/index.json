@@ -211,6 +211,19 @@
     },
     "fact_section": {
       "type": "fact-section",
+      "blocks": {
+        "fact_section_GKteej": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "satisfied customers",
+            "fact_value": 1963
+          }
+        }
+      },
+      "block_order": [
+        "fact_section_GKteej"
+      ],
       "settings": {
       }
     },
