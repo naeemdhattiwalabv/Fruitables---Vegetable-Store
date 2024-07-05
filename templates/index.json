@@ -184,7 +184,7 @@
     "bestseller_product": {
       "type": "bestseller-product",
       "settings": {
-        "product_collection": ""
+        "product_collection": "all-products"
       }
     },
     "fact_section": {
