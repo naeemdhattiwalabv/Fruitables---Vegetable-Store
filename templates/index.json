@@ -238,33 +238,25 @@
             "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,",
             "client_name": "Leena",
             "client_profession": "CTO",
+            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
             "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
           }
         },
         "client_section_haBfTF": {
           "type": "client_section",
           "settings": {
-            "client_comment": "",
-            "client_name": "",
-            "client_profession": "",
-            "client_rating": ""
-          }
-        },
-        "client_section_z3UWwX": {
-          "type": "client_section",
-          "settings": {
-            "client_comment": "",
-            "client_name": "",
-            "client_profession": "",
-            "client_rating": ""
+            "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "client_name": "Andy",
+            "client_profession": "CMO",
+            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
+            "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
           }
         }
       },
       "block_order": [
         "client_section_pHaWMW",
         "client_section_GywXJX",
-        "client_section_haBfTF",
-        "client_section_z3UWwX"
+        "client_section_haBfTF"
       ],
       "settings": {
         "testimonial_heading": "Our Testimonial",
