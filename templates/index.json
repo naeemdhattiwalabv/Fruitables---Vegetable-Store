@@ -23,8 +23,9 @@
         "homepage_banner_slider_8NkaJr": {
           "type": "homepage_banner_slider",
           "settings": {
-            "slider_url": "",
-            "button_text": ""
+            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
+            "slider_url": "shopify:\/\/collections\/vegetables",
+            "button_text": "Vegtables"
           }
         }
       },
