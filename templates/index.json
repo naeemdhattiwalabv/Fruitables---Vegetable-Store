@@ -15,8 +15,9 @@
         "homepage_banner_slider_dAyzAf": {
           "type": "homepage_banner_slider",
           "settings": {
-            "slider_url": "",
-            "button_text": ""
+            "slider_image": "shopify:\/\/shop_images\/hero-img-1.png",
+            "slider_url": "shopify:\/\/collections\/fruits",
+            "button_text": "Fruits"
           }
         },
         "homepage_banner_slider_8NkaJr": {
