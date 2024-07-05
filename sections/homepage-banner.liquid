@@ -5,17 +5,68 @@
         <h4 class="mb-3 text-secondary">{{ section.settings.banner_header }}</h4>
         <h1 class="mb-5 display-3 text-primary">{{ section.settings.banner_content }}</h1>
         <div class="position-relative mx-auto">
-          <input
-            class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill"
-            type="text"
-            placeholder="{{ section.settings.search_placeholder }}"          >
-          <button
-            type="submit"
-            class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
-            style="top: 0; right: 25%;"
-          >
-            {{ section.settings.search_button_text }}          </button>
-          
+          {% comment %}
+            <input
+              class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill"
+              type="number"
+              placeholder="{{ section.settings.search_placeholder }}"          >
+            <button
+              type="submit"
+              class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
+              style="top: 0; right: 25%;"
+            >
+              Submit Now
+            </button>
+          {% endcomment %}
+          <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+            <div class="field">
+              <input
+                class="search__input field__input"
+                id="Search-In-Template"
+                type="search"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="{{ 'general.search.search' | t }}"
+                {%- if settings.predictive_search_enabled -%}
+                  role="combobox"
+                  aria-expanded="false"
+                  aria-owns="predictive-search-results"
+                  aria-controls="predictive-search-results"
+                  aria-haspopup="listbox"
+                  aria-autocomplete="list"
+                  autocorrect="off"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                {%- endif -%}
+              >
+              <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+              <input name="options[prefix]" type="hidden" value="last">
+
+              {%- if settings.predictive_search_enabled -%}
+                <div class="predictive-search predictive-search--search-template" tabindex="-1" data-predictive-search>
+                  {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+                </div>
+
+                <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+              {%- endif -%}
+
+              <button
+                type="reset"
+                class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+                aria-label="{{ 'general.search.reset' | t }}"
+              >
+                <svg class="icon icon-close" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon-reset">
+                </svg>
+              </button>
+              <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon-search">
+                </svg>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="col-md-12 col-lg-5">
