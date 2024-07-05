@@ -9,6 +9,13 @@
 */
 {
   "sections": {
+    "home_page_banner": {
+      "type": "homepage-banner",
+      "settings": {
+        "banner_header": "",
+        "banner_content": ""
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -167,13 +174,48 @@
         "padding_bottom": 36
       }
     },
-    "home_page_banner": {
-      "type": "homepage-banner",
-      "settings": {
-      }
-    },
     "fact_section": {
       "type": "fact-section",
+      "blocks": {
+        "fact_section_3N7LB7": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "satisfied customers",
+            "fact_value": 1963
+          }
+        },
+        "fact_section_UHeBRb": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "quality of service",
+            "fact_value": 99
+          }
+        },
+        "fact_section_Q9aCqk": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "quality certificates",
+            "fact_value": 33
+          }
+        },
+        "fact_section_eTA7Bw": {
+          "type": "fact_section",
+          "settings": {
+            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "fact_name": "Available Products",
+            "fact_value": 789
+          }
+        }
+      },
+      "block_order": [
+        "fact_section_3N7LB7",
+        "fact_section_UHeBRb",
+        "fact_section_Q9aCqk",
+        "fact_section_eTA7Bw"
+      ],
       "settings": {
       }
     },
