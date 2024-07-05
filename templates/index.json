@@ -9,35 +9,6 @@
 */
 {
   "sections": {
-    "home_page_banner": {
-      "type": "homepage-banner",
-      "blocks": {
-        "homepage_banner_slider_9nKfyX": {
-          "type": "homepage_banner_slider",
-          "settings": {
-            "slider_image": "shopify:\/\/shop_images\/hero-img-1.png",
-            "slider_url": "shopify:\/\/collections\/fruits",
-            "button_text": "Fruits"
-          }
-        },
-        "homepage_banner_slider_WgErBB": {
-          "type": "homepage_banner_slider",
-          "settings": {
-            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
-            "slider_url": "shopify:\/\/collections\/vegetables",
-            "button_text": "Vegetables"
-          }
-        }
-      },
-      "block_order": [
-        "homepage_banner_slider_9nKfyX",
-        "homepage_banner_slider_WgErBB"
-      ],
-      "settings": {
-        "banner_header": "100% Organic Foods",
-        "banner_content": "Organic Veggies & Fruits Foods"
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -196,48 +167,18 @@
         "padding_bottom": 36
       }
     },
+    "home_page_banner": {
+      "type": "homepage-banner",
+      "settings": {
+      }
+    },
     "fact_section": {
       "type": "fact-section",
-      "blocks": {
-        "fact_section_7Nn9AK": {
-          "type": "fact_section",
-          "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
-            "fact_name": "satisfied customers",
-            "fact_value": 1963
-          }
-        },
-        "fact_section_bWqqdN": {
-          "type": "fact_section",
-          "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
-            "fact_name": "quality of service",
-            "fact_value": 99
-          }
-        },
-        "fact_section_YhFDrf": {
-          "type": "fact_section",
-          "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
-            "fact_name": "quality certificates",
-            "fact_value": 33
-          }
-        },
-        "fact_section_djGkUc": {
-          "type": "fact_section",
-          "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
-            "fact_name": "Available Products",
-            "fact_value": 789
-          }
-        }
-      },
-      "block_order": [
-        "fact_section_7Nn9AK",
-        "fact_section_bWqqdN",
-        "fact_section_YhFDrf",
-        "fact_section_djGkUc"
-      ],
+      "settings": {
+      }
+    },
+    "testimonial_section": {
+      "type": "testimonial-section",
       "settings": {
       }
     }
@@ -248,6 +189,7 @@
     "featured_section",
     "home_page_products_collection",
     "featured_collection",
-    "fact_section"
+    "fact_section",
+    "testimonial_section"
   ]
 }
