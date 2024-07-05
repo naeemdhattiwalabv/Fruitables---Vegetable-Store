@@ -24,12 +24,11 @@
           <div class="carousel-inner" role="listbox">
             {% for block in section.settings %}
               <div class="carousel-item active rounded">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0588/7521/5971/files/hero-img-1.png?v=1720160862"
-                  class="img-fluid w-100 h-100 bg-secondary rounded"
-                  alt="First slide"
-                >
-                    {{ block.slider_image | image_tag: width:100 | image_url }}
+                {{
+                  block.slider_image
+                  | image_tag: width: 100
+                  | image_url: class: 'img-fluid w-100 h-100 bg-secondary rounded'
+                }}
                 <a href="{{ block.slider_url }}" class="btn px-4 py-2 text-white rounded">{{ block.button_text }}</a>
               </div>
             {% endfor %}
