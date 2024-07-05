@@ -19,10 +19,19 @@
             "slider_url": "shopify:\/\/collections\/fruits",
             "button_text": "Fruits"
           }
+        },
+        "homepage_banner_slider_c6n3MF": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
+            "slider_url": "shopify:\/\/collections\/vegetables",
+            "button_text": "Vegetables"
+          }
         }
       },
       "block_order": [
-        "homepage_banner_slider_cM6wTb"
+        "homepage_banner_slider_cM6wTb",
+        "homepage_banner_slider_c6n3MF"
       ],
       "settings": {
         "banner_header": "",
