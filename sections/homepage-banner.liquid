@@ -68,7 +68,7 @@
               {% if forloop.index == 1 %}
                 <div class="carousel-item active rounded">
                   <img
-                    src="{{ block.settings.slider_image | img_url: 'master' }}"
+                    src="{{ block.settings.slider_image | image_url: 'master' }}"
                     class="img-fluid w-100 h-100 bg-secondary rounded"
                     alt=""
                     width="1200"
@@ -81,7 +81,7 @@
               {% else %}
                 <div class="carousel-item rounded">
                   <img
-                    src="{{ block.settings.slider_image | img_url: 'master' }}"
+                    src="{{ block.settings.slider_image | image_url: 'master' }}"
                     class="img-fluid w-100 h-100 bg-secondary rounded"
                     alt=""
                     width="1200"
