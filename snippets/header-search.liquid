@@ -41,6 +41,10 @@
         tabindex="-1"
       >
         <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
           {%- if settings.predictive_search_enabled -%}
             <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
           {%- else -%}
