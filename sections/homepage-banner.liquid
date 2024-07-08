@@ -80,11 +80,18 @@
                 </div>
               {% else %}
                 <div class="carousel-item rounded">
-                  {{
+                  {% comment %} {{
                     block.settings.slider_image
                     | image_url: width: 100
                     | image_tag: class: 'img-fluid w-100 h-100 bg-secondary rounded'
-                  }}
+                  }} {% endcomment %}
+                  <img
+                    src="{{ block.settings.slider_image | img_url: 'master' }}"
+                    class="img-fluid w-100 h-100 bg-secondary rounded"
+                    alt=""
+                    width="1200"
+                    height="1200"
+                  >
                   <a href="{{ block.settings.slider_url }}" class="btn px-4 py-2 text-white rounded">
                     {{- block.settings.button_text -}}
                   </a>
