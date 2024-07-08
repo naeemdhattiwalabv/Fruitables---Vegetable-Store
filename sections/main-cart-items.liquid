@@ -35,7 +35,7 @@
         </a>
       </div>
     {% endcomment %}
-    <div class="container-fluid page-header py-5" style="background: url(https://cdn.shopify.com/s/files/1/0588/7521/5971/files/cart-page-header-img.jpg);">
+    <div class="container-fluid page-header py-5">
       <h1 class="text-center text-white display-6">{{ 'sections.cart.title' | t }}</h1>
     </div>
 
@@ -54,8 +54,8 @@
     </div>
 
     <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
-      <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
-        <div class="js-contents">
+      <div class="cart__items container-fluid py-5" id="main-cart-items" data-id="{{ section.id }}">
+        <div class="js-contents container py-5">
           {%- if cart != empty -%}
             <table class="cart-items">
               <caption class="visually-hidden">
