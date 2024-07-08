@@ -494,10 +494,3 @@
     line-height: 35px;
 }
 /*** Footer End ***/
-
-
-@media (min-width: 1200px) {
-    .display-6 {
-        font-size: 4.5rem !important;
-    }
-}
