@@ -24,12 +24,7 @@
       </div>
     {% endcomment %}
     <div class="container-fluid page-header py-5" style="background:url(https://cdn.shopify.com/s/files/1/0588/7521/5971/files/cart-page-header-img.jpg);">
-      <h1 class="text-center text-white display-6">Shop</h1>
-      <ol class="breadcrumb justify-content-center mb-0">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active text-white">Shop</li>
-      </ol>
+      <h1 class="text-center text-white display-6">{{- collection.title | escape -}}</h1>
     </div>
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
