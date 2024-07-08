@@ -264,7 +264,7 @@
                         endif
                       -%}
                       <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
-                        <quantity-popover>
+                        {% comment %} <quantity-popover>
                           <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
                             <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                               {{ 'products.product.quantity.label' | t }}
@@ -419,7 +419,20 @@
                               <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
                             </svg>
                           </div>
-                        </quantity-popover>
+                        </quantity-popover> {% endcomment %}
+                        <div class="input-group quantity mt-4" style="width: 100px;">
+                          <div class="input-group-btn">
+                            <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                              <i class="fa fa-minus"></i>
+                            </button>
+                          </div>
+                          <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                          <div class="input-group-btn">
+                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                              <i class="fa fa-plus"></i>
+                            </button>
+                          </div>
+                        </div>
                       </td>
 
                       <td class="cart-item__totals right small-hide">
