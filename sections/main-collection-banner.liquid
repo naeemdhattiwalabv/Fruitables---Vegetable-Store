@@ -11,7 +11,7 @@
 
 <div class=" collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    <div class="collection-hero__text-wrapper container-fluid page-header py-5">
+    <div class="collection-hero__text-wrapper container-fluid page-header py-5" style="background: url(https://cdn.shopify.com/s/files/1/0588/7521/5971/files/cart-page-header-img.jpg?v=1720431899);">
       <h1 class="collection-hero__title text-center text-white display-6">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
