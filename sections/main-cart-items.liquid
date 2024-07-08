@@ -64,22 +64,30 @@
                 </caption>
                 <thead>
                   <tr>
-                    <th class="caption-with-letter-spacing" colspan="2" scope="col">
-                      {{ 'sections.cart.headings.product' | t }}
-                    </th>
-                    <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
-                      {{ 'sections.cart.headings.total' | t }}
-                    </th>
-                    <th
-                      class="cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing"
-                      colspan="1"
-                      scope="col"
-                    >
-                      {{ 'sections.cart.headings.quantity' | t }}
-                    </th>
-                    <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
-                      {{ 'sections.cart.headings.total' | t }}
-                    </th>
+                    {% comment %}
+                      <th class="caption-with-letter-spacing" colspan="2" scope="col">
+                        {{ 'sections.cart.headings.product' | t }}
+                      </th>
+                      <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                        {{ 'sections.cart.headings.total' | t }}
+                      </th>
+                      <th
+                        class="cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing"
+                        colspan="1"
+                        scope="col"
+                      >
+                        {{ 'sections.cart.headings.quantity' | t }}
+                      </th>
+                      <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                        {{ 'sections.cart.headings.total' | t }}
+                      </th>
+                    {% endcomment %}
+                    <th scope="col">Products</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Handle</th>
                   </tr>
                 </thead>
 
@@ -167,7 +175,11 @@
                           <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                         {%- endif -%}
 
-                        <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                        <ul
+                          class="discounts list-unstyled"
+                          role="list"
+                          aria-label="{{ 'customer.order.discount' | t }}"
+                        >
                           {%- for discount in item.line_level_discount_allocations -%}
                             <li class="discounts__discount">
                               {%- render 'icon-discount' -%}
@@ -249,7 +261,11 @@
                               <quantity-input class="quantity cart-quantity">
                                 <button class="quantity__button" name="minus" type="button">
                                   <span class="visually-hidden">
-                                    {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
+                                    {{-
+                                      'products.product.quantity.decrease'
+                                      | t: product: item.product.title
+                                      | escape
+                                    -}}
                                   </span>
                                   {% render 'icon-minus' %}
                                 </button>
@@ -274,7 +290,11 @@
                                 >
                                 <button class="quantity__button" name="plus" type="button">
                                   <span class="visually-hidden">
-                                    {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
+                                    {{-
+                                      'products.product.quantity.increase'
+                                      | t: product: item.product.title
+                                      | escape
+                                    -}}
                                   </span>
                                   {% render 'icon-plus' %}
                                 </button>
