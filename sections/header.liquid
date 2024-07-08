@@ -165,11 +165,7 @@
                 </div>
               </div>
             {% else %}
-              {% if forloop.index == 1 %}
-                <a href="{{- link.url | escape -}}" class="nav-item nav-link active">{{- link.title | escape -}}</a>
-              {% else %}
-                <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
-              {% endif %}
+              <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
             {% endif %}
           {% endfor %}
         </div>
