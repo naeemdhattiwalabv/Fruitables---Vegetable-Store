@@ -321,18 +321,6 @@
                                 </button>
                               </quantity-input>
                             </div>
-                            <cart-remove-button
-                              id="Remove-{{ item.index | plus: 1 }}"
-                              data-index="{{ item.index | plus: 1 }}"
-                            >
-                              <a
-                                href="{{ item.url_to_remove }}"
-                                class="button button--tertiary"
-                                aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
-                              >
-                                {% render 'icon-remove' %}
-                              </a>
-                            </cart-remove-button>
                           </div>
                           {%- if has_qty_rules or has_vol_pricing -%}
                             <button
@@ -475,6 +463,20 @@
                             </div>
                           {%- endif -%}
                         </div>
+                      </td>
+                      <td>
+                        <cart-remove-button
+                          id="Remove-{{ item.index | plus: 1 }}"
+                          data-index="{{ item.index | plus: 1 }}"
+                        >
+                          <a
+                            href="{{ item.url_to_remove }}"
+                            class="button button--tertiary"
+                            aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
+                          >
+                            {% render 'icon-remove' %}
+                          </a>
+                        </cart-remove-button>
                       </td>
                     </tr>
                   {%- endfor -%}
