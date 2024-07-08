@@ -113,21 +113,25 @@
                         </td>
                       {% endcomment %}
                       <th scope="row">
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="{{ item.image | img_url: 'master' }}"
-                            class="img-fluid me-5 rounded-circle"
-                            alt="{{ item.image.alt | escape }}"
-                            loading="lazy"
-                            width="80px"
-                            style="width: 80px; height: 80px;"
-                            height="80px"
-                          >
-                        </div>
+                        {% if item.image %}
+                          {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
+                          <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="{{ item.image | img_url: 'master' }}"
+                              class="img-fluid me-5 rounded-circle"
+                              alt="{{ item.image.alt | escape }}"
+                              loading="lazy"
+                              width="80px"
+                              style="width: 80px; height: 80px;"
+                              height="80px"
+                            >
+                          </div>
+                        {% endif %}
                       </th>
-                      <td class="cart-item__details">
+                      <td>
                         {%- if settings.show_vendor -%}
-                          <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
+                          <p class="mb-0 mt-4">{{ item.product.vendor }}</p>
                         {%- endif -%}
 
                         <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
