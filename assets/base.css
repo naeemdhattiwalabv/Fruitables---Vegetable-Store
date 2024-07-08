@@ -1867,9 +1867,9 @@ input[type='checkbox'] {
   min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
 }
 
-/* .quantity:after {
+.quantity:after {
   pointer-events: none;
-  content: '';
+  /* content: ''; */
   position: absolute;
   top: var(--inputs-border-width);
   right: var(--inputs-border-width);
@@ -1885,7 +1885,7 @@ input[type='checkbox'] {
 .quantity:before {
   background: rgb(var(--color-background));
   pointer-events: none;
-  content: '';
+  /* content: ''; */
   position: absolute;
   top: 0;
   right: 0;
@@ -1895,7 +1895,7 @@ input[type='checkbox'] {
   box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset)
     var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
   z-index: -1;
-} */
+}
 
 .quantity__input {
   color: currentColor;
