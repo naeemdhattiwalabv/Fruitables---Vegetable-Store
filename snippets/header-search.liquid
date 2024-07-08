@@ -12,14 +12,16 @@
   <details>
     <summary
       class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
-      
+
       aria-haspopup="dialog"
       aria-label="{{ 'general.search.search' | t }}"
     >
       <span>
-        {% comment %} <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false">
-          <use href="#icon-search">
-        </svg> {% endcomment %}
+        {% comment %}
+          <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false">
+            <use href="#icon-search">
+          </svg>
+        {% endcomment %}
         <i class="fas fa-search text-primary"></i>
         <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false">
           <use href="#icon-close">
@@ -27,10 +29,11 @@
       </span>
     </summary>
     <div
-      class="search-modal modal__content gradient"
+      class="search-modal modal__content gradient modal fade"
       role="dialog"
       aria-modal="true"
       aria-label="{{ 'general.search.search' | t }}"
+      id="searchModal"
     >
       <div class="modal-overlay"></div>
       <div
