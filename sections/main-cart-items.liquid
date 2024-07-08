@@ -280,7 +280,7 @@
                                 </button>
                               {%- endif -%}
                               <quantity-input class="quantity cart-quantity">
-                                <button class="quantity__button" name="minus" type="button">
+                                <button class="quantity__button btn btn-sm btn-minus rounded-circle bg-light border" name="minus" type="button">
                                   <span class="visually-hidden">
                                     {{-
                                       'products.product.quantity.decrease'
@@ -325,7 +325,7 @@
                           {%- if has_qty_rules or has_vol_pricing -%}
                             <button
                               type="button"
-                              class="btn btn-sm btn-minus rounded-circle bg-light border quantity-popover__info-button quantity-popover__info-button--icon-with-label button button--tertiary large-up-hide"
+                              class="quantity-popover__info-button quantity-popover__info-button--icon-with-label button button--tertiary large-up-hide"
                               aria-expanded="false"
                             >
                               {% render 'icon-info' %}
