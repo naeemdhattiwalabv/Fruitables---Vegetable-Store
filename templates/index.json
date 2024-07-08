@@ -242,7 +242,7 @@
           "settings": {
             "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
             "fact_name": "satisfied customers",
-            "fact_value": 1963
+            "fact_value": "1963"
           }
         },
         "fact_section_C8VwiF": {
@@ -250,7 +250,7 @@
           "settings": {
             "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
             "fact_name": "quality of service",
-            "fact_value": 99
+            "fact_value": "99%"
           }
         },
         "fact_section_U3n9Vd": {
@@ -258,7 +258,7 @@
           "settings": {
             "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
             "fact_name": "quality certificate",
-            "fact_value": 33
+            "fact_value": "33"
           }
         },
         "fact_section_KX4CfM": {
@@ -266,7 +266,7 @@
           "settings": {
             "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
             "fact_name": "Available Products",
-            "fact_value": 789
+            "fact_value": "789"
           }
         }
       },
