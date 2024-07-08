@@ -265,7 +265,7 @@
                       -%}
                       <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
                         <quantity-popover>
-                          <div class="cart-item__quantity-wrapper quantity-popover-wrapper input-group quantity mt-4">
+                          <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
                             <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                               {{ 'products.product.quantity.label' | t }}
                             </label>
@@ -339,7 +339,6 @@
                             </button>
                           {%- endif -%}
                           {%- if has_vol_pricing or has_qty_rules -%}
-                            {{ '123' }}
                             <div
                               class="cart-items__info global-settings-popup quantity-popover__info"
                               tabindex="-1"
@@ -421,21 +420,6 @@
                             </svg>
                           </div>
                         </quantity-popover>
-                        {% comment %}
-                          <div class="input-group quantity mt-4" style="width: 100px;">
-                            <div class="input-group-btn">
-                              <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                <i class="fa fa-minus"></i>
-                              </button>
-                            </div>
-                            <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                            <div class="input-group-btn">
-                              <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                <i class="fa fa-plus"></i>
-                              </button>
-                            </div>
-                          </div>
-                        {% endcomment %}
                       </td>
 
                       <td class="cart-item__totals right small-hide">
