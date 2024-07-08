@@ -115,7 +115,7 @@
                       <th scope="row">
                         <div class="d-flex align-items-center">
                           <img
-                            src="{{ item.image | image_url: width: 300 }}"
+                            src="{{ item.image | img_url: 'master' }}"
                             class="img-fluid me-5 rounded-circle"
                             alt="{{ item.image.alt | escape }}"
                             loading="lazy"
