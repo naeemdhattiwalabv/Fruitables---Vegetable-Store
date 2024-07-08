@@ -131,7 +131,11 @@
       <div class="top-link pe-2">
         {% for link in linklists.header.links %}
           <a href="{{- link.url | escape -}}" class="text-white">
-            <small class="text-white mx-2">{{- link.title | escape -}}</small>
+            {% if forloop.index != linklists.header.links.size %}
+              <small class="text-white mx-2">{{- link.title | append: '  /' | escape -}}</small>
+            {% else %}
+              <small class="text-white mx-2">{{- link.title | escape -}}</small>
+            {% endif %}
           </a>
         {% endfor %}
       </div>
