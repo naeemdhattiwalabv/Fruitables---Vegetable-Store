@@ -115,7 +115,7 @@
                       <th scope="row">
                         {% if item.image %}
                           {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                          
+                          <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
                           <div class="d-flex align-items-center">
                             <img
                               src="{{ item.image | img_url: 'master' }}"
@@ -280,11 +280,7 @@
                                 </button>
                               {%- endif -%}
                               <quantity-input class="quantity cart-quantity">
-                                <button
-                                  class="quantity__button btn btn-sm btn-minus rounded-circle bg-light border"
-                                  name="minus"
-                                  type="button"
-                                >
+                                <button class="quantity__button" name="minus" type="button">
                                   <span class="visually-hidden">
                                     {{-
                                       'products.product.quantity.decrease'
@@ -295,7 +291,7 @@
                                   {% render 'icon-minus' %}
                                 </button>
                                 <input
-                                  class="quantity__input form-control form-control-sm text-center border-0"
+                                  class="quantity__input"
                                   data-quantity-variant-id="{{ item.variant.id }}"
                                   type="number"
                                   name="updates[]"
@@ -313,11 +309,7 @@
                                   id="Quantity-{{ item.index | plus: 1 }}"
                                   data-index="{{ item.index | plus: 1 }}"
                                 >
-                                <button
-                                  class="quantity__button btn btn-sm btn-plus rounded-circle bg-light border"
-                                  name="plus"
-                                  type="button"
-                                >
+                                <button class="quantity__button" name="plus" type="button">
                                   <span class="visually-hidden">
                                     {{-
                                       'products.product.quantity.increase'
@@ -493,7 +485,6 @@
               </table>
             </div>
           {%- endif -%}
-          {% render 'cart-footer' %}
         </div>
       </div>
 
