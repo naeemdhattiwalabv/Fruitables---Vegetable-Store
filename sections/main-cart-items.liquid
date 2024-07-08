@@ -443,9 +443,9 @@
                               </dd>
                             </dl>
                           {%- else -%}
-                            <span class="price price--end mb-0 mt-4">
+                            <p class="mb-0 mt-4">
                               {{ item.original_line_price | money }}
-                            </span>
+                            </p>
                           {%- endif -%}
 
                           {%- if item.variant.available and item.unit_price_measurement -%}
