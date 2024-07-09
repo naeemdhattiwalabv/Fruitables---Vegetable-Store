@@ -1,6 +1,6 @@
 <div class="">
   <div class="">
-    <div class="row g-5 align-items-center">
+    <div class="">
       <div class="col-md-12 col-lg-7">
         <h4 class="mb-3 text-secondary">{{ section.settings.banner_header }}</h4>
         <h1 class="mb-5 display-3 text-primary">{{ section.settings.banner_content }}</h1>
@@ -38,14 +38,6 @@
                 Submit Now
               </button>
             </div>
-
-            {%- if settings.predictive_search_enabled -%}
-              <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
-                {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
-              </div>
-
-              <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
-            {%- endif -%}
           </form>
         </div>
       </div>
