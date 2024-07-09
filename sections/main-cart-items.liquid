@@ -132,7 +132,9 @@
                           <p class="mb-0 mt-4">{{ item.product.vendor }}</p>
                         {%- endif -%}
 
-                        <p class="mb-0 mt-4">{{ item.product.title | escape }}</p>
+                        <a href="{{ item.url }}" class="">
+                          <p class="mb-0 mt-4">{{ item.product.title | escape }}</p>
+                        </a>
                       </td>
                       <td>
                         {%- if item.original_price != item.final_price -%}
