@@ -44,8 +44,47 @@
               <option value="opel">Organic</option>
               <option value="audi">Fantastic</option>
           </select>
+          <select
+            name="sort_by"
+            class="border-0 form-select-sm bg-light me-3"
+            id="SortBy"
+            aria-describedby="a11y-refresh-page-message"
+          >
+            {%- for option in results.sort_options -%}
+              <option
+                value="{{ option.value | escape }}"
+                {% if option.value == sort_by %}
+                  selected="selected"
+                {% endif %}
+              >
+                {{ option.name | escape }}
+              </option>
+            {%- endfor -%}
+          </select>
+          {% render 'icon-caret' %}
       </div>
   </div>
+</div>
+<div class="select">
+  {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+  <select
+    name="sort_by"
+    class="facet-filters__sort select__select caption-large"
+    id="SortBy"
+    aria-describedby="a11y-refresh-page-message"
+  >
+    {%- for option in results.sort_options -%}
+      <option
+        value="{{ option.value | escape }}"
+        {% if option.value == sort_by %}
+          selected="selected"
+        {% endif %}
+      >
+        {{ option.name | escape }}
+      </option>
+    {%- endfor -%}
+  </select>
+  {% render 'icon-caret' %}
 </div>
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
