@@ -5,7 +5,7 @@
     render 'icon-cart'
   endif
 -%}
-<span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+{% comment %} <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span> {% endcomment %}
 <i class="fa fa-shopping-bag fa-2x"></i>
 {%- if cart != empty -%}
   <div class="cart-count-bubble">
