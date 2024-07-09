@@ -114,8 +114,6 @@
                       {% endcomment %}
                       <th scope="row">
                         {% if item.image %}
-                          {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                          
                           <div class="d-flex align-items-center">
                             <img
                               src="{{ item.image | img_url: 'master' }}"
@@ -131,10 +129,10 @@
                       </th>
                       <td>
                         {%- if settings.show_vendor -%}
-                          <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
+                          <p class="mb-0 mt-4">{{ item.product.vendor }}</p>
                         {%- endif -%}
 
-                        <a href="{{ item.url }}" class="cart-item__name h4 break">
+                        <a href="{{ item.url }}" class="">
                           <p class="mb-0 mt-4">{{ item.product.title | escape }}</p>
                         </a>
                       </td>
