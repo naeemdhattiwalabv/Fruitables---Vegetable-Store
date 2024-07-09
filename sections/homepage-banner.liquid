@@ -80,8 +80,9 @@
   </div>
 </div>
 <script type="text/javascript">
-  document.getElementById('home_page_banner_search').action = '';
   function get_action() {
+    var action = document.getElementById('home_page_banner_search').action;
+    alert(action.value);
     document.getElementById('home_page_banner_search').action = '{{ routes.search_url }}';
   }
 </script>
