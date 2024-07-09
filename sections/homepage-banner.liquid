@@ -8,24 +8,12 @@
           <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
             <div class="">
               <input
-                class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill"
+                class="border-2 border-secondary w-75 py-3 px-4 rounded-pill"
                 id="{{ input_id }}"
                 type="text"
                 name="q"
                 value="{{ search.terms | escape }}"
                 placeholder="Search"
-                {%- if settings.predictive_search_enabled -%}
-                  role="combobox"
-                  aria-expanded="true"
-                  aria-owns="predictive-search-results"
-                  aria-controls="predictive-search-results"
-                  aria-haspopup=""
-                  aria-autocomplete="list"
-                  autocorrect="off"
-                  autocomplete="off"
-                  autocapitalize="off"
-                  spellcheck="false"
-                {%- endif -%}
               >
               <input type="hidden" name="options[prefix]" value="last">
               <button
