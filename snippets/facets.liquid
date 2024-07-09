@@ -29,63 +29,37 @@
 -%}
 <div class="row g-4">
   <div class="col-xl-3">
-      <div class="input-group w-100 mx-auto d-flex">
-          <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-          <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-      </div>
+    <div class="input-group w-100 mx-auto d-flex">
+      <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+      <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+    </div>
   </div>
   <div class="col-6"></div>
   <div class="col-xl-3">
-      <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
-          <label for="fruits">Default Sorting:</label>
-          <select id="fruits" name="fruitlist" class="border-0 form-select-sm bg-light me-3" form="fruitform">
-              <option value="volvo">Nothing</option>
-              <option value="saab">Popularity</option>
-              <option value="opel">Organic</option>
-              <option value="audi">Fantastic</option>
-          </select>
-          <select
-            name="sort_by"
-            class="border-0 form-select-sm bg-light me-3"
-            id="SortBy"
-            aria-describedby="a11y-refresh-page-message"
+    <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
+      <label for="fruits">{{ 'products.facets.sort_by_label' | t }}</label>
+      <select
+        name="sort_by"
+        class="border-0 form-select-sm bg-light me-3"
+        id="SortBy"
+        aria-describedby="a11y-refresh-page-message"
+      >
+        {%- for option in results.sort_options -%}
+          <option
+            value="{{ option.value | escape }}"
+            {% if option.value == sort_by %}
+              selected="selected"
+            {% endif %}
           >
-            {%- for option in results.sort_options -%}
-              <option
-                value="{{ option.value | escape }}"
-                {% if option.value == sort_by %}
-                  selected="selected"
-                {% endif %}
-              >
-                {{ option.name | escape }}
-              </option>
-            {%- endfor -%}
-          </select>
-          {% render 'icon-caret' %}
-      </div>
+            {{ option.name | escape }}
+          </option>
+        {%- endfor -%}
+      </select>
+      {% render 'icon-caret' %}
+    </div>
   </div>
 </div>
-<div class="select">
-  {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
-  <select
-    name="sort_by"
-    class="facet-filters__sort select__select caption-large"
-    id="SortBy"
-    aria-describedby="a11y-refresh-page-message"
-  >
-    {%- for option in results.sort_options -%}
-      <option
-        value="{{ option.value | escape }}"
-        {% if option.value == sort_by %}
-          selected="selected"
-        {% endif %}
-      >
-        {{ option.name | escape }}
-      </option>
-    {%- endfor -%}
-  </select>
-  {% render 'icon-caret' %}
-</div>
+
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
     <facet-filters-form class="facets small-hide">
