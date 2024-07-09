@@ -278,9 +278,9 @@
                                     {% render 'icon-info' %}
                                   </button>
                                 {%- endif -%}
-                                <quantity-input class="quantity">
+                                <quantity-input class="quantity cart-quantity">
                                   <button
-                                    class="btn btn-sm btn-minus rounded-circle bg-light border"
+                                    class="quantity__button btn btn-sm btn-minus rounded-circle bg-light border"
                                     name="minus"
                                     type="button"
                                   >
@@ -313,7 +313,7 @@
                                     data-index="{{ item.index | plus: 1 }}"
                                   >
                                   <button
-                                    class="btn btn-sm btn-plus rounded-circle bg-light border"
+                                    class="quantity__button btn btn-sm btn-plus rounded-circle bg-light border"
                                     name="plus"
                                     type="button"
                                   >
