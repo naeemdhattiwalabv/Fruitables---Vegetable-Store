@@ -158,7 +158,7 @@
                 <div class="footer-item">
                   <h4 class="text-light mb-3">Contact</h4>
 
-                  {%- if block.settings.address != blank -%}
+                  {%- if shop.address.address1 != blank -%}
                     <p>
                       Address:
                       {{
@@ -171,7 +171,7 @@
                     </p>
                   {%- endif -%}
 
-                  {%- if block.settings.email != blank -%}
+                  {%- if shop.email != blank -%}
                     <p>
                       Email: <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
                     </p>
