@@ -341,21 +341,24 @@
                           </div>
                           <div class="col-lg-9">
                             <div class="row g-4 justify-content-center">
-                              <ul
-                                id="product-grid"
-                                data-id="{{ section.id }}"
-                                class="
-                                  grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-                                  grid--{{ section.settings.columns_desktop }}-col-desktop
-                                  {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
-                                "
-                              >
-                                {% assign skip_card_product_styles = false %}
-                                {%- for product in collection.products -%}
-                                  {% assign lazy_load = false %}
-                                  {%- if forloop.index > 2 -%}
-                                    {%- assign lazy_load = true -%}
-                                  {%- endif -%}
+                              {% comment %}
+                                <ul
+                                  id="product-grid"
+                                  data-id="{{ section.id }}"
+                                  class="
+                                    grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                                    grid--{{ section.settings.columns_desktop }}-col-desktop
+                                    {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
+                                  "
+                                >
+                              {% endcomment %}
+                              {% assign skip_card_product_styles = false %}
+                              {%- for product in collection.products -%}
+                                {% assign lazy_load = false %}
+                                {%- if forloop.index > 2 -%}
+                                  {%- assign lazy_load = true -%}
+                                {%- endif -%}
+                                {% comment %}
                                   <li
                                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                                     {% if settings.animations_reveal_on_scroll %}
@@ -363,22 +366,25 @@
                                       style="--animation-order: {{ forloop.index }};"
                                     {% endif %}
                                   >
-                                    {% render 'card-product',
-                                      card_product: product,
-                                      media_aspect_ratio: section.settings.image_ratio,
-                                      image_shape: section.settings.image_shape,
-                                      show_secondary_image: section.settings.show_secondary_image,
-                                      show_vendor: section.settings.show_vendor,
-                                      show_rating: section.settings.show_rating,
-                                      lazy_load: lazy_load,
-                                      skip_styles: skip_card_product_styles,
-                                      quick_add: section.settings.quick_add,
-                                      section_id: section.id
-                                    %}
-                                  </li>
-                                  {%- assign skip_card_product_styles = true -%}
-                                {%- endfor -%}
-                              </ul>
+                                {% endcomment %}
+                                <div class="col-md-6 col-lg-6 col-xl-4">
+                                  {% render 'card-product',
+                                    card_product: product,
+                                    media_aspect_ratio: section.settings.image_ratio,
+                                    image_shape: section.settings.image_shape,
+                                    show_secondary_image: section.settings.show_secondary_image,
+                                    show_vendor: section.settings.show_vendor,
+                                    show_rating: section.settings.show_rating,
+                                    lazy_load: lazy_load,
+                                    skip_styles: skip_card_product_styles,
+                                    quick_add: section.settings.quick_add,
+                                    section_id: section.id
+                                  %}
+                                </div>
+                                {% comment %} </li> {% endcomment %}
+                                {%- assign skip_card_product_styles = true -%}
+                              {%- endfor -%}
+                              {% comment %} </ul> {% endcomment %}
                             </div>
                           </div>
                         </div>
