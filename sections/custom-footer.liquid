@@ -53,7 +53,8 @@
                         id="Subscribe"
                         aria-label="{{ 'newsletter.button_label' | t }}"
                       >
-                        {% render 'icon-arrow' %}
+                        {% comment %} {% render 'icon-arrow' %} {% endcomment %}
+                        {{ 'Subscribe Now' }}
                       </button>
                     </div>
                     {%- if form.errors -%}
