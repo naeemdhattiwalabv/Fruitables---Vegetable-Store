@@ -42,7 +42,7 @@
                         {% elsif form.posted_successfully? %}
                           aria-describedby="ContactFooter-success"
                         {% endif %}
-                        placeholder=""
+                        placeholder="{{ 'newsletter.label' | t }}"
                         required
                       >
                       <label class="field__label" for="NewsletterForm--{{ section.id }}">
