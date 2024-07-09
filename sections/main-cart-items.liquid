@@ -127,9 +127,7 @@
                           </div>
                         {% endif %}
                       </th>
-
-                      <td class="cart-item__totals right medium-hide large-up-hide">
-                        {%- render 'loading-spinner' -%}
+                      <td>
                         {%- if settings.show_vendor -%}
                           <p class="mb-0 mt-4">{{ item.product.vendor }}</p>
                         {%- endif -%}
@@ -138,7 +136,9 @@
                           <p class="mb-0 mt-4">{{ item.product.title | escape }}</p>
                         </a>
                       </td>
-                      <td>
+
+                      <td class="cart-item__totals right medium-hide large-up-hide">
+                        {%- render 'loading-spinner' -%}
                         {%- if item.original_price != item.final_price -%}
                           <div class="cart-item__discounted-prices">
                             <span class="visually-hidden">
