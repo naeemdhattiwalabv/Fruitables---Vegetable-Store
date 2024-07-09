@@ -81,8 +81,6 @@
 </div>
 <script type="text/javascript">
   function get_action() {
-    var action = document.getElementById('home_page_banner_search').action;
-    alert(action.value);
     document.getElementById('home_page_banner_search').action = '{{ routes.search_url }}';
   }
 </script>
