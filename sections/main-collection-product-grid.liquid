@@ -39,6 +39,7 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   <div class="container-fluid fruite py-5">
     <div class="container py-5">
+      <h1 class="mb-4">Fresh fruits shop</h1>
       {%- paginate collection.products by section.settings.products_per_page -%}
         {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
         {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
