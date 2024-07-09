@@ -262,7 +262,7 @@
                         endif
                       -%}
                       <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
-                        <div class="input-group quantity mt-4" style="width: 100px;">
+                        <div class="input-group quantity mt-4">
                           <quantity-popover>
                             <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
                               <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
