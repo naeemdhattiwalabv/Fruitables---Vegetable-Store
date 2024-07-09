@@ -176,12 +176,14 @@
             <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
             {%- if cart != empty -%}
               {%- if cart.item_count < 100 -%}
-                <span
-                  class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                  style="top: -5px; left: 15px; height: 20px; min-width: 20px;"
-                >
-                  {{- cart.item_count -}}
-                </span>
+                <div class="cart-count-bubble">
+                  <span
+                    class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                    style="top: -5px; left: 15px; height: 20px; min-width: 20px;"
+                  >
+                    {{- cart.item_count -}}
+                  </span>
+                </div>
                 <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
               {% endif %}
             {% endif %}
