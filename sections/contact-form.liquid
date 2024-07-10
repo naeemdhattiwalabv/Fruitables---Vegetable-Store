@@ -48,12 +48,6 @@
               </div>
             </div>
             <div class="col-lg-7">
-              {% comment %}
-                {%- liquid
-                  assign contact_form_class = 'isolate'
-                -%}
-              {% endcomment %}
-
               {%- form 'contact', id: 'ContactForm' -%}
                 <form action="" class="">
                   {%- if form.posted_successfully? -%}
@@ -138,15 +132,9 @@
                   >
                             {{- form.body -}}
                           </textarea>
-                  {% comment %}
-                    <label class="form__label" for="ContactForm-body">
-                      {{- 'templates.contact.form.comment' | t -}}
-                    </label>
-                  {% endcomment %}
                   <button type="submit" class="w-100 btn form-control border-secondary py-3 bg-white text-primary">
                     {{ 'templates.contact.form.send' | t }}
                   </button>
-                  {% comment %} <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button> {% endcomment %}
                 </form>
               {%- endform -%}
             </div>
