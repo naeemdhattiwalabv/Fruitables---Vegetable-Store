@@ -417,10 +417,10 @@
                     <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
                       <label for="fruits">{{ 'products.facets.sort_by_label' | t }}</label>
                       <select
-                        id="fruits"
-                        name="fruitlist"
+                        id="SortBy"
+                        name="sort_by"
                         class="border-0 form-select-sm bg-light me-3"
-                        form="fruitform"
+                        aria-describedby="a11y-refresh-page-message"
                       >
                         {%- for option in results.sort_options -%}
                           <option
