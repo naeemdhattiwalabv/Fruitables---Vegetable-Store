@@ -51,7 +51,7 @@
                       </a>
                     {% endif %}
                   </div>
-                {% else %}
+                {% elsif block.settings.slider_image %}
                   <div class="carousel-item rounded">
                     <img
                       src="{{ block.settings.slider_image | img_url: 'master' }}"
@@ -60,9 +60,11 @@
                       width="1200"
                       height="1200"
                     >
-                    <a href="{{ block.settings.slider_url }}" class="btn px-4 py-2 text-white rounded">
-                      {{- block.settings.button_text -}}
-                    </a>
+                    {% if block.settings.slider_url and block.settings.button_text %}
+                      <a href="{{ block.settings.slider_url }}" class="btn px-4 py-2 text-white rounded">
+                        {{- block.settings.button_text -}}
+                      </a>
+                    {% endif %}
                   </div>
                 {% endif %}
               {% endfor %}
