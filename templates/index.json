@@ -196,6 +196,23 @@
         "padding_bottom": 36
       }
     },
+    "deal_section_fLRf7p": {
+      "type": "deal-section",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/baner-1.png",
+        "link_1": "",
+        "title_1": "Fresh Apples",
+        "promotion_1": "20% OFF",
+        "image_2": "shopify:\/\/shop_images\/featur-2.jpg",
+        "link_2": "",
+        "title_2": "Tasty Fruits",
+        "promotion_2": "Free delivery",
+        "image_3": "shopify:\/\/shop_images\/featur-3.jpg",
+        "link_3": "",
+        "title_3": "Exotic Vegetable",
+        "promotion_3": "Discount $30"
+      }
+    },
     "vegetable_shop": {
       "type": "vegetable-shop",
       "settings": {
@@ -305,23 +322,6 @@
         "testimonial_heading": "Our Testimonial",
         "testimonial_content": "Our Client Saying!"
       }
-    },
-    "deal_section_fLRf7p": {
-      "type": "deal-section",
-      "settings": {
-        "image_1": "shopify:\/\/shop_images\/baner-1.png",
-        "link_1": "",
-        "title_1": "Fresh Apples",
-        "promotion_1": "20% OFF",
-        "image_2": "shopify:\/\/shop_images\/featur-2.jpg",
-        "link_2": "",
-        "title_2": "Tasty Fruits",
-        "promotion_2": "Free delivery",
-        "image_3": "shopify:\/\/shop_images\/featur-3.jpg",
-        "link_3": "",
-        "title_3": "Exotic Vegetable",
-        "promotion_3": "Discount $30"
-      }
     }
   },
   "order": [
@@ -330,11 +330,11 @@
     "featured_section",
     "home_page_products_collection",
     "featured_collection",
+    "deal_section_fLRf7p",
     "vegetable_shop",
     "custom_product_banner_jdBJW4",
     "bestseller_product",
     "fact_section",
-    "testimonial_section",
-    "deal_section_fLRf7p"
+    "testimonial_section"
   ]
 }
