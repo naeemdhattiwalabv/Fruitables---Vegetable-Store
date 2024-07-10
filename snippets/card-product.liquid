@@ -626,9 +626,9 @@
               </span>
             </p>
           {%- endif -%}
-          {{ 'test' }}
-          {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
-          {{ 'test2' }}
+          <p class="text-dark fs-5 fw-bold mb-0">
+            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+          </p>
           {%- if card_product.quantity_price_breaks_configured? -%}
             {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
               {% liquid
