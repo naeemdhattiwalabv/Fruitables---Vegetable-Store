@@ -27,18 +27,13 @@
 
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
-    {% comment %}
-      <div class="title-wrapper-with-link">
-        <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-        <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
-          {{- 'general.continue_shopping' | t -}}
-        </a>
-      </div>
-    {% endcomment %}
-    <div class="container-fluid page-header py-5">
-      <h1 class="text-center text-white display-6">{{ 'sections.cart.title' | t }}</h1>
+    <div class="title-wrapper-with-link">
+      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+        {{- 'general.continue_shopping' | t -}}
+      </a>
     </div>
-
+    
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="button">
