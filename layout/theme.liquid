@@ -312,11 +312,22 @@
     {% if template.name != 'index' %}
       <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6">{{ page_title }}</h1>
-        <ol class="breadcrumb justify-content-center mb-0">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Pages</a></li>
-          <li class="breadcrumb-item active text-white">Contact</li>
-        </ol>
+        {% unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' %}
+          {% assign t = template | split: '.' | first %}
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            {% case t %}
+              {% when 'page' %}
+                <li class="breadcrumb-item">
+                  <a href="{{ page.url }}">{{ page.title }}</a>
+                </li>
+              {% when 'product' %}
+                {% if collection.url %}
+                  <a href="{{ collection.url }}">{{ collection.title }}</a>
+                {% endif %}
+            {% endcase %}
+          </ol>
+        {% endunless %}
       </div>
     {% endif %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
