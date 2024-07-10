@@ -309,7 +309,12 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
-
+    {% if template.name != 'index' %}
+      <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">{{ page_title }}</h1>
+        {% render 'breadscrumb' %}
+      </div>
+    {% endif %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
@@ -378,6 +383,5 @@
     <script src="{{ 'lightbox.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
-
   </body>
 </html>
