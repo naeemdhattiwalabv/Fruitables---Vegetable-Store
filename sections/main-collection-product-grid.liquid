@@ -343,32 +343,12 @@
                       </div>
                       <div class="col-lg-9">
                         <div class="row g-4 justify-content-center">
-                          {% comment %}
-                            <ul
-                              id="product-grid"
-                              data-id="{{ section.id }}"
-                              class="
-                                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-                                grid--{{ section.settings.columns_desktop }}-col-desktop
-                                {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
-                              "
-                            >
-                          {% endcomment %}
                           {% assign skip_card_product_styles = false %}
                           {%- for product in collection.products -%}
                             {% assign lazy_load = false %}
                             {%- if forloop.index > 2 -%}
                               {%- assign lazy_load = true -%}
                             {%- endif -%}
-                            {% comment %}
-                              <li
-                                class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                                {% if settings.animations_reveal_on_scroll %}
-                                  data-cascade
-                                  style="--animation-order: {{ forloop.index }};"
-                                {% endif %}
-                              >
-                            {% endcomment %}
                             {% render 'card-product',
                               card_product: product,
                               media_aspect_ratio: section.settings.image_ratio,
@@ -381,10 +361,8 @@
                               quick_add: section.settings.quick_add,
                               section_id: section.id
                             %}
-                            {% comment %} </li> {% endcomment %}
                             {%- assign skip_card_product_styles = true -%}
                           {%- endfor -%}
-                          {% comment %} </ul> {% endcomment %}
                         </div>
                       </div>
                     </div>
