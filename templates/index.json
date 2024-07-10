@@ -83,6 +83,7 @@
       "blocks": {
         "featured_section_MnfQE3": {
           "type": "featured_section",
+          "disabled": true,
           "settings": {
             "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"><\/i>",
             "featured_heading": "Free Shipping",
@@ -91,6 +92,7 @@
         },
         "featured_section_CPaH8F": {
           "type": "featured_section",
+          "disabled": true,
           "settings": {
             "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"><\/i>",
             "featured_heading": "Security Payment",
@@ -99,6 +101,7 @@
         },
         "featured_section_PidfC4": {
           "type": "featured_section",
+          "disabled": true,
           "settings": {
             "featured_icon": "<i class=\"fas fa-exchange-alt fa-3x text-white\"><\/i>",
             "featured_heading": "30 Day Return",
@@ -107,6 +110,7 @@
         },
         "featured_section_NYYgM3": {
           "type": "featured_section",
+          "disabled": true,
           "settings": {
             "featured_icon": "<i class=\"fa fa-phone-alt fa-3x text-white\"><\/i>",
             "featured_heading": "24\/7 Support",
