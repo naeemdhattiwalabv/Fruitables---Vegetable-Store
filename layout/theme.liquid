@@ -309,7 +309,14 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
-
+    <div class="container-fluid page-header py-5">
+      <h1 class="text-center text-white display-6">Contact</h1>
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+        <li class="breadcrumb-item active text-white">Contact</li>
+      </ol>
+    </div>
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
@@ -378,6 +385,5 @@
     <script src="{{ 'lightbox.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
-
   </body>
 </html>
