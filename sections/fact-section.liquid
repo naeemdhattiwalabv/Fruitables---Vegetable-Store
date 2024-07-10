@@ -1,21 +1,22 @@
-<div class="container-fluid py-5">
-  <div class="container">
-    <div class="bg-light p-5 rounded">
-      <div class="row g-4 justify-content-center">
-        {% for block in section.blocks %}
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="counter bg-white rounded p-5">
-              {{ block.settings.icon }}
-              <h4>{{ block.settings.fact_name }}</h4>
-              <h1>{{ block.settings.fact_value }}</h1>
+{% if section.blocks != blank %}
+  <div class="container-fluid py-5">
+    <div class="container">
+      <div class="bg-light p-5 rounded">
+        <div class="row g-4 justify-content-center">
+          {% for block in section.blocks %}
+            <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="counter bg-white rounded p-5">
+                {{ block.settings.icon }}
+                <h4>{{ block.settings.fact_name }}</h4>
+                <h1>{{ block.settings.fact_value }}</h1>
+              </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
-</div>
-
+{% endif %}
 {% schema %}
 {
   "name": "Fact Section",
