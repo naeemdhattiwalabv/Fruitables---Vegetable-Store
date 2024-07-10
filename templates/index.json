@@ -78,35 +78,35 @@
         "show_text_below": false
       }
     },
-    "company_featured": {
+    "featured_section": {
       "type": "featured-section",
       "blocks": {
-        "company_featured_MnfQE3": {
-          "type": "company_featured",
+        "featured_section_MnfQE3": {
+          "type": "featured_section",
           "settings": {
             "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"><\/i>",
             "featured_heading": "Free Shipping",
             "featured_content": "Free on order over $300"
           }
         },
-        "company_featured_CPaH8F": {
-          "type": "company_featured",
+        "featured_section_CPaH8F": {
+          "type": "featured_section",
           "settings": {
             "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"><\/i>",
             "featured_heading": "Security Payment",
             "featured_content": "100% security payment"
           }
         },
-        "company_featured_PidfC4": {
-          "type": "company_featured",
+        "featured_section_PidfC4": {
+          "type": "featured_section",
           "settings": {
             "featured_icon": "<i class=\"fas fa-exchange-alt fa-3x text-white\"><\/i>",
             "featured_heading": "30 Day Return",
             "featured_content": "30 day money guarantee"
           }
         },
-        "company_featured_NYYgM3": {
-          "type": "company_featured",
+        "featured_section_NYYgM3": {
+          "type": "featured_section",
           "settings": {
             "featured_icon": "<i class=\"fa fa-phone-alt fa-3x text-white\"><\/i>",
             "featured_heading": "24\/7 Support",
@@ -115,10 +115,10 @@
         }
       },
       "block_order": [
-        "company_featured_MnfQE3",
-        "company_featured_CPaH8F",
-        "company_featured_PidfC4",
-        "company_featured_NYYgM3"
+        "featured_section_MnfQE3",
+        "featured_section_CPaH8F",
+        "featured_section_PidfC4",
+        "featured_section_NYYgM3"
       ],
       "settings": {
       }
@@ -194,23 +194,6 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "deal_section_QyLbkz": {
-      "type": "deal-section",
-      "settings": {
-        "image_1": "shopify:\/\/shop_images\/featur-1.jpg",
-        "link_1": "",
-        "title_1": "Fresh Apples",
-        "promotion_1": "20% OFF",
-        "image_2": "shopify:\/\/shop_images\/featur-2_3672e1b4-55ff-4771-8fa5-d88fa47568e7.jpg",
-        "link_2": "",
-        "title_2": "Tasty Fruits",
-        "promotion_2": "Free delivery",
-        "image_3": "shopify:\/\/shop_images\/featur-3_077a972d-2762-4193-99a5-75d39ce43251.jpg",
-        "link_3": "",
-        "title_3": "Exotic Vegetable",
-        "promotion_3": "Discount $30"
       }
     },
     "vegetable_shop": {
@@ -322,19 +305,36 @@
         "testimonial_heading": "Our Testimonial",
         "testimonial_content": "Our Client Saying!"
       }
+    },
+    "deal_section_fLRf7p": {
+      "type": "deal-section",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/baner-1.png",
+        "link_1": "",
+        "title_1": "Fresh Apples",
+        "promotion_1": "20% OFF",
+        "image_2": "shopify:\/\/shop_images\/featur-2.jpg",
+        "link_2": "",
+        "title_2": "Tasty Fruits",
+        "promotion_2": "Free delivery",
+        "image_3": "shopify:\/\/shop_images\/featur-3.jpg",
+        "link_3": "",
+        "title_3": "Exotic Vegetable",
+        "promotion_3": "Discount $30"
+      }
     }
   },
   "order": [
     "home_page_banner",
     "image_banner",
-    "company_featured",
+    "featured_section",
     "home_page_products_collection",
     "featured_collection",
-    "deal_section_QyLbkz",
     "vegetable_shop",
     "custom_product_banner_jdBJW4",
     "bestseller_product",
     "fact_section",
-    "testimonial_section"
+    "testimonial_section",
+    "deal_section_fLRf7p"
   ]
 }
