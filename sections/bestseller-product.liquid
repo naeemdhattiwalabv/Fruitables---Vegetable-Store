@@ -59,8 +59,9 @@
                   {% assign rating = product.metafields.custom.rating %}
                   {% assign scale_min = rating | split: 'scale_min":"' | last | split: '"' | first %}
                   {% assign scale_max = rating | split: 'scale_max":"' | last | split: '"' | first %}
-                  {% assign value = rating | split: 'value":"' | last | split: '"' | first %}\
+                  {% assign value = rating | split: 'value":"' | last | split: '"' | first %}
                   {% for i in (scale_min..scale_max) %}
+                    {{ i }}
                     <i class="fas fa-star text-primary"></i>
                   {% endfor %}
                 {% endif %}
