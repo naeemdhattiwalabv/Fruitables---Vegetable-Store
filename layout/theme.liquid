@@ -388,7 +388,7 @@
           body: JSON.stringify(formData),
         })
           .then((response) => {
-            window.location = cart_url;
+            window.location = window.routes.cart_url;
           })
           .catch((error) => console.error('Error:', error));
       }
