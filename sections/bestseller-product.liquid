@@ -22,7 +22,6 @@
                   >
                 </div>
                 <div class="col-6">
-                  {{ 'test' }}
                   <a href="{{ product.url }}" class="h5">{{ product.title }}</a>
                   {% if product.metafields.custom.rating != blank %}
                     {{ 'test' }}
@@ -56,6 +55,9 @@
               >
               <div class="py-4">
                 <a href="{{ product.url }}" class="h5">{{ product.title }}</a>
+                {% if product.metafields.custom.rating != blank %}
+                  {{ 'test' }}
+                {% endif %}
                 <div class="d-flex my-3 justify-content-center">
                   <i class="fas fa-star text-primary"></i>
                   <i class="fas fa-star text-primary"></i>
