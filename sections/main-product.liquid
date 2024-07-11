@@ -294,7 +294,8 @@
                                 <span class="visually-hidden">
                                   {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                                 </span>
-                                {% render 'icon-minus' %}
+                                {% comment %} {% render 'icon-minus' %} {% endcomment %}
+                                <i class="fa fa-minus"></i>
                               </button>
                               <input
                                 class="quantity__input"
