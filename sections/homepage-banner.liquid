@@ -35,7 +35,7 @@
           <div class="carousel-inner" role="listbox">
             {% if section.blocks %}
               {% for block in section.blocks %}
-                {% if forloop.index == 1 and block.settings.slider_image != ''%}
+                {% if forloop.index == 1 and block.settings.slider_image != '' %}
                   <div class="carousel-item active rounded">
                     <img
                       src="{{ block.settings.slider_image | img_url: 'master' }}"
