@@ -97,9 +97,8 @@
                         <p
                           class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                           {{ block.shopify_attributes }}
-                        >
-                          <p class="mb-3"> {{- block.settings.text -}}</p>
-                        </p>
+                        ></p>
+                        <p class="mb-3">{{- block.settings.text -}}</p>
                       {%- when 'title' -%}
                         <div class="product__title" {{ block.shopify_attributes }}>
                           <h4 class="fw-bold mb-3">{{ product.title | escape }}</h4>
