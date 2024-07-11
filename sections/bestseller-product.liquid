@@ -57,6 +57,10 @@
                 <a href="{{ product.url }}" class="h5">{{ product.title }}</a>
                 {% if product.metafields.custom.rating != blank %}
                   {{ product.metafields.custom.rating.value }}
+                  {% assign rating = 5 %}
+                  {% for i in (1..rating) %}
+                    <i class="fas fa-star text-primary"></i>
+                  {% endfor %}
                 {% endif %}
                 <div class="d-flex my-3 justify-content-center">
                   <i class="fas fa-star text-primary"></i>
