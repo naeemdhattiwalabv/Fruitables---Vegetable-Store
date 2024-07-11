@@ -27,11 +27,20 @@
             "slider_url": "shopify:\/\/collections\/vegetables",
             "button_text": "Vegtables"
           }
+        },
+        "homepage_banner_slider_ezpimw": {
+          "type": "homepage_banner_slider",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
+            "slider_url": "shopify:\/\/products\/apricots",
+            "button_text": "Apricots"
+          }
         }
       },
       "block_order": [
         "homepage_banner_slider_dAyzAf",
-        "homepage_banner_slider_8NkaJr"
+        "homepage_banner_slider_8NkaJr",
+        "homepage_banner_slider_ezpimw"
       ],
       "settings": {
         "banner_header": "100% Organic Foods",
