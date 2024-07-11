@@ -23,16 +23,23 @@
                 </div>
                 <div class="col-6">
                   <a href="{{ product.url }}" class="h5">{{ product.title }}</a>
-                  {% if product.metafields.custom.rating != blank %}
-                    {{ 'test' }}
+                  {% assign rating = product.metafields.custom.rating %}
+                  {% if rating != blank %}
+                    {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
+                    {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
+                    {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
+                    {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
+
+                    <div class="d-flex my-3 justify-content-center">
+                      {% for i in (scale_min..scale_max) %}
+                        {% if i <= value %}
+                          <i class="fas fa-star text-primary"></i>
+                        {% else %}
+                          <i class="fas fa-star"></i>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
                   {% endif %}
-                  <div class="d-flex my-3">
-                    <i class="fas fa-star text-primary"></i>
-                    <i class="fas fa-star text-primary"></i>
-                    <i class="fas fa-star text-primary"></i>
-                    <i class="fas fa-star text-primary"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
                   <h4 class="mb-3">{{ product.price | money }}</h4>
                   <a
                     onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
@@ -72,7 +79,6 @@
                     {% endfor %}
                   </div>
                 {% endif %}
-
                 <h4 class="mb-3">{{ product.price | money }}</h4>
                 <a
                   onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
