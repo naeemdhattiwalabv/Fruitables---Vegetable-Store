@@ -60,21 +60,16 @@
                   {% assign scale_min = rating | split: 'scale_min":"' | last | split: '"' | first %}
                   {% assign scale_max = rating | split: 'scale_max":"' | last | split: '"' | first %}
                   {% assign value = rating | split: 'value":"' | last | split: '"' | first %}
-                  {% for i in (scale_min..scale_max) %}
-                    {% if i == value %}
-                      <i class="fas fa-star text-primary"></i>
-                    {% else %}
-                      <i class="fas fa-star"></i>
-                    {% endif %}
-                  {% endfor %}
+                  <div class="d-flex my-3 justify-content-center">
+                    {% for i in (scale_min..scale_max) %}
+                      {% if i == value %}
+                        <i class="fas fa-star text-primary"></i>
+                      {% else %}
+                        <i class="fas fa-star"></i>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                 {% endif %}
-                <div class="d-flex my-3 justify-content-center">
-                  <i class="fas fa-star text-primary"></i>
-                  <i class="fas fa-star text-primary"></i>
-                  <i class="fas fa-star text-primary"></i>
-                  <i class="fas fa-star text-primary"></i>
-                  <i class="fas fa-star"></i>
-                </div>
                 <h4 class="mb-3">{{ product.price | money }}</h4>
                 <a
                   onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
