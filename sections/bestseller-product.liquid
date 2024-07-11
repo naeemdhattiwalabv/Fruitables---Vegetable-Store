@@ -62,7 +62,7 @@
                   {% assign value = rating | split: 'value":"' | last | split: '"' | first | floor %}
                   <div class="d-flex my-3 justify-content-center">
                     {% for i in (scale_min..scale_max) %}
-                      {% if i == value %}
+                      {% if i >= value %}
                         <i class="fas fa-star text-primary"></i>
                       {% else %}
                         <i class="fas fa-star"></i>
