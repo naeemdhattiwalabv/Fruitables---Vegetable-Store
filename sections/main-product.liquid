@@ -224,7 +224,7 @@
                       {%- when 'description' -%}
                         {%- if product.description != blank -%}
                           <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                            {{ product.description }}
+                            <p class="mb-4">{{ product.description }}</p>
                           </div>
                         {%- endif -%}
                       {%- when 'sku' -%}
@@ -286,7 +286,7 @@
                               data-url="{{ product.url }}"
                               data-section="{{ section.id }}"
                             >
-                              <button class="quantity__button" name="minus" type="button">
+                              <button class="btn btn-sm btn-minus rounded-circle bg-light border" name="minus" type="button">
                                 <span class="visually-hidden">
                                   {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                                 </span>
