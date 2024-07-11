@@ -57,7 +57,7 @@
                 <a href="{{ product.url }}" class="h5">{{ product.title }}</a>
                 {% if product.metafields.custom.rating != blank %}
                   {% assign rating = product.metafields.custom.rating %}
-                  {{ rating.scale_min }}
+                  {{ rating['scale_min'] }}
                   {% comment %}
                     {% assign rating = 5 %}
                     {% for i in (1..rating) %}
