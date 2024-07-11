@@ -20,7 +20,7 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
+            "text": "Vendor : {{ product.vendor }}",
             "text_style": "uppercase"
           }
         },
