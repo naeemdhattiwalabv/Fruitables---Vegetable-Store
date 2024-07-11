@@ -78,32 +78,30 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          <div class="input-group-btn">
-            <button
-              id="ProductSubmitButton-{{ section_id }}"
-              type="submit"
-              name="add"
-              class=" btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary product-form__submit {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-              {% if product.selected_or_first_available_variant.available == false
-                or quantity_rule_soldout
-                or product.selected_or_first_available_variant == null
-              %}
-                disabled
-              {% endif %}
-            >
-              <i class="fa fa-shopping-bag me-2 text-primary"></i>
-              <span>
-                {%- if product.selected_or_first_available_variant == null -%}
-                  {{ 'products.product.unavailable' | t }}
-                {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                  {{ 'products.product.sold_out' | t }}
-                {%- else -%}
-                  {{ 'products.product.add_to_cart' | t }}
-                {%- endif -%}
-              </span>
-              {%- render 'loading-spinner' -%}
-            </button>
-          </div>
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class=" btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary product-form__submit {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false
+              or quantity_rule_soldout
+              or product.selected_or_first_available_variant == null
+            %}
+              disabled
+            {% endif %}
+          >
+            <i class="fa fa-shopping-bag me-2 text-primary"></i>
+            <span>
+              {%- if product.selected_or_first_available_variant == null -%}
+                {{ 'products.product.unavailable' | t }}
+              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
