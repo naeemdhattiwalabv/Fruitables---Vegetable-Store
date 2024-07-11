@@ -55,11 +55,13 @@
               >
               <div class="py-4">
                 <a href="{{ product.url }}" class="h5">{{ product.title }}</a>
-                {% if product.metafields.custom.rating != blank %}
-                  {% assign rating = product.metafields.custom.rating %}
-                  {% assign scale_min = rating | split: 'scale_min":"' | last | split: '"' | first %}
-                  {% assign scale_max = rating | split: 'scale_max":"' | last | split: '"' | first %}
-                  {% assign value = rating | split: 'value":"' | last | split: '"' | first | floor %}
+                {% assign rating = product.metafields.custom.rating %}
+                {% if rating != blank %}
+                  {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
+                  {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
+                  {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
+                  {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
+
                   <div class="d-flex my-3 justify-content-center">
                     {% for i in (scale_min..scale_max) %}
                       {% if i <= value %}
@@ -70,6 +72,7 @@
                     {% endfor %}
                   </div>
                 {% endif %}
+
                 <h4 class="mb-3">{{ product.price | money }}</h4>
                 <a
                   onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
