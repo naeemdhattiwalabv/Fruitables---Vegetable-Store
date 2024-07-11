@@ -30,7 +30,7 @@
                     {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
                     {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
 
-                    <div class="d-flex my-3 justify-content-center">
+                    <div class="d-flex my-3">
                       {% for i in (scale_min..scale_max) %}
                         {% if i <= value %}
                           <i class="fas fa-star text-primary"></i>
