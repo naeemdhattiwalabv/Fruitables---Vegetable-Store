@@ -328,7 +328,26 @@
     </ul>
     <script>
       function addToCart(variant_id) {
-        alert(variant_id);
+        let formData = {
+          items: [
+            {
+              id: variant_id,
+              quantity: 1,
+            },
+          ],
+        };
+        fetch(`${window.Shopify.routes.root}+cart/add.js`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            cartData();
+            return response.json();
+          })
+          .catch((error) => console.error('Error:', error));
       }
     </script>
     <script>
