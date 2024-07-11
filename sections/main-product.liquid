@@ -97,12 +97,11 @@
                         <p
                           class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                           {{ block.shopify_attributes }}
-                        >
-                          {{- block.settings.text -}}
-                        </p>
+                        ></p>
+                        <p class="mb-3">{{- block.settings.text -}}</p>
                       {%- when 'title' -%}
                         <div class="product__title" {{ block.shopify_attributes }}>
-                          <h1>{{ product.title | escape }}</h1>
+                          <h4 class="fw-bold mb-3">{{ product.title | escape }}</h4>
                           <a href="{{ product.url }}" class="product__title">
                             <h2 class="h1">
                               {{ product.title | escape }}
@@ -110,14 +109,33 @@
                           </a>
                         </div>
                       {%- when 'price' -%}
-                        <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                          {%- render 'price',
-                            product: product,
-                            use_variant: true,
-                            show_badges: true,
-                            price_class: 'price--large'
-                          -%}
-                        </div>
+                        <h5 class="fw-bold mb-3">
+                          <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                            {%- render 'price',
+                              product: product,
+                              use_variant: true,
+                              show_badges: true,
+                              price_class: 'price--large'
+                            -%}
+                          </div>
+                        </h5>
+                        {% assign rating = product.metafields.custom.rating %}
+                        {% if rating != blank %}
+                          {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
+                          {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
+                          {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
+                          {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
+
+                          <div class="d-flex my-3">
+                            {% for i in (scale_min..scale_max) %}
+                              {% if i <= value %}
+                                <i class="fa fa-star text-secondary"></i>
+                              {% else %}
+                                <i class="fas fa-star"></i>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                        {% endif %}
                         {%- if product.quantity_price_breaks_configured? -%}
                           <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                             <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -206,7 +224,7 @@
                       {%- when 'description' -%}
                         {%- if product.description != blank -%}
                           <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                            {{ product.description }}
+                            <p class="mb-4">{{ product.description }}</p>
                           </div>
                         {%- endif -%}
                       {%- when 'sku' -%}
@@ -268,14 +286,18 @@
                               data-url="{{ product.url }}"
                               data-section="{{ section.id }}"
                             >
-                              <button class="quantity__button" name="minus" type="button">
+                              <button
+                                class="quantity__button btn btn-sm btn-minus rounded-circle bg-light border"
+                                name="minus"
+                                type="button"
+                              >
                                 <span class="visually-hidden">
                                   {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                                 </span>
                                 {% render 'icon-minus' %}
                               </button>
                               <input
-                                class="quantity__input"
+                                class="quantity__input form-control form-control-sm text-center border-0"
                                 type="number"
                                 name="quantity"
                                 id="Quantity-{{ section.id }}"
@@ -290,7 +312,11 @@
                                 value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                                 form="{{ product_form_id }}"
                               >
-                              <button class="quantity__button" name="plus" type="button">
+                              <button
+                                class="quantity__button btn btn-sm btn-plus rounded-circle bg-light border"
+                                name="plus"
+                                type="button"
+                              >
                                 <span class="visually-hidden">
                                   {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                                 </span>
