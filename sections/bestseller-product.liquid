@@ -58,6 +58,7 @@
                 {% if product.metafields.custom.rating != blank %}
                   {% assign rating = product.metafields.custom.rating %}
                   {{ rating }}
+                  {{ rating.scale_min }}
                   {{ rating.value }}
                   {% comment %}
                     {% assign rating = 5 %}
