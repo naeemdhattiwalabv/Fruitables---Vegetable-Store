@@ -75,7 +75,7 @@
   });
 
   // vegetable carousel
-//   setTimeout(function () {
+  setTimeout(function () {
     $(".vegetable-carousel").owlCarousel({
       autoplay: true,
       smartSpeed: 1500,
@@ -107,7 +107,7 @@
         },
       },
     });
-//   }, 1000);
+  }, 1000);
 
   // Modal Video
   $(document).ready(function () {
