@@ -128,7 +128,7 @@
   });
   {
     setTimeout(function () {
-      $("#releted_product_section").appendTo("#prependTo");
+      $("#releted_product").appendTo("#releted_product_section");
     }, 4000);
   }
 
