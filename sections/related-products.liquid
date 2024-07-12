@@ -20,45 +20,195 @@
   }
 {%- endstyle -%}
 <div id="releted_product">
-  <div class="color-{{ section.settings.color_scheme }} gradient">
-    <product-recommendations
-      class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-      data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
-      data-section-id="{{ section.id }}"
-      data-product-id="{{ product.id }}"
-    >
-      {% if recommendations.performed and recommendations.products_count > 0 %}
-        <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-          <h1 class="fw-bold mb-0">{{ section.settings.heading }}</h1>
-        </h2>
-        <div class="vesitable">
-          <ul
-            class="owl-carousel vegetable-carousel justify-content-center grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-            role="list"
-          >
-            {% assign skip_card_product_styles = false %}
-            {% for recommendation in recommendations.products %}
-              <li class="grid__item border border-primary rounded position-relative vesitable-item">
-                {% render 'card-product',
-                  card_product: recommendation,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  image_shape: section.settings.image_shape,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  skip_styles: skip_card_product_styles
-                %}
-              </li>
-              {%- assign skip_card_product_styles = true -%}
-            {% endfor %}
-          </ul>
+  <div class="vesitable">
+    <div class="owl-carousel vegetable-carousel justify-content-center">
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
         </div>
-      {% endif %}
-    </product-recommendations>
-    {% if section.settings.image_shape == 'arch' %}
-      {% render 'mask-arch' %}
-    {%- endif -%}
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Parsely</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+        </div>
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Parsely</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-3.png" class="img-fluid w-100 rounded-top bg-light" alt="">
+        </div>
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Banana</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
+        </div>
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Bell Papper</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+        </div>
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Potatoes</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+        </div>
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Parsely</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+        </div>
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Potatoes</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border border-primary rounded position-relative vesitable-item">
+        <div class="vesitable-img">
+          <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+        </div>
+        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+          Vegetable
+        </div>
+        <div class="p-4 pb-0 rounded-bottom">
+          <h4>Parsely</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+          <div class="d-flex justify-content-between flex-lg-wrap">
+            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+            <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
+              ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  {% comment %}
+    <div class="color-{{ section.settings.color_scheme }} gradient">
+      <product-recommendations
+        class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
+        data-section-id="{{ section.id }}"
+        data-product-id="{{ product.id }}"
+      >
+        {% if recommendations.performed and recommendations.products_count > 0 %}
+          <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+            <h1 class="fw-bold mb-0">{{ section.settings.heading }}</h1>
+          </h2>
+          <div class="vesitable">
+            <ul
+              class="owl-carousel vegetable-carousel justify-content-center grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+              role="list"
+            >
+              {% assign skip_card_product_styles = false %}
+              {% for recommendation in recommendations.products %}
+                <li class="grid__item border border-primary rounded position-relative vesitable-item">
+                  {% render 'card-product',
+                    card_product: recommendation,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    image_shape: section.settings.image_shape,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    skip_styles: skip_card_product_styles
+                  %}
+                </li>
+                {%- assign skip_card_product_styles = true -%}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </product-recommendations>
+      {% if section.settings.image_shape == 'arch' %}
+        {% render 'mask-arch' %}
+      {%- endif -%}
+    </div>
+  {% endcomment %}
 </div>
 
 {% schema %}
