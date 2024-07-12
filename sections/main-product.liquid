@@ -764,11 +764,6 @@
           </div>
         </div>
         {% assign collection = product.collections.first %}
-        {% for product2 in collection %}
-          {% for product3 in product2.product %}
-            {{ product3.title }}
-          {% endfor %}
-        {% endfor %}
         {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
           <aside
             aria-labelledby="verticalTitle"
