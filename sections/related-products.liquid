@@ -20,48 +20,39 @@
   }
 {%- endstyle -%}
 <div id="releted_product">
-  <div class="">
-    <product-recommendations
-      class=""
-      data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
-      data-section-id="{{ section.id }}"
-      data-product-id="{{ product.id }}"
-    >
-      {% if recommendations.performed and recommendations.products_count > 0 %}
-        <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-          <h1 class="fw-bold mb-0">{{ section.settings.heading }}</h1>
-        </h2>
-        <div class="vesitable">
-          {% comment %}
-            <ul
-              class="owl-carousel vegetable-carousel justify-content-center grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-              role="list"
-            >
-          {% endcomment %}
-          <div class="owl-carousel vegetable-carousel justify-content-center">
-            {% assign skip_card_product_styles = false %}
-            {% for recommendation in recommendations.products %}
-              <div class="border border-primary rounded position-relative vesitable-item">
-                {% render 'card-product',
-                  card_product: recommendation,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  image_shape: section.settings.image_shape,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  skip_styles: skip_card_product_styles
-                %}
-              </div>
-              {%- assign skip_card_product_styles = true -%}
-            {% endfor %}
+  {% if recommendations.performed and recommendations.products_count > 0 %}
+    <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+      <h1 class="fw-bold mb-0">{{ section.settings.heading }}</h1>
+    </h2>
+    <div class="vesitable">
+      {% comment %}
+        <ul
+          class="owl-carousel vegetable-carousel justify-content-center grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+          role="list"
+        >
+      {% endcomment %}
+      <div class="owl-carousel vegetable-carousel justify-content-center">
+        {% assign skip_card_product_styles = false %}
+        {% for recommendation in recommendations.products %}
+          <div class="border border-primary rounded position-relative vesitable-item">
+            {% render 'card-product',
+              card_product: recommendation,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              skip_styles: skip_card_product_styles
+            %}
           </div>
-        </div>
-      {% endif %}
-    </product-recommendations>
-    {% if section.settings.image_shape == 'arch' %}
-      {% render 'mask-arch' %}
-    {%- endif -%}
-  </div>
+          {%- assign skip_card_product_styles = true -%}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  {% if section.settings.image_shape == 'arch' %}
+    {% render 'mask-arch' %}
+  {%- endif -%}
 </div>
 
 {% schema %}
