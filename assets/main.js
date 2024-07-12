@@ -125,7 +125,7 @@
     $("#videoModal").on("hide.bs.modal", function (e) {
       $("#video").attr("src", $videoSrc);
     });
-    $("#releted_product").appendTo("#releted_product_section");
+    $("#releted_product").prependTo("#releted_product_section");
   });
 
   // Product Quantity
