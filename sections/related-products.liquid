@@ -19,7 +19,8 @@
     }
   }
 {%- endstyle -%}
-
+<div class="col-lg-12">
+  <div class="row g-4 fruite">
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -58,6 +59,7 @@
   {% if section.settings.image_shape == 'arch' %}
     {% render 'mask-arch' %}
   {%- endif -%}
+</div>
 </div>
 
 {% schema %}
