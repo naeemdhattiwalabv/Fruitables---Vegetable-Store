@@ -27,7 +27,7 @@
       }
     }
   });
-
+  $("#releted_product").prependTo("#releted_product_section");
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
@@ -125,7 +125,7 @@
     $("#videoModal").on("hide.bs.modal", function (e) {
       $("#video").attr("src", $videoSrc);
     });
-    $("#releted_product").prependTo("#releted_product_section");
+    
   });
 
   // Product Quantity
