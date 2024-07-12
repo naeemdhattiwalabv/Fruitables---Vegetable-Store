@@ -763,7 +763,7 @@
             </div>
           </div>
         </div>
-        {% assign collection = product.collections %}
+        {% assign collection = product.collections.first %}
         {% for product2 in collection %}
           {{ product2.title }}
         {% endfor %}
