@@ -32,14 +32,17 @@
         <h1 class="fw-bold mb-0">{{ section.settings.heading }}</h1>
       </h2>
       <div class="vesitable">
-        {% comment %} <ul
-          class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-          role="list"
-        > {% endcomment %}
+        {% comment %}
+          <ul
+            class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+            role="list"
+          >
+        {% endcomment %}
         <div class="owl-carousel vegetable-carousel justify-content-center">
           {% assign skip_card_product_styles = false %}
           {% for recommendation in recommendations.products %}
-            <li class="grid__item">
+            {% comment %} <li class="grid__item"> {% endcomment %}
+            <div class="border border-primary rounded position-relative vesitable-item">
               {% render 'card-product',
                 card_product: recommendation,
                 media_aspect_ratio: section.settings.image_ratio,
@@ -49,10 +52,10 @@
                 show_rating: section.settings.show_rating,
                 skip_styles: skip_card_product_styles
               %}
-            </li>
+            </div>
             {%- assign skip_card_product_styles = true -%}
           {% endfor %}
-        </div
+        </div>
       </div>
     {% endif %}
   </product-recommendations>
