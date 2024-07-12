@@ -130,7 +130,7 @@
   {
     setTimeout(function () {
       alert('hello');
-    }, 1000);
+    }, 2000);
   }
 
   // Product Quantity
