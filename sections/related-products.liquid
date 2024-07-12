@@ -71,7 +71,7 @@
       <div class="vesitable">
         <div class="owl-carousel vegetable-carousel justify-content-center grid product-grid">
           {% for recommendation in recommendations.products %}
-            <div class="owl-carousel vegetable-carousel justify-content-center">
+            <div class="border border-primary rounded position-relative vesitable-item">
               <div class="vesitable-img">
                 <img
                   src="{{ recommendation.images.first.src | img_url: 'master' }}"
