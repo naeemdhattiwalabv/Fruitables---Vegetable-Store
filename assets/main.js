@@ -129,7 +129,7 @@
   {
     setTimeout(function () {
       $("#releted_product").appendTo("#releted_product_section");
-    }, 1000);
+    }, 2000);
   }
 
   // Product Quantity
