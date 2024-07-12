@@ -30,7 +30,7 @@
       {% if recommendations.performed and recommendations.products_count > 0 %}
         <h1 class="fw-bold mb-0">Related products</h1>
         <ul
-          class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+          class="owl-carousel vegetable-carousel justify-content-center grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
           role="list"
         >
           {% assign skip_card_product_styles = false %}
