@@ -73,7 +73,13 @@
           {% for recommendation in recommendations.products %}
             <div class="border border-primary rounded position-relative vesitable-item">
               <div class="vesitable-img">
-                <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                <img
+                  src="{{ recommendation.src | img_url: 'master' }}"
+                  class="img-fluid w-100 rounded-top"
+                  alt=""
+                  height="1200"
+                  width="1200"
+                >
               </div>
               <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
                 Vegetable
