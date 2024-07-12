@@ -37,7 +37,13 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer="defer"></script>
+    <script src="{{ 'easing.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'waypoints.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'lightbox.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
@@ -268,13 +274,7 @@
     {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer="defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer="defer"></script>
-    <script src="{{ 'easing.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'waypoints.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'lightbox.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
+  
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
