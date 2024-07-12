@@ -765,6 +765,7 @@
         </div>
         <div class="col-lg-4 col-xl-3">
           <div class="row g-4 fruite">
+            {{ product.collections }}
             {% assign collection = collections[product.handle] %}
             {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
               <aside
