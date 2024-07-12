@@ -69,7 +69,7 @@
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h1 class="fw-bold mb-0">Related products</h1>
       <div class="vesitable">
-        <div class="owl-carousel vegetable-carousel justify-content-center grid product-grid">
+        <div class="owl-carousel vegetable-carousel justify-content-center">
           {% for recommendation in recommendations.products %}
             <div class="border border-primary rounded position-relative vesitable-item">
               <div class="vesitable-img">
