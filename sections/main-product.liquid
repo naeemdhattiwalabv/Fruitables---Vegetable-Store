@@ -835,11 +835,23 @@
                   <div>
                     <h6 class="mb-2">{{ product.title }}</h6>
                     <div class="d-flex mb-2">
-                      <i class="fa fa-star text-secondary"></i>
-                      <i class="fa fa-star text-secondary"></i>
-                      <i class="fa fa-star text-secondary"></i>
-                      <i class="fa fa-star text-secondary"></i>
-                      <i class="fa fa-star"></i>
+                      {% assign rating = product.metafields.custom.rating %}
+                      {% if rating != blank %}
+                        {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
+                        {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
+                        {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
+                        {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
+
+                        <div class="d-flex my-3">
+                          {% for i in (scale_min..scale_max) %}
+                            {% if i <= value %}
+                              <i class="fa fa-star text-secondary"></i>
+                            {% else %}
+                              <i class="fas fa-star"></i>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      {% endif %}
                     </div>
                     <div class="d-flex mb-2">
                       <h5 class="fw-bold me-2">{{ product.price | money_without_trailing_zeros }}</h5>
