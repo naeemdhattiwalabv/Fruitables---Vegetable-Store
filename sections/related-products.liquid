@@ -74,7 +74,7 @@
             <div class="border border-primary rounded position-relative vesitable-item">
               <div class="vesitable-img">
                 <img
-                  src="{{ recommendation.image | img_url: 'master' }}"
+                  src="{{ recommendation.images.first.src | img_url: 'master' }}"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                   height="1200"
