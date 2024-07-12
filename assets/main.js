@@ -143,7 +143,7 @@
 
   // Modal Video
   $(document).ready(function () {
-    $("#eleted_product").prependTo("#releted_product_section");
+    $("#releted_product").prependTo("#releted_product_section");
     var $videoSrc;
     $(".btn-play").click(function () {
       $videoSrc = $(this).data("src");
