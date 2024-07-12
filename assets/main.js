@@ -107,7 +107,7 @@
         },
       },
     });
-  }, 100);
+  }, 1000);
 
   // Modal Video
   $(document).ready(function () {
