@@ -64,7 +64,7 @@
     class=""
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
     data-section-id="{{ section.id }}"
-    
+    data-product-id="{{ product.id }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h1 class="fw-bold mb-0">Related products</h1>
