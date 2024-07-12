@@ -61,11 +61,11 @@
 {% endcomment %}
 <div id="releted_product">
   <h1 class="fw-bold mb-0">Related products</h1>
+  {% for recommendation in recommendations.products %}
+    {{ recommendation.title }}
+  {% endfor %}
   <div class="vesitable">
     <div class="owl-carousel vegetable-carousel justify-content-center">
-      {% for recommendation in recommendations.products %}
-        {{ recommendation.title }}
-      {% endfor %}
       <div class="border border-primary rounded position-relative vesitable-item">
         <div class="vesitable-img">
           <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
