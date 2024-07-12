@@ -125,12 +125,8 @@
     $("#videoModal").on("hide.bs.modal", function (e) {
       $("#video").attr("src", $videoSrc);
     });
+    $("#releted_product").appendTo("#releted_product_section");
   });
-  {
-    setTimeout(function () {
-      $("#releted_product").appendTo("#releted_product_section");
-    }, 2000);
-  }
 
   // Product Quantity
   // $('.quantity button').on('click', function () {
