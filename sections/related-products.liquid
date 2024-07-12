@@ -36,7 +36,7 @@
             class="owl-carousel vegetable-carousel justify-content-center grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
             role="list"
           > {% endcomment %}
-          <div class="owl-carousel vegetable-carousel justify-content-center">
+          <div class="owl-carousel vegetable-carousel justify-content-center grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down">
             {% assign skip_card_product_styles = false %}
             {% for recommendation in recommendations.products %}
               <div class="border border-primary rounded position-relative vesitable-item">
