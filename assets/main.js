@@ -127,6 +127,7 @@
         $('#videoModal').on('hide.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc);
         })
+        $('#releted_product_section').appendTo('#releted_product');
     });
 
 
