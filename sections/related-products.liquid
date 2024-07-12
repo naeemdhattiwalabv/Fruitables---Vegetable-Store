@@ -59,9 +59,10 @@
     {%- endif -%}
   </div>
 {% endcomment %}
-<div class="">
-  <div class="container py-5">
-    <div id="releted_product">
+
+<div id="releted_product">
+  <div class="container-fluid py-5 mt-5">
+    <div class="container py-5">
       <product-recommendations
         class=""
         data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
