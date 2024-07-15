@@ -65,6 +65,9 @@
 {% endcomment %}
 
 <div id="releted_product">
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
   <product-recommendations
     class=""
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
