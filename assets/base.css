@@ -3577,3 +3577,7 @@ details-disclosure>details {
 label.quantity__label.form__label {
   display: none;
 }
+
+.product-count-vertical .light {
+  display: none;
+}
