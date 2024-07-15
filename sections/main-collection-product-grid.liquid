@@ -44,7 +44,14 @@
           {%- paginate collection.products by section.settings.products_per_page -%}
             {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
             <div class="row g-4">
-              <div class="input-group w-100 mx-auto d-flex">
+              <div class="col-xl-3">
+                <div class="input-group w-100 mx-auto d-flex">
+                  <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                  <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                </div>
+              </div>
+              <div class="col-6"></div>
+              <div class="col-xl-3">
                 {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
                   <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
                     <form class="facets-vertical-form" id="FacetSortForm">
@@ -100,8 +107,6 @@
                     </form>
                   </facet-filters-form>
                 {%- endif -%}
-                <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
               </div>
             </div>
             <div class="row g-4">
