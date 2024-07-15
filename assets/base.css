@@ -3578,6 +3578,6 @@ label.quantity__label.form__label {
   display: none;
 }
 
-.product-count-vertical .light {
+.product-count-vertical.light {
   display: none;
 }
