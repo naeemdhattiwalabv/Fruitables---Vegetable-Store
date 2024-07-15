@@ -119,6 +119,7 @@
                         class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
                         id="main-collection-filters"
                         data-id="{{ section.id }}"
+                        style="margin: 22px 0px 0 -182px;"
                       >
                         {% render 'facets',
                           results: collection,
