@@ -3584,8 +3584,7 @@ label.quantity__label.form__label {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff;
-  /* Change to your background color */
+  background-color: #fff; /* Change to your background color */
   z-index: 9999;
 }
 
@@ -3595,8 +3594,7 @@ label.quantity__label.form__label {
   position: absolute;
   left: 50%;
   top: 50%;
-  background-image: url('https://www.example.com/preloader.gif');
-  /* Change to your preloader image */
+  background-image: url('https://www.example.com/preloader.gif'); /* Change to your preloader image */
   background-repeat: no-repeat;
   background-position: center;
   margin: -50px 0 0 -50px;
