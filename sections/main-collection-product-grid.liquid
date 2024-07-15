@@ -56,33 +56,29 @@
                   {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
                     <facet-filters-form class="">
                       <form class="" id="FacetSortForm">
+                        {% comment %} <h2 class="facet-filters__label caption-large text-body"> {% endcomment %}
+                        <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+                        {% comment %} </h2> {% endcomment %}
                         <div class="">
-                          <div class="">
-                            {% comment %} <h2 class="facet-filters__label caption-large text-body"> {% endcomment %}
-                            <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-                            {% comment %} </h2> {% endcomment %}
-                            <div class="">
-                              {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                              <select
-                                name="sort_by"
-                                class="border-0 form-select-sm bg-light me-3"
-                                id="SortBy"
-                                aria-describedby="a11y-refresh-page-message"
+                          {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                          <select
+                            name="sort_by"
+                            class="border-0 form-select-sm bg-light me-3"
+                            id="SortBy"
+                            aria-describedby="a11y-refresh-page-message"
+                          >
+                            {%- for option in collection.sort_options -%}
+                              <option
+                                value="{{ option.value | escape }}"
+                                {% if option.value == sort_by %}
+                                  selected="selected"
+                                {% endif %}
                               >
-                                {%- for option in collection.sort_options -%}
-                                  <option
-                                    value="{{ option.value | escape }}"
-                                    {% if option.value == sort_by %}
-                                      selected="selected"
-                                    {% endif %}
-                                  >
-                                    {{ option.name | escape }}
-                                  </option>
-                                {%- endfor -%}
-                              </select>
-                              {% comment %} {% render 'icon-caret' %} {% endcomment %}
-                            </div>
-                          </div>
+                                {{ option.name | escape }}
+                              </option>
+                            {%- endfor -%}
+                          </select>
+                          {% comment %} {% render 'icon-caret' %} {% endcomment %}
                         </div>
 
                         <div class="product-count-vertical light" role="status">
