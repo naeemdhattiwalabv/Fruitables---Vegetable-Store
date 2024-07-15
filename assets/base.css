@@ -3578,6 +3578,26 @@ label.quantity__label.form__label {
   display: none;
 }
 
-.product-count-vertical.light {
-  display: none;
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* Change to your background color */
+  z-index: 9999;
+}
+
+#status {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-image: url('https://www.example.com/preloader.gif');
+  /* Change to your preloader image */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -50px 0 0 -50px;
 }
