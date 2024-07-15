@@ -3578,7 +3578,7 @@ label.quantity__label.form__label {
   display: none;
 }
 
-#preloader {
+#preloader1 {
   position: fixed;
   left: 0;
   top: 0;
@@ -3588,7 +3588,7 @@ label.quantity__label.form__label {
   z-index: 9999;
 }
 
-#status {
+#status1 {
   width: 100px;
   height: 100px;
   position: absolute;
