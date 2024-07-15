@@ -54,7 +54,7 @@
               <div class="col-xl-3">
                 <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
                   {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
-                    <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
+                    <facet-filters-form class="">
                       <form class="" id="FacetSortForm">
                         <div class="">
                           <div class="">
@@ -80,7 +80,7 @@
                                   </option>
                                 {%- endfor -%}
                               </select>
-                              {% render 'icon-caret' %}
+                              {% comment %} {% render 'icon-caret' %} {% endcomment %}
                             </div>
                           </div>
                         </div>
