@@ -106,9 +106,6 @@
       },
     },
   });
-  setTimeout(function () {
-    $("#releted_product").prependTo("#releted_product_section");
-  }, 1000);
 
   setTimeout(function () {
     $(".releated-product-carousel").owlCarousel({
@@ -146,6 +143,7 @@
 
   // Modal Video
   $(document).ready(function () {
+    $("#releted_product").prependTo("#releted_product_section");
     var $videoSrc;
     $(".btn-play").click(function () {
       $videoSrc = $(this).data("src");
