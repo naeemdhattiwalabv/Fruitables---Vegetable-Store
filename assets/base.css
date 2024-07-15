@@ -3577,24 +3577,3 @@ details-disclosure>details {
 label.quantity__label.form__label {
   display: none;
 }
-
-#preloader1 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-}
-
-#status1 {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background-image: url('https://www.example.com/preloader.gif'); /* Change to your preloader image */
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: -50px 0 0 -50px;
-}
