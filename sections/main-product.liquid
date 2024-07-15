@@ -770,7 +770,7 @@
                 <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
                 <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
               </div>
-              <div class="mb-4">
+              {% comment %} <div class="mb-4">
                 <h4>Categories</h4>
                 <ul class="list-unstyled fruite-categorie">
                   <li>
@@ -804,7 +804,7 @@
                     </div>
                   </li>
                 </ul>
-              </div>
+              </div> {% endcomment %}
             </div>
             {%- liquid
               assign products_to_display = section.settings.collection.all_products_count
