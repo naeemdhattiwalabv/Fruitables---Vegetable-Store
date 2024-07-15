@@ -108,6 +108,7 @@
   });
 
   setTimeout(function () {
+    $("#releted_product").prependTo("#releted_product_section");
     $(".releated-product-carousel").owlCarousel({
       autoplay: true,
       smartSpeed: 1500,
@@ -143,7 +144,7 @@
 
   // Modal Video
   $(document).ready(function () {
-    //$("#releted_product").prependTo("#releted_product_section");
+    
     var $videoSrc;
     $(".btn-play").click(function () {
       $videoSrc = $(this).data("src");
