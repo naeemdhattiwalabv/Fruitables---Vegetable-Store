@@ -107,9 +107,9 @@
     },
   });
   setTimeout(function () {
-    alert('releated product');
+    $("#releted_product").prependTo("#releted_product_section");
   }, 1000);
-  $("#releted_product").prependTo("#releted_product_section");
+
   setTimeout(function () {
     $(".releated-product-carousel").owlCarousel({
       autoplay: true,
@@ -146,7 +146,6 @@
 
   // Modal Video
   $(document).ready(function () {
-    
     var $videoSrc;
     $(".btn-play").click(function () {
       $videoSrc = $(this).data("src");
