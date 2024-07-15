@@ -106,9 +106,8 @@
       },
     },
   });
-
+  $("#releted_product").prependTo("#releted_product_section");
   setTimeout(function () {
-    $("#releted_product").prependTo("#releted_product_section");
     $(".releated-product-carousel").owlCarousel({
       autoplay: true,
       smartSpeed: 1500,
