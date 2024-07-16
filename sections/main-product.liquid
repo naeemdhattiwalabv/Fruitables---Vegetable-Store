@@ -783,7 +783,7 @@
                             {%- assign key = key_val[0] -%}
                             {%- assign val = key_val[1] -%}
                             {%- if key and val -%}
-                              {% assign num = forloop.index | divided_by: 2 %}
+                              {% assign num = forloop.index | modulo: 2 %}
                               {% if num == 0 %}
                                 <div class="row text-center align-items-center justify-content-center py-2">
                                   <div class="col-6">
