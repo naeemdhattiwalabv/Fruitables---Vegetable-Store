@@ -783,6 +783,7 @@
                             {%- assign key = key_val[0] -%}
                             {%- assign val = key_val[1] -%}
                             {%- if key and val -%}
+                              {{ forloop.index }}
                               <div class="row text-center align-items-center justify-content-center py-2">
                                 <div class="col-6">
                                   <p class="mb-0">{{ key }}</p>
