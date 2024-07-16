@@ -791,8 +791,7 @@
                               {% endif %}
                               <div class="{{ class }}">
                                 <div class="col-6">
-                                  {% assign key =  key | replace: '_', ' ' %}
-                                  <p class="mb-0">{{ key | uppercase }}</p>
+                                  <p class="mb-0">{{ key | camelcase }}</p>
                                 </div>
                                 <div class="col-6">
                                   <p class="mb-0">
