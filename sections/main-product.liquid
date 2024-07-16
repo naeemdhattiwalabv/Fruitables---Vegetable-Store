@@ -768,7 +768,7 @@
                             {%- assign key_value = pair | split: ':' -%}
                             {%- assign key = key_value[0] | replace: '"', '' | strip -%}
                             {%- assign val = key_value[1] | replace: '"', '' | strip -%}
-`
+
                             {%- assign json_array = json_array
                               | append: key
                               | append: ':'
