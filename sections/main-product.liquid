@@ -754,11 +754,12 @@
                               </p>
                             </div>
                           </div>
-                          {{product.metafields.custom.product_additional_information.value | json }}
-                          {% for metaobject in product.metafields.custom.product_additional_information.value %}
-                            {% for field in metaobject.product_details.value %}
-                              {% comment %} {{ field.country_of_origin }}
-                              {{ field.check }} {% endcomment %}
+                          {{ product.metafields.custom.product_additional_information.value | json }}
+
+                          {% for productdetails in product.metafields.custom.product_additional_information.value %}
+                            {% assign check = productdetails.check.value %}
+                            {% for checks in check %}
+                              {{ checks }}
                             {% endfor %}
                           {% endfor %}
                           <div class="row text-center align-items-center justify-content-center py-2">
