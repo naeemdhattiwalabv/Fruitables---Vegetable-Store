@@ -757,8 +757,8 @@
                           {{product.metafields.custom.product_additional_information.value | json }}
                           {% for metaobject in product.metafields.custom.product_additional_information.value %}
                             {% for field in metaobject.product_details.value %}
-                              {{ field.country_of_origin }}
-                              {{ field.check }}
+                              {% comment %} {{ field.country_of_origin }}
+                              {{ field.check }} {% endcomment %}
                             {% endfor %}
                           {% endfor %}
                           <div class="row text-center align-items-center justify-content-center py-2">
