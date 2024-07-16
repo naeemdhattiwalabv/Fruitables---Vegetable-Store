@@ -783,17 +783,30 @@
                             {%- assign key = key_val[0] -%}
                             {%- assign val = key_val[1] -%}
                             {%- if key and val -%}
-                              {{ forloop.index }}
-                              <div class="row text-center align-items-center justify-content-center py-2">
-                                <div class="col-6">
-                                  <p class="mb-0">{{ key }}</p>
+                              {% assign num = forloop.index | divided_by: 2 %}
+                              {% if num == 0 %}
+                                <div class="row text-center align-items-center justify-content-center py-2">
+                                  <div class="col-6">
+                                    <p class="mb-0">{{ key }}</p>
+                                  </div>
+                                  <div class="col-6">
+                                    <p class="mb-0">
+                                      {{ val }}
+                                    </p>
+                                  </div>
                                 </div>
-                                <div class="col-6">
-                                  <p class="mb-0">
-                                    {{ val }}
-                                  </p>
+                              {% else %}
+                                <div class="row bg-light align-items-center text-center justify-content-center py-2">
+                                  <div class="col-6">
+                                    <p class="mb-0">{{ key }}</p>
+                                  </div>
+                                  <div class="col-6">
+                                    <p class="mb-0">
+                                      {{ val }}
+                                    </p>
+                                  </div>
                                 </div>
-                              </div>
+                              {% endif %}
                             {%- endif -%}
                           {%- endfor -%}
                         </div>
