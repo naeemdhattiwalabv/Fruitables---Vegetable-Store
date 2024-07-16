@@ -785,28 +785,20 @@
                             {%- if key and val -%}
                               {% assign num = forloop.index | modulo: 2 %}
                               {% if num == 0 %}
-                                <div class="row bg-light align-items-center text-center justify-content-center py-2">
-                                  <div class="col-6">
-                                    <p class="mb-0">{{ key }}</p>
-                                  </div>
-                                  <div class="col-6">
-                                    <p class="mb-0">
-                                      {{ val }}
-                                    </p>
-                                  </div>
-                                </div>
+                                {% assign class = 'row bg-light align-items-center text-center justify-content-center py-2' %}
                               {% else %}
-                                <div class="row text-center align-items-center justify-content-center py-2">
-                                  <div class="col-6">
-                                    <p class="mb-0">{{ key }}</p>
-                                  </div>
-                                  <div class="col-6">
-                                    <p class="mb-0">
-                                      {{ val }}
-                                    </p>
-                                  </div>
-                                </div>
+                              {% assign class = 'row text-center align-items-center justify-content-center py-2' %}
                               {% endif %}
+                              <div class="{{ class }}">
+                                <div class="col-6">
+                                  <p class="mb-0">{{ key }}</p>
+                                </div>
+                                <div class="col-6">
+                                  <p class="mb-0">
+                                    {{ val }}
+                                  </p>
+                                </div>
+                              </div>
                             {%- endif -%}
                           {%- endfor -%}
                         </div>
