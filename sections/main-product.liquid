@@ -754,15 +754,43 @@
                               </p>
                             </div>
                           </div>
-                          {{ product.metafields.custom.product_additional_information.value | json }}
+                          {% assign json_string = product.metafields.custom.product_additional_information.value
+                            | json
+                          %}
+                          {%- assign key_value_pairs = json_string
+                            | replace: '{', ''
+                            | replace: '}', ''
+                            | split: ','
+                          -%}
 
-                          {% for productdetails in product.metafields.custom.product_additional_information.values %}
-                            {% assign check = productdetails.check.value %}
-                            {% for checks in check %}
-                              {{ checks }}
-                              {{'hello' }}
-                            {% endfor %}
-                          {% endfor %}
+                          {%- assign json_array = '' -%}
+                          {%- for pair in key_value_pairs -%}
+                            {%- assign key_value = pair | split: ':' -%}
+                            {%- assign key = key_value[0] | replace: '"', '' | strip -%}
+                            {%- assign val = key_value[1] | replace: '"', '' | strip -%}
+
+                            {%- assign json_array = json_array
+                              | append: key
+                              | append: ':'
+                              | append: val
+                              | append: ','
+                            -%}
+                          {%- endfor -%}
+
+                          {%- assign json_array = json_array | split: ',' -%}
+
+                          <ul>
+                            {%- for item in json_array -%}
+                              {%- assign key_val = item | split: ':' -%}
+                              {%- assign key = key_val[0] -%}
+                              {%- assign val = key_val[1] -%}
+                              {%- if key and val -%}
+                                <li>
+                                  <strong>{{ key }}:</strong> {{ val }}
+                                </li>
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </ul>
                           <div class="row text-center align-items-center justify-content-center py-2">
                             <div class="col-6">
                               <p class="mb-0">Weight</p>
