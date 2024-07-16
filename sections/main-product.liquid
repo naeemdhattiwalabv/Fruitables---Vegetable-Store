@@ -778,30 +778,23 @@
                           {%- endfor -%}
 
                           {%- assign json_array = json_array | split: ',' -%}
-
-                          <ul>
-                            {%- for item in json_array -%}
-                              {%- assign key_val = item | split: ':' -%}
-                              {%- assign key = key_val[0] -%}
-                              {%- assign val = key_val[1] -%}
-                              {%- if key and val -%}
-                                <li>
-                                  <strong>{{ key }}:</strong> {{ val }}
-                                </li>
-                              {%- endif -%}
-                            {%- endfor -%}
-                          </ul>
-                          <div class="row text-center align-items-center justify-content-center py-2">
-                            <div class="col-6">
-                              <p class="mb-0">Weight</p>
-                            </div>
-                            <div class="col-6">
-                              <p class="mb-0">
-                                {{ product.variants.first.weight_in_unit }}
-                                {{ product.variants.first.weight_unit }}
-                              </p>
-                            </div>
-                          </div>
+                          {%- for item in json_array -%}
+                            {%- assign key_val = item | split: ':' -%}
+                            {%- assign key = key_val[0] -%}
+                            {%- assign val = key_val[1] -%}
+                            {%- if key and val -%}
+                              <div class="row text-center align-items-center justify-content-center py-2">
+                                <div class="col-6">
+                                  <p class="mb-0">{{ key }}</p>
+                                </div>
+                                <div class="col-6">
+                                  <p class="mb-0">
+                                    {{ val }}
+                                  </p>
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          {%- endfor -%}
                         </div>
                       </div>
                     </div>
