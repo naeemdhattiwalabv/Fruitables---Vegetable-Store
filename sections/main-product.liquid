@@ -823,7 +823,7 @@
                   {% for collection in collections %}
                     <li>
                       <div class="d-flex justify-content-between fruite-name">
-                        <a href="#"><i class="fas fa-apple-alt me-2"></i>{{ collection.title }}</a>
+                        <a href="{{ collection.url }}"><i class="fas fa-apple-alt me-2"></i>{{ collection.title }}</a>
                         <span>{{ collection.products_count }}</span>
                       </div>
                     </li>
