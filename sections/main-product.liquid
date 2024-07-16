@@ -763,12 +763,12 @@
                             | split: ','
                           -%}
 
-                          {%- assign json_array = '' -%}
+                          {% liquid assign json_array = '' -%}
                           {%- for pair in key_value_pairs -%}
                             {%- assign key_value = pair | split: ':' -%}
                             {%- assign key = key_value[0] | replace: '"', '' | strip -%}
                             {%- assign val = key_value[1] | replace: '"', '' | strip -%}
-
+                            `
                             {%- assign json_array = json_array
                               | append: key
                               | append: ':'
@@ -787,7 +787,7 @@
                               {% if num == 0 %}
                                 {% assign class = 'row bg-light align-items-center text-center justify-content-center py-2' %}
                               {% else %}
-                              {% assign class = 'row text-center align-items-center justify-content-center py-2' %}
+                                {% assign class = 'row text-center align-items-center justify-content-center py-2' %}
                               {% endif %}
                               <div class="{{ class }}">
                                 <div class="col-6">
