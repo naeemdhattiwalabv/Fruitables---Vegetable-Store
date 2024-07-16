@@ -756,9 +756,8 @@
                           </div>
                           {{ product.metafields.custom.product_additional_information.value | json }}
 
-                          {% for productdetails in product.metafields.custom.product_additional_information.value %}
+                          {% for productdetails in product.metafields.custom.product_additional_information.values %}
                             {% assign check = productdetails.check.value %}
-                            {{check | json_parse }}
                             {% for checks in check %}
                               {{ checks }}
                               {{'hello' }}
