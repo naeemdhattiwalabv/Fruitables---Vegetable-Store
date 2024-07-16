@@ -755,8 +755,10 @@
                             </div>
                           </div>
                           {% for metaobject in product.metafields.product_additional_information.values %}
-                            {{ metaobject.country_of_origin }}
-                            {{ metaobject.country_of_origin.value }}
+                            {% for field in metaobject %}
+                              {{ field.country_of_origin }}
+                              {{ field.country_of_origin.value }}
+                            {% endfor %}
                           {% endfor %}
                           <div class="row text-center align-items-center justify-content-center py-2">
                             <div class="col-6">
