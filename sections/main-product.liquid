@@ -754,7 +754,8 @@
                               </p>
                             </div>
                           </div>
-                          {% for metaobject in product.metafields.custom.product_additional_information.values %}
+                          {% for metaobject in product.metafields.custom.product_additional_information.value %}
+                            {{ metaobject.country_of_origin.value }}
                             {% for field in metaobject %}
                               {{ field.product_details.country_of_origin }}
                               {{ field.product_details.country_of_origin.value }}
