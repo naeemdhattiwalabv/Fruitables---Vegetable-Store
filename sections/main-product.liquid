@@ -754,8 +754,9 @@
                               </p>
                             </div>
                           </div>
+                          {{ 'test1' }}
                           {% for metafields in product.metafields.custom.product_additional_information.value %}
-                            {{ metafields.product_details.country_of_origin.value }}
+                            {{ metafields.product_details.country_of_origin }}
                           {% endfor %}
                           <div class="row text-center align-items-center justify-content-center py-2">
                             <div class="col-6">
