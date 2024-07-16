@@ -259,7 +259,7 @@
                                       {%- endif -%}
                                     </div>
                                   {%- else -%}
-                                    <svg
+                                    {% comment %} <svg
                                       width="1.6rem"
                                       height="1.6rem"
                                       viewBox="0 0 16 16"
@@ -283,7 +283,7 @@
                                         stroke-width="1.75"
                                         stroke-linecap="round"
                                         stroke-linejoin="round" />
-                                    </svg>
+                                    </svg> {% endcomment %}
                                   {%- endif -%}
 
                                   {{ text_value }}
