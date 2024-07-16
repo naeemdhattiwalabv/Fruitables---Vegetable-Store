@@ -754,6 +754,53 @@
                               </p>
                             </div>
                           </div>
+                          {% assign json_string = product.metafields.custom.product_additional_information.value
+                            | json
+                          %}
+                          {%- assign key_value_pairs = json_string
+                            | replace: '{', ''
+                            | replace: '}', ''
+                            | split: ','
+                          -%}
+
+                          {%- assign json_array = '' -%}
+                          {%- for pair in key_value_pairs -%}
+                            {%- assign key_value = pair | split: ':' -%}
+                            {%- assign key = key_value[0] | replace: '"', '' | strip -%}
+                            {%- assign val = key_value[1] | replace: '"', '' | strip -%}
+
+                            {%- assign json_array = json_array
+                              | append: key
+                              | append: ':'
+                              | append: val
+                              | append: ','
+                            -%}
+                          {%- endfor -%}
+
+                          {%- assign json_array = json_array | split: ',' -%}
+                          {%- for item in json_array -%}
+                            {%- assign key_val = item | split: ':' -%}
+                            {%- assign key = key_val[0] -%}
+                            {%- assign val = key_val[1] -%}
+                            {%- if key and val -%}
+                              {% assign num = forloop.index | modulo: 2 %}
+                              {% if num == 0 %}
+                                {% assign class = 'row bg-light align-items-center text-center justify-content-center py-2' %}
+                              {% else %}
+                                {% assign class = 'row text-center align-items-center justify-content-center py-2' %}
+                              {% endif %}
+                              <div class="{{ class }}">
+                                <div class="col-6">
+                                  <p class="mb-0">{{ key | camelcase }}</p>
+                                </div>
+                                <div class="col-6">
+                                  <p class="mb-0">
+                                    {{ val }}
+                                  </p>
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          {%- endfor -%}
                         </div>
                       </div>
                     </div>
@@ -773,36 +820,14 @@
               <div class="mb-4">
                 <h4>Categories</h4>
                 <ul class="list-unstyled fruite-categorie">
-                  <li>
-                    <div class="d-flex justify-content-between fruite-name">
-                      <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
-                      <span>(3)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex justify-content-between fruite-name">
-                      <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
-                      <span>(5)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex justify-content-between fruite-name">
-                      <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
-                      <span>(2)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex justify-content-between fruite-name">
-                      <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
-                      <span>(8)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex justify-content-between fruite-name">
-                      <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
-                      <span>(5)</span>
-                    </div>
-                  </li>
+                  {% for collection in collections %}
+                    <li>
+                      <div class="d-flex justify-content-between fruite-name">
+                        <a href="{{ collection.url }}"><i class="fas fa-apple-alt me-2"></i>{{ collection.title }}</a>
+                        <span>{{ collection.products_count }}</span>
+                      </div>
+                    </li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
