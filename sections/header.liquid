@@ -168,7 +168,7 @@
               {% assign class = '' %}
               {% if page_title == link.title %}
                 {% assign class = 'active' %}
-              {% elsif page_title == shop.name and link.url == '/' %}
+              {% elsif template.name == 'index' and link.url == '/' %}
                 {% assign class = 'active' %}
               {% endif %}
               <a href="{{- link.url | escape -}}" class="nav-item nav-link {{ class }}">{{- link.title | escape -}}</a>
