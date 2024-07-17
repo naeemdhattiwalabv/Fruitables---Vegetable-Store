@@ -166,12 +166,11 @@
               </div>
             {% else %}
               {% assign class = '' %}
-              {% if page_title ==  link.title %}
+              {% if page_title == link.title %}
                 {% assign class = 'active' %}
-              
+              {% elsif page_title == shop.name %}
+                {% assign class = 'active' %}
               {% endif %}
-              {{ page_title }}
-              {{ shop.name }}
               <a href="{{- link.url | escape -}}" class="nav-item nav-link {{ class }}">{{- link.title | escape -}}</a>
             {% endif %}
           {% endfor %}
