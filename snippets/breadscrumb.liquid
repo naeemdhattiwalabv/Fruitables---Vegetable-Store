@@ -5,16 +5,16 @@
     {% case t %}
       {% when 'page' %}
         <li class="breadcrumb-item active text-white">
-          <a href="{{ page.url }}">{{ page.title }}</a>
+          {{ page.title }}
         </li>
       {% when 'product' %}
         {% if collection.url %}
           <li class="breadcrumb-item active text-white">
-            <a href="{{ collection.url }}">{{ collection.title }}</a>
+            {{ collection.title }}
           </li>
         {% endif %}
         <li class="breadcrumb-item active text-white">
-          <a href="{{ product.url }}">{{ product.title }}</a>
+          {{ product.title }}
         </li>
       {% when 'collection' and collection.handle %}
         {% if current_tags %}
