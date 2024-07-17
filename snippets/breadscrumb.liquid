@@ -21,11 +21,11 @@
           <li class="breadcrumb-item active text-white">{{ collection.title | link_to: collection.url }}</li>
           <li class="breadcrumb-item active text-white">
             {% capture tag_url %}{{ collection.url }}/{{ current_tags | join: "+"}}{% endcapture %}
-            <a href="{{ tag_url }}" aria-current="page">{{ current_tags | join: ' + ' }}</a>
+            {{ current_tags | join: ' + ' }}
           </li>
         {% else %}
           <li class="breadcrumb-item active text-white">
-            <a href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+            {{ collection.title }}
           </li>
         {% endif %}
 
