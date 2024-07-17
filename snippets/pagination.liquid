@@ -16,12 +16,12 @@
 {%- if paginate.parts.size > 0 -%}
   <div class="pagination d-flex justify-content-center mt-5">
     <nav class="" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-      <ul class="list-unstyled" role="list">
+      <ul class="pagination_list list-unstyled" role="list">
         {%- if paginate.previous -%}
           <li>
             <a
               href="{{ paginate.previous.url }}{{ anchor }}"
-              class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce rounded"
+              class="rounded"
               aria-label="{{ 'general.pagination.previous' | t }}"
             >
               {% render 'icon-caret' %}
@@ -34,7 +34,7 @@
             {%- if part.is_link -%}
               <a
                 href="{{ part.url }}{{ anchor }}"
-                class="pagination__item link rounded"
+                class="rounded"
                 aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
               >
                 {{- part.title -}}
@@ -44,7 +44,7 @@
                 <a
                   role="link"
                   aria-disabled="true"
-                  class="pagination__item pagination__item--current light active rounded"
+                  class="active rounded"
                   aria-current="page"
                   aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
                 >
