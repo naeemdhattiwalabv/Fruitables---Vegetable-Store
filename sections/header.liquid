@@ -171,7 +171,7 @@
               {% elsif page_title == shop.name and link.title == 'Home' %}
                 {% assign class = 'active' %}
               {% endif %}
-              {{ template.name }}
+              {{ link.url }}
               <a href="{{- link.url | escape -}}" class="nav-item nav-link {{ class }}">{{- link.title | escape -}}</a>
             {% endif %}
           {% endfor %}
