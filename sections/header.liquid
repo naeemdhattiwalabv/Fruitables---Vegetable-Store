@@ -165,6 +165,7 @@
                 </div>
               </div>
             {% else %}
+              {{ page_title }}
               <a href="{{- link.url | escape -}}" class="nav-item nav-link">{{- link.title | escape -}}</a>
             {% endif %}
           {% endfor %}
