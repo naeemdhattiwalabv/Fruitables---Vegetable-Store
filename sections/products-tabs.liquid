@@ -78,3 +78,22 @@
     </div>
   </div>
 </div>
+{% schema %}
+{
+    "name": "Product Tabs",
+    "blocks": [
+      {
+        "type": "product_tabs",
+        "name": "Add Product Tab",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "text",
+            "id": "tab_label",
+            "label": "Tab Label"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
