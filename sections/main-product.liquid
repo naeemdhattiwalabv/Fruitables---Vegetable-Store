@@ -814,7 +814,14 @@
           <div class="row g-4 fruite">
             <div class="col-lg-12">
               <div class="input-group w-100 mx-auto d-flex mb-4">
-                <input type="search" class="form-control p-3" id="myInput" onkeyup="myFunction()" placeholder="keywords" aria-describedby="search-icon-1">
+                <input
+                  type="search"
+                  class="form-control p-3"
+                  id="myInput"
+                  onkeyup="myFunction()"
+                  placeholder="keywords"
+                  aria-describedby="search-icon-1"
+                >
                 <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
               </div>
               <div class="mb-4">
@@ -973,7 +980,27 @@
       assign seo_media = product.featured_media
     endif
   -%}
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById('myUL');
+      li = ul.getElementsByTagName('li');
 
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName('a')[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = '';
+        } else {
+          li[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
   <script type="application/ld+json">
     {{ product | structured_data }}
   </script>
