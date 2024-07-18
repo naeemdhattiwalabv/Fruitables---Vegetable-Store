@@ -108,11 +108,19 @@
           "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
           }
+        },
+        "product_tabs_aciLd9": {
+          "type": "product_tabs",
+          "settings": {
+            "tab_label": "Additional Information",
+            "tab_content": "test"
+          }
         }
       },
       "block_order": [
         "product_tabs_aiHejY",
-        "judge_me_reviews_review_widget_nWixEe"
+        "judge_me_reviews_review_widget_nWixEe",
+        "product_tabs_aciLd9"
       ],
       "settings": {
       }
