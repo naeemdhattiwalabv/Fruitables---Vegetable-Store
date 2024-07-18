@@ -186,7 +186,7 @@
                         -%}
                         <ul
                           class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
-                          role="list" id="cat_list"
+                          role="list" id="cat_list_{{ forloop.index }}"
                         >
                           {%- for value in sorted_values -%}
                             {% liquid
