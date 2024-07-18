@@ -78,27 +78,28 @@
     </div>
   </div>
 </div>
+
 {% schema %}
 {
-    "name": "Product Tabs",
-    "blocks": [
-      {
-        "type": "product_tabs",
-        "name": "Add Product Tab",
-        "limit": 3,
-        "settings": [
-          {
-            "type": "text",
-            "id": "tab_label",
-            "label": "Tab Label"
-          },
-          {
-            "type": "liquid",
-            "id": "tab_content",
-            "label": "Tab Content"
-          }
-        ]
-      }
-    ]
-  }
+  "name": "Product Tabs",
+  "blocks": [
+    {
+      "type": "product_tabs",
+      "name": "Add Product Tab",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab Label"
+        },
+        {
+          "type": "liquid",
+          "id": "tab_content",
+          "label": "Tab Content"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
