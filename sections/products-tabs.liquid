@@ -16,7 +16,7 @@
             >
               {{ block.settings.tab_label }}
             </button>
-          {% else %}
+          {% elsif forloop.index < 1 %}
             <button
               class="nav-link border-white border-bottom-0"
               type="button"
