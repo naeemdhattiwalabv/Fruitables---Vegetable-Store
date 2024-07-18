@@ -29,6 +29,8 @@
             {{ block.settings.tab_label }}
           </button>
         {% endif %}
+      {% endfor %}
+      {% for block in section.blocks %}
         {% case block.type %}
           {% when '@app' %}
             <button
