@@ -817,8 +817,8 @@
                 <input
                   type="search"
                   class="form-control p-3"
-                  id="myInput"
-                  onkeyup="myFunction()"
+                  id="search_keyword"
+                  onkeyup="searchFilter()"
                   placeholder="keywords"
                   aria-describedby="search-icon-1"
                 >
@@ -826,7 +826,7 @@
               </div>
               <div class="mb-4">
                 <h4>Categories</h4>
-                <ul class="list-unstyled fruite-categorie" id="myUL">
+                <ul class="list-unstyled fruite-categorie" id="cat_list">
                   {% for collection in collections %}
                     <li>
                       <div class="d-flex justify-content-between fruite-name">
@@ -981,12 +981,11 @@
     endif
   -%}
   <script>
-    function myFunction() {
-      // Declare variables
+    function searchFilter() {
       var input, filter, ul, li, a, i, txtValue;
-      input = document.getElementById('myInput');
+      input = document.getElementById('search_keyword');
       filter = input.value.toUpperCase();
-      ul = document.getElementById('myUL');
+      ul = document.getElementById('cat_list');
       li = ul.getElementsByTagName('li');
 
       // Loop through all list items, and hide those who don't match the search query
