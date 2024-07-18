@@ -4,28 +4,28 @@
     <li class="breadcrumb-item"><a href="#">Home</a></li>
     {% case t %}
       {% when 'page' %}
-        <li class="breadcrumb-item">
-          <a href="{{ page.url }}">{{ page.title }}</a>
+        <li class="breadcrumb-item active text-white">
+          {{ page.title }}
         </li>
       {% when 'product' %}
         {% if collection.url %}
-          <li class="breadcrumb-item">
-            <a href="{{ collection.url }}">{{ collection.title }}</a>
+          <li class="breadcrumb-item active text-white">
+            {{ collection.title }}
           </li>
         {% endif %}
-        <li class="breadcrumb-item">
-          <a href="{{ product.url }}">{{ product.title }}</a>
+        <li class="breadcrumb-item active text-white">
+          {{ product.title }}
         </li>
       {% when 'collection' and collection.handle %}
         {% if current_tags %}
-          <li class="breadcrumb-item">{{ collection.title | link_to: collection.url }}</li>
-          <li class="breadcrumb-item">
+          <li class="breadcrumb-item active text-white">{{ collection.title | link_to: collection.url }}</li>
+          <li class="breadcrumb-item active text-white">
             {% capture tag_url %}{{ collection.url }}/{{ current_tags | join: "+"}}{% endcapture %}
-            <a href="{{ tag_url }}" aria-current="page">{{ current_tags | join: ' + ' }}</a>
+            {{ current_tags | join: ' + ' }}
           </li>
         {% else %}
-          <li class="breadcrumb-item">
-            <a href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+          <li class="breadcrumb-item active text-white">
+            {{ collection.title }}
           </li>
         {% endif %}
 
