@@ -420,7 +420,7 @@
           var input, filter, ul, li, a, i, txtValue;
           input = document.getElementById('search_keyword');
           filter = input.value.toUpperCase();
-          ul = document.getElementById('cat_list-1');
+          ul = document.getElementById('cat_list');
           li = ul.getElementsByTagName('li');
           for (i = 0; i < li.length; i++) {
             span = li[i].getElementsByTagName('span')[0];
@@ -431,19 +431,6 @@
               li[i].style.display = 'none';
             }
           }
-
-          ul2 = document.getElementById('cat_list-2');
-          li2 = ul2.getElementsByTagName('li');
-          for (i = 0; i < li2.length; i++) {
-            span2 = li2[i].getElementsByTagName('span')[0];
-            txtValue = span2.textContent || span2.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li2[i].style.display = '';
-            } else {
-              li2[i].style.display = 'none';
-            }
-          }
-
         }
       </script>
     {% endif %}
