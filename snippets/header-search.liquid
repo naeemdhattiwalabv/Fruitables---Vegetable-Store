@@ -98,18 +98,20 @@
         {%- else -%}
           </search-form>
         {%- endif -%}
-        <button
-          type="button"
-          class="search-modal__close-button modal__close-button link link--text focus-inset"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          <span id="search-icon-1" class="input-group-text p-3">
-            {% comment %} <svg class="icon icon-close" aria-hidden="true" focusable="false">
+        {% comment %}
+          <button
+            type="button"
+            class="search-modal__close-button modal__close-button link link--text focus-inset"
+            aria-label="{{ 'accessibility.close' | t }}"
+          >
+            <svg class="icon icon-close" aria-hidden="true" focusable="false">
               <use href="#icon-close">
-            </svg> {% endcomment %}
-            <i class="fa fa-close" style="font-size:48px;color:red"></i>
-          </span>
-        </button>
+            </svg>
+          </button>
+        {% endcomment %}
+        <span id="search-icon-1" class="input-group-text p-3" aria-label="{{ 'accessibility.close' | t }}">
+          <i class="fa fa-close" style="font-size:48px;color:red"></i>
+        </span>
       </div>
     </div>
   </details>
