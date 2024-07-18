@@ -157,18 +157,23 @@
           {%- for link in section.settings.menu.links -%}
             {% if link.links.size > 0 %}
               <div class="nav-item dropdown">
-                <a href="{{- link.url | escape -}}" class="nav-link dropdown-toggle">{{- link.title | escape -}}</a>
+                <a id="nav_dropdown" href="{{- link.url | escape -}}" class="nav-link dropdown-toggle">
+                  {{- link.title | escape -}}
+                </a>
                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
                   {%- for childlink in link.links -%}
+                    {% if request.path == childlink.url %}
+                      <script>
+                        document.getElementById('nav_dropdown').classList.add('active');
+                      </script>
+                    {% endif %}
                     <a href="{{- childlink.url | escape -}}" class="dropdown-item">{{ childlink.title | escape }}</a>
                   {% endfor %}
                 </div>
               </div>
             {% else %}
               {% assign class = '' %}
-              {% if page_title == link.title %}
-                {% assign class = 'active' %}
-              {% elsif template.name == 'index' and link.url == '/' %}
+              {% if request.path == link.url %}
                 {% assign class = 'active' %}
               {% endif %}
               <a href="{{- link.url | escape -}}" class="nav-item nav-link {{ class }}">{{- link.title | escape -}}</a>
@@ -194,24 +199,27 @@
             {% endif %}
           </a>
           {%- if shop.customer_accounts_enabled -%}
-            {%- if section.settings.enable_customer_avatar -%}
-              {%- if customer and customer.has_avatar? -%}
-                {{ customer | avatar }}
-              {%- else -%}
-                {% render 'icon-account-new' %}
-              {%- endif -%}
-            {%- else -%}
-              {% render 'icon-account-new' %}
-            {%- endif -%}
-            <span class="visually-hidden">
-              {%- liquid
-                if customer
-                  echo 'customer.account_fallback' | t
-                else
-                  echo 'customer.log_in' | t
-                endif
-              -%}
-            </span>
+            <a
+              href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+              class="my-auto"
+            >
+              <account-icon>
+                {%- if customer and customer.has_avatar? -%}
+                  {{ customer | avatar }}
+                {%- else -%}
+                  {% render 'icon-account-new' %}
+                {%- endif -%}
+              </account-icon>
+              <span class="visually-hidden">
+                {%- liquid
+                  if customer
+                    echo 'customer.account_fallback' | t
+                  else
+                    echo 'customer.log_in' | t
+                  endif
+                -%}
+              </span>
+            </a>
           {%- endif -%}
         </div>
       </div>
