@@ -400,7 +400,7 @@
         filter = input.value.toUpperCase();
         ul = document.getElementById('cat_list');
         li = ul.getElementsByTagName('li');
-        console.log({{ template.name }})
+        console.log({{ template.name }});
         for (i = 0; i < li.length; i++) {
           a = li[i].getElementsByTagName('a')[0];
           txtValue = a.textContent || a.innerText;
