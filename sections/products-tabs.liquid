@@ -31,9 +31,18 @@
   </nav>
   <div class="tab-content mb-5">
     {% for block in section.blocks %}
-      <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-        {{ block.settings.tab_content }}
-      </div>
+      {% if forloop.index == 1 %}
+        <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+          {{ block.settings.tab_content }}
+        </div>
+      {% else %}
+        <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
+          {% case block.type %}
+            {% when '@app' %}
+              {% render block %}
+          {% endcase %}
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 </div>
