@@ -2,32 +2,34 @@
   <nav>
     <div class="nav nav-tabs mb-3">
       {% for block in section.blocks %}
-        {% if forloop.index == 1 %}
-          <button
-            class="nav-link active border-white border-bottom-0"
-            type="button"
-            role="tab"
-            id="nav-about-tab-{{ forloop.index }}"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-about-{{ forloop.index }}"
-            aria-controls="nav-about-{{ forloop.index }}"
-            aria-selected="true"
-          >
-            {{ block.settings.tab_label }}
-          </button>
-        {% else %}
-          <button
-            class="nav-link border-white border-bottom-0"
-            type="button"
-            role="tab"
-            id="nav-about-tab-{{ forloop.index }}"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-about-{{ forloop.index }}"
-            aria-controls="nav-about-{{ forloop.index }}"
-            aria-selected="true"
-          >
-            {{ block.settings.tab_label }}
-          </button>
+        {% if block.settings.tab_label != '' and block.settings.tab_content != '' %}
+          {% if forloop.index == 1 %}
+            <button
+              class="nav-link active border-white border-bottom-0"
+              type="button"
+              role="tab"
+              id="nav-about-tab-{{ forloop.index }}"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-about-{{ forloop.index }}"
+              aria-controls="nav-about-{{ forloop.index }}"
+              aria-selected="true"
+            >
+              {{ block.settings.tab_label }}
+            </button>
+          {% else %}
+            <button
+              class="nav-link border-white border-bottom-0"
+              type="button"
+              role="tab"
+              id="nav-about-tab-{{ forloop.index }}"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-about-{{ forloop.index }}"
+              aria-controls="nav-about-{{ forloop.index }}"
+              aria-selected="true"
+            >
+              {{ block.settings.tab_label }}
+            </button>
+          {% endif %}
         {% endif %}
         {% case block.type %}
           {% when '@app' %}
