@@ -37,8 +37,14 @@
         </div>
       {% else %}
         <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
-            {{ block.settings.tab_content }}
+          {{ block.settings.tab_content }}
         </div>
+        {% case block.type %}
+          {% when '@app' %}
+            <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
+              {% render block %}
+            </div>
+        {% endcase %}
       {% endif %}
     {% endfor %}
   </div>
