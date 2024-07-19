@@ -133,7 +133,19 @@
     },
     "featured_collection": {
       "type": "main-product-featured-collection",
+      "blocks": {
+        "pdp_featured_collection_aVPWwL": {
+          "type": "pdp_featured_collection",
+          "settings": {
+            "featured_collection": "fruits"
+          }
+        }
+      },
+      "block_order": [
+        "pdp_featured_collection_aVPWwL"
+      ],
       "settings": {
+        "label": "Featured Collection"
       }
     },
     "related-products": {
