@@ -486,6 +486,20 @@
               </table>
             </div>
           {%- endif -%}
+          <form id="cart-coupon-form" action="/cart" method="post" class="cart__form">
+            <div class="cart__coupon">
+              <label for="cart-coupon" class="cart__coupon-label">Discount Code</label>
+              <input
+                type="text"
+                id="cart-coupon"
+                name="discount"
+                class="cart__coupon-input"
+                placeholder="Enter your code"
+              >
+              <button type="submit" class="btn btn--coupon">Apply</button>
+            </div>
+          </form>
+
           {% render 'cart-footer' %}
         </div>
       </div>
@@ -503,7 +517,26 @@
     </form>
   </div>
 </cart-items>
+<script>
+  document.getElementById('cart-coupon-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var discountCode = document.getElementById('cart-coupon').value;
 
+    fetch('/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: 'discount=' + encodeURIComponent(discountCode),
+    }).then((response) => {
+      if (response.ok) {
+        window.location.reload();
+      } else {
+        alert('Failed to apply discount code.');
+      }
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "t:sections.main-cart-items.name",
