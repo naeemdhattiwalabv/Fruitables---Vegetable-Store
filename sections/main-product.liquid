@@ -776,9 +776,11 @@
                       >
                     {% endfor %}
                   </div>
-                  <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}">
-                    {{ product.metafields.judgeme.widget }}
+                  <!-- Start of Judge.me code -->
+                  <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}">
+                    {{ product.metafields.judgeme.badge }}
                   </div>
+                  <!-- End of Judge.me code -->
                   <div>
                     <h6 class="mb-2">{{ product.title }}</h6>
                     <div class="d-flex mb-2">
