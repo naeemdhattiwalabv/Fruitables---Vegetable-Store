@@ -119,23 +119,11 @@
                             -%}
                           </div>
                         </h5>
-                        {% assign rating = product.metafields.custom.rating %}
-                        {% if rating != blank %}
-                          {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
-                          {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
-                          {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
-                          {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
-
-                          <div class="d-flex my-3">
-                            {% for i in (scale_min..scale_max) %}
-                              {% if i <= value %}
-                                <i class="fa fa-star text-secondary"></i>
-                              {% else %}
-                                <i class="fas fa-star"></i>
-                              {% endif %}
-                            {% endfor %}
+                        <div class="d-flex my-3">
+                          <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}">
+                            {{ product.metafields.judgeme.badge }}
                           </div>
-                        {% endif %}
+                        </div>
                         {%- if product.quantity_price_breaks_configured? -%}
                           <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                             <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -777,23 +765,9 @@
                   <div>
                     <h6 class="mb-2">{{ product.title }}</h6>
                     <div class="d-flex mb-2">
-                      {% assign rating = product.metafields.custom.rating %}
-                      {% if rating != blank %}
-                        {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
-                        {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
-                        {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
-                        {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
-
-                        <div class="d-flex my-3">
-                          {% for i in (scale_min..scale_max) %}
-                            {% if i <= value %}
-                              <i class="fa fa-star text-secondary"></i>
-                            {% else %}
-                              <i class="fas fa-star"></i>
-                            {% endif %}
-                          {% endfor %}
-                        </div>
-                      {% endif %}
+                      <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}">
+                        {{ product.metafields.judgeme.badge }}
+                      </div>
                     </div>
                     <div class="d-flex mb-2">
                       <h5 class="fw-bold me-2">{{ product.price | money_without_trailing_zeros }}</h5>
