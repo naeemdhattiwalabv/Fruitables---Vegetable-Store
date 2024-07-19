@@ -139,10 +139,16 @@
           "settings": {
             "featured_collection": "fruits"
           }
+        },
+        "judge_me_reviews_preview_badge_xywkGk": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "pdp_featured_collection_aVPWwL"
+        "pdp_featured_collection_aVPWwL",
+        "judge_me_reviews_preview_badge_xywkGk"
       ],
       "settings": {
         "label": "Featured Collection"
