@@ -486,19 +486,12 @@
               </table>
             </div>
           {%- endif -%}
-          <form id="cart-coupon-form" action="/cart" method="post" class="cart__form">
-            <div class="cart__coupon">
-              <label for="cart-coupon" class="cart__coupon-label">Discount Code</label>
-              <input
-                type="text"
-                id="cart-coupon"
-                name="discount"
-                class="cart__coupon-input"
-                placeholder="Enter your code"
-              >
-              <button type="submit" class="btn btn--coupon">Apply</button>
-            </div>
-          </form>
+          <div class="cart-coupon">
+            <label for="cart-coupon-code">Discount Code</label>
+            <input type="text" id="cart-coupon-code" name="cart-coupon-code" placeholder="Enter your code">
+            <button type="button" id="apply-coupon-button">Apply</button>
+            <p id="coupon-message"></p>
+          </div>
 
           {% render 'cart-footer' %}
         </div>
@@ -518,24 +511,38 @@
   </div>
 </cart-items>
 <script>
-  document.getElementById('cart-coupon-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    var discountCode = document.getElementById('cart-coupon').value;
-
-    fetch('/cart', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: 'discount=' + encodeURIComponent(discountCode),
-    }).then((response) => {
-      if (response.ok) {
-        window.location.reload();
-      } else {
-        alert('Failed to apply discount code.');
-      }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('apply-coupon-button').addEventListener('click', function () {
+      var couponCode = document.getElementById('cart-coupon-code').value;
+      applyCouponCode(couponCode);
     });
   });
+
+  function applyCouponCode(code) {
+    fetch('/cart.js')
+      .then((response) => response.json())
+      .then((cart) => {
+        fetch('/cart/update.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            updates: {},
+            note: code,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById('coupon-message').innerText = 'Coupon applied successfully!';
+          })
+          .catch((error) => {
+            document.getElementById('coupon-message').innerText = 'Failed to apply coupon.';
+            console.error('Error:', error);
+          });
+      });
+  }
 </script>
 {% schema %}
 {
