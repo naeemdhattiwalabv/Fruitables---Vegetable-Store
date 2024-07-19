@@ -119,23 +119,25 @@
                             -%}
                           </div>
                         </h5>
-                        {% comment %} {% assign rating = product.metafields.custom.rating %}
-                        {% if rating != blank %}
-                          {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
-                          {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
-                          {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
-                          {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
+                        {% comment %}
+                          {% assign rating = product.metafields.custom.rating %}
+                          {% if rating != blank %}
+                            {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
+                            {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
+                            {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
+                            {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
 
-                          <div class="d-flex my-3">
-                            {% for i in (scale_min..scale_max) %}
-                              {% if i <= value %}
-                                <i class="fa fa-star text-secondary"></i>
-                              {% else %}
-                                <i class="fas fa-star"></i>
-                              {% endif %}
-                            {% endfor %}
-                          </div>
-                        {% endif %} {% endcomment %}
+                            <div class="d-flex my-3">
+                              {% for i in (scale_min..scale_max) %}
+                                {% if i <= value %}
+                                  <i class="fa fa-star text-secondary"></i>
+                                {% else %}
+                                  <i class="fas fa-star"></i>
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          {% endif %}
+                        {% endcomment %}
                         {%- if product.quantity_price_breaks_configured? -%}
                           <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                             <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -773,6 +775,9 @@
                         height="1200"
                       >
                     {% endfor %}
+                  </div>
+                  <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}">
+                    {{ product.metafields.judgeme.widget }}
                   </div>
                   <div>
                     <h6 class="mb-2">{{ product.title }}</h6>
