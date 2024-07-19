@@ -84,7 +84,7 @@
         "collection": "all-products",
         "products_to_show": 4,
         "show_view_all": true,
-        "show_rating": true,
+        "show_rating": false,
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "small",
