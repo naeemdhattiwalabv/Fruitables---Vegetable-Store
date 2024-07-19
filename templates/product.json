@@ -114,7 +114,7 @@
           "type": "product_tabs",
           "settings": {
             "tab_label": "Additional Information",
-            "tab_content": "Broccoli (Brassica oleracea var. italica) is an edible green plant in the cabbage family (family Brassicaceae, genus Brassica) whose large flowering head, stalk and small associated leaves are eaten as a vegetable. Broccoli is classified in the Italica cultivar group of the species Brassica oleracea."
+            "tab_content": "{{ product.description }}"
           }
         },
         "judge_me_reviews_review_widget_nWixEe": {
