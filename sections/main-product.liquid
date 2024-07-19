@@ -119,25 +119,23 @@
                             -%}
                           </div>
                         </h5>
-                        {% comment %}
-                          {% assign rating = product.metafields.custom.rating %}
-                          {% if rating != blank %}
-                            {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
-                            {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
-                            {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
-                            {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
+                        {% comment %} {% assign rating = product.metafields.custom.rating %}
+                        {% if rating != blank %}
+                          {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
+                          {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
+                          {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
+                          {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
 
-                            <div class="d-flex my-3">
-                              {% for i in (scale_min..scale_max) %}
-                                {% if i <= value %}
-                                  <i class="fa fa-star text-secondary"></i>
-                                {% else %}
-                                  <i class="fas fa-star"></i>
-                                {% endif %}
-                              {% endfor %}
-                            </div>
-                          {% endif %}
-                        {% endcomment %}
+                          <div class="d-flex my-3">
+                            {% for i in (scale_min..scale_max) %}
+                              {% if i <= value %}
+                                <i class="fa fa-star text-secondary"></i>
+                              {% else %}
+                                <i class="fas fa-star"></i>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                        {% endif %} {% endcomment %}
                         {%- if product.quantity_price_breaks_configured? -%}
                           <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                             <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -750,7 +748,74 @@
                 </ul>
               </div>
             </div>
-            <div id="featured_product_collection"></div>
+            {%- liquid
+              assign products_to_display = section.settings.collection.all_products_count
+
+              if section.settings.collection.all_products_count > section.settings.products_to_show
+                assign products_to_display = section.settings.products_to_show
+                assign more_in_collection = true
+              endif
+            -%}
+            <div class="col-lg-12">
+              {%- if section.settings.title != blank -%}
+                <h4 class="mb-4">{{ section.settings.title }}</h4>
+              {% endif %}
+              {% assign collection = collections[section.settings.collection.handle] %}
+              {%- for product in collection.products limit: section.settings.products_to_show -%}
+                <div class="d-flex align-items-center justify-content-start">
+                  <div class="rounded" style="width: 100px; height: 100px;">
+                    {% for image in product.images %}
+                      <img
+                        src="{{ image.src | img_url: 'master' }}"
+                        class="img-fluid rounded"
+                        alt=""
+                        width="1200"
+                        height="1200"
+                      >
+                    {% endfor %}
+                  </div>
+                  <div>
+                    <h6 class="mb-2">{{ product.title }}</h6>
+                    <div class="d-flex mb-2">
+                      {% assign rating = product.metafields.custom.rating %}
+                      {% if rating != blank %}
+                        {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
+                        {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
+                        {% assign scale_max = rating_parts[1] | split: ':"' | last | split: '"' | first %}
+                        {% assign value = rating_parts[2] | split: ':"' | last | split: '"' | first | floor %}
+
+                        <div class="d-flex my-3">
+                          {% for i in (scale_min..scale_max) %}
+                            {% if i <= value %}
+                              <i class="fa fa-star text-secondary"></i>
+                            {% else %}
+                              <i class="fas fa-star"></i>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="d-flex mb-2">
+                      <h5 class="fw-bold me-2">{{ product.price | money_without_trailing_zeros }}</h5>
+                      <h5 class="text-danger text-decoration-line-through">
+                        {{ product.variants.first.compare_at_price | money_without_trailing_zeros }}
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+              <div class="d-flex justify-content-center my-4">
+                {%- if section.settings.show_view_all and more_in_collection -%}
+                  <a
+                    href="{{ section.settings.collection.url }}"
+                    class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100"
+                    aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
+                  >
+                    {{ 'sections.featured_collection.view_all' | t }}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
             {% if section.settings.image_banner != blank %}
               <div class="col-lg-12">
                 <div class="position-relative">
