@@ -29,11 +29,6 @@
           "settings": {
           }
         },
-        "rating_JjM8qq": {
-          "type": "rating",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -70,7 +65,6 @@
         "title",
         "vendor",
         "price",
-        "rating_JjM8qq",
         "variant_picker",
         "description",
         "quantity_selector",
