@@ -119,7 +119,7 @@
                             -%}
                           </div>
                         </h5>
-                        {% assign rating = product.metafields.custom.rating %}
+                        {% comment %} {% assign rating = product.metafields.custom.rating %}
                         {% if rating != blank %}
                           {% assign rating_parts = rating | replace: '{"', '' | replace: '}', '' | split: '","' %}
                           {% assign scale_min = rating_parts[0] | split: ':"' | last | split: '"' | first %}
@@ -135,7 +135,7 @@
                               {% endif %}
                             {% endfor %}
                           </div>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                         {%- if product.quantity_price_breaks_configured? -%}
                           <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                             <span>{{ 'products.product.volume_pricing.note' | t }}</span>
