@@ -14,7 +14,8 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+          }
         },
         "vendor": {
           "type": "text",
@@ -25,11 +26,13 @@
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+          }
         },
         "rating_JjM8qq": {
           "type": "rating",
-          "settings": {}
+          "settings": {
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -40,11 +43,13 @@
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {}
+          "settings": {
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -79,7 +84,7 @@
         "collection": "all-products",
         "products_to_show": 4,
         "show_view_all": true,
-        "show_rating": true,
+        "show_rating": false,
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "small",
@@ -109,12 +114,13 @@
           "type": "product_tabs",
           "settings": {
             "tab_label": "Additional Information",
-            "tab_content": "Broccoli (Brassica oleracea var. italica) is an edible green plant in the cabbage family (family Brassicaceae, genus Brassica) whose large flowering head, stalk and small associated leaves are eaten as a vegetable. Broccoli is classified in the Italica cultivar group of the species Brassica oleracea."
+            "tab_content": "{{ product.description }}"
           }
         },
         "judge_me_reviews_review_widget_nWixEe": {
           "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -122,7 +128,8 @@
         "product_tabs_aciLd9",
         "judge_me_reviews_review_widget_nWixEe"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "related-products": {
       "type": "related-products",
