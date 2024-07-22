@@ -80,7 +80,7 @@
                                     if product.selected_or_first_available_variant.quantity_rule.min > 1 or product.selected_or_first_available_variant.quantity_rule.max != null or product.selected_or_first_available_variant.quantity_rule.increment > 1
                                       assign qty_rules = true
                                     endif
-                                    assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
+                                    assign product_form_id = 'quick-add-' | append: section_id | append: product.id
 
                                   -%}
                                   {%- if product.variants.size > 1 or qty_rules -%}
@@ -95,9 +95,6 @@
                                         data-product-url="{{ product.url }}"
                                       >
                                         {{ 'products.product.choose_options' | t }}
-                                        {%- if horizontal_quick_add -%}
-                                          <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-                                        {%- endif -%}
                                         {%- render 'loading-spinner' -%}
                                       </button>
                                     </modal-opener>
