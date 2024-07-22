@@ -46,15 +46,6 @@
                         <div class="col-md-6 col-lg-4 col-xl-3">
                           <div class="rounded position-relative fruite-item">
                             <div class="fruite-img">
-                              {% for image in product.images %}
-                                <img
-                                  src="{{ image.src | img_url: 'master' }}"
-                                  class="img-fluid w-100 rounded-top"
-                                  alt=""
-                                  width="1200"
-                                  height="1200"
-                                >
-                              {% endfor %}
                               {%- if product.featured_media -%}
                                 <div class="fruite-img card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
                                   <div class="media media--transparent media--hover-effect">
@@ -142,7 +133,7 @@
                         <div class="col-md-6 col-lg-4 col-xl-3">
                           <div class="rounded position-relative fruite-item">
                             <div class="fruite-img">
-                              {% for image in product.images %}
+                              {% comment %} {% for image in product.images %}
                                 <img
                                   src="{{ image.src | img_url: 'master' }}"
                                   class="img-fluid w-100 rounded-top"
@@ -150,7 +141,7 @@
                                   height="1200"
                                   width="1200"
                                 >
-                              {% endfor %}
+                              {% endfor %} {% endcomment %}
                               {%- if product.featured_media -%}
                                 <div class="fruite-img card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
                                   <div class="media media--transparent media--hover-effect">
