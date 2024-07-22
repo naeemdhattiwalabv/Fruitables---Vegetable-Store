@@ -45,38 +45,35 @@
                       {% for product in collection.products %}
                         <div class="col-md-6 col-lg-4 col-xl-3">
                           <div class="rounded position-relative fruite-item">
-                            {% comment %}
-                              <div class="fruite-img">
-                                  <img
-                                    src="{{ product.featured_media | img_url: 'master' }}"
-                                    class="img-fluid w-100 rounded-top"
-                                    alt=""
-                                    width="1200"
-                                    height="1200"
-                                  >
+                            <div class="fruite-img">
+                                <img
+                                  src="{{ product.featured_media | img_url: 'master' }}"
+                                  class="img-fluid w-100 rounded-top"
+                                  alt=""
+                                  width="1200"
+                                  height="1200"
+                                >
+                            </div>
+                            <div
+                              class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                              style="top: 10px; left: 10px;"
+                            >
+                              {{ product.tags }}
+                            </div>
+                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                              <a href="{{ product.url }}">
+                                <h4>{{ product.title }}</h4>
+                              </a>
+                              <p>{{ product.description }}</p>
+                              <div class="d-flex justify-content-between flex-lg-wrap">
+                                <p class="text-dark fs-5 fw-bold mb-0">{{ product.price | money }} / kg</p>
+                                <a
+                                  onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
+                                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
+                                >
                               </div>
-                              <div
-                                class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                style="top: 10px; left: 10px;"
-                              >
-                                {{ product.tags }}
-                              </div>
-                              <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                <a href="{{ product.url }}">
-                                  <h4>{{ product.title }}</h4>
-                                </a>
-                                <p>{{ product.description }}</p>
-                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                  <p class="text-dark fs-5 fw-bold mb-0">{{ product.price | money }} / kg</p>
-                                  <a
-                                    onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
-                                    class="btn border border-secondary rounded-pill px-3 text-primary"
-                                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
-                                  >
-                                </div>
-                              </div>
-                            {% endcomment %}
-                            {% render 'card-product', card_product: product %}
+                            </div>
                           </div>
                         </div>
                       {% endfor %}
@@ -94,13 +91,13 @@
                         <div class="col-md-6 col-lg-4 col-xl-3">
                           <div class="rounded position-relative fruite-item">
                             <div class="fruite-img">
-                              <img
-                                src="{{ product.featured_media | img_url: 'master' }}"
-                                class="img-fluid w-100 rounded-top"
-                                alt=""
-                                height="1200"
-                                width="1200"
-                              >
+                                <img
+                                  src="{{ product.featured_media | img_url: 'master' }}"
+                                  class="img-fluid w-100 rounded-top"
+                                  alt=""
+                                  height="1200"
+                                  width="1200"
+                                >
                             </div>
                             <div
                               class="text-white bg-secondary px-3 py-1 rounded position-absolute"
