@@ -752,7 +752,6 @@
               {%- for product in collection.products limit: section.settings.products_to_show -%}
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded" style="width: 100px; height: 100px;">
-                    \
                     <img
                       src="{{ product.featured_image | img_url: 'master' }}"
                       class="img-fluid rounded"
