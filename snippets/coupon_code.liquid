@@ -46,6 +46,9 @@
             code.value = discounts[0].title;
             removeDiscount.style.display = 'block';
             applyDiscount.style.display = 'none';
+            return true;
+          } else {
+            return false;
           }
         })
         .catch((error) => {
@@ -61,11 +64,13 @@
         return;
       }
       let discountApplyUrl = window.location.origin + '/checkout?discount=' + code.value + '&t=' + Date.now();
-      console.log(fetch(discountApplyUrl));
-      return false;
       fetch(discountApplyUrl).then((data) => {
-        cartData();
-        location.reload();
+        if (cartData()) {
+          location.reload();
+        } else {
+          errorNote.style.display = 'block';
+          errorNote.innerHTML = 'Coupon code is not valid!';
+        }
       });
     }
 
