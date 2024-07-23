@@ -22,7 +22,6 @@
   }
 
   function removeDiscount() {
-    var code = '';
     fetch("/discount/CLEAR");
       .then(function (response) {
         return response.text();
