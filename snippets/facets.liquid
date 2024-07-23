@@ -186,8 +186,7 @@
                         -%}
                         <ul
                           class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
-                          role="list"
-                          id="cat_list_{{ forloop.index }}"
+                          role="list" id="cat_list"
                         >
                           {%- for value in sorted_values -%}
                             {% liquid
@@ -294,24 +293,6 @@
                           {%- endfor -%}
                         </ul>
                       </fieldset>
-                      <script>
-                        function searchFilter() {
-                          var input, filter, ul, li, a, i, txtValue;
-                          input = document.getElementById('search_keyword');
-                          filter = input.value.toUpperCase();
-                          ul = document.getElementById('cat_list_{{ forloop.index }}');
-                          li = ul.getElementsByTagName('li');
-                          for (i = 0; i < li.length; i++) {
-                            span = li[i].getElementsByTagName('span')[0];
-                            txtValue = span.textContent || span.innerText;
-                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                              li[i].style.display = '';
-                            } else {
-                              li[i].style.display = 'none';
-                            }
-                          }
-                        }
-                      </script>
                       {%- if filter.values.size > show_more_number and filter_type == 'vertical' -%}
                         <show-more-button>
                           <button
