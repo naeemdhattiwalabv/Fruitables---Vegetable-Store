@@ -1,5 +1,5 @@
 <div class="mt-5">
-  <input type="text" id="coupon_code" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
+  <input type="text" id="coupon-code" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
   <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" onclick="applyDiscount()" type="button">
     Apply Coupon
   </button>
@@ -44,7 +44,7 @@
   }
 
   function applyDiscount() {
-    var code = document.getElementById('coupon_code').value;
+    var code = document.getElementById('coupon-code').value;
     console.log(code);
     var error_note = document.getElementById('error_note');
     error_note.style.display = 'none';
