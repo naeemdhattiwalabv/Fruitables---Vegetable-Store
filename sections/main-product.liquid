@@ -752,15 +752,14 @@
               {%- for product in collection.products limit: section.settings.products_to_show -%}
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded" style="width: 100px; height: 100px;">
-                    {% for image in product.images %}
-                      <img
-                        src="{{ image.src | img_url: 'master' }}"
-                        class="img-fluid rounded"
-                        alt=""
-                        width="1200"
-                        height="1200"
-                      >
-                    {% endfor %}
+                    \
+                    <img
+                      src="{{ product.featured_image | img_url: 'master' }}"
+                      class="img-fluid rounded"
+                      alt=""
+                      width="1200"
+                      height="1200"
+                    >
                   </div>
                   <div>
                     <h6 class="mb-2">{{ product.title }}</h6>
