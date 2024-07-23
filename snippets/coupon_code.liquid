@@ -24,6 +24,8 @@
   cartData();
   var code = document.getElementById('coupon-code');
   var error_note = document.getElementById('error_note');
+  var applyDiscount = document.getElementById('apply_discount');
+  var removeDiscount = document.getElementById('remove_discount');
   function removeDiscount() {
     fetch('/discount/CLEAR')
       .then(function (response) {
@@ -49,6 +51,8 @@
         console.log(discounts.length);
         if (discounts.length && discounts[0]['title'] != '') {
           code.value = discounts[0]['title'];
+          removeDiscount.style.display = 'block';
+          removeDiscount.style.display = 'none';
           console.log(code);
         }
         //return data;
