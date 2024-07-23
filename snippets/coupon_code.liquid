@@ -47,6 +47,7 @@
     var code = document.getElementById('coupon_code').value;
     console.log(code);
     var error_note = document.getElementById('error_note');
+    error_note.style.display = 'none';
     if (code == '') {
       error_note.style.display = 'block';
       error_note.innerHTML = 'Coupon code is required!';
