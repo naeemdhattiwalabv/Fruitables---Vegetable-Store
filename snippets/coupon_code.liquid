@@ -1,6 +1,6 @@
 <div class="mt-5">
   <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
-  <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
+  <button class="btn border-secondary rounded-pill px-4 py-3 text-primary"  type="button">Apply Coupon</button>
 </div>
 
 <script>
@@ -19,7 +19,8 @@
     .catch((error) => {
       console.error('Error:', error);
     });
-    function applyDiscount(code, action) {
+    function applyDiscount() {
+      var code = "WELCOME";
       let discountApplyUrl = window.location.href+"/checkout?discount="+code+"&t="+Date.now();
       fetch(discountApplyUrl)
       .then(function(response) {
