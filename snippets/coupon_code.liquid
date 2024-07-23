@@ -1,33 +1,39 @@
 <div class="mt-5">
-  <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code"/>
-  <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" onclick="applyDiscount()"  type="button">Apply Coupon</button>
+  <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
+  <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" onclick="applyDiscount()" type="button">
+    Apply Coupon
+  </button>
 </div>
 
 <script>
-  fetch(window.Shopify.routes.root + 'cart.js', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-
-    function applyDiscount() {
-      var code = "WELCOME";
-      let discountApplyUrl = window.location.href+"/checkout?discount="+code+"&t="+Date.now();
-      fetch(discountApplyUrl)
-      .then(function(response) {
+  function applyDiscount() {
+    var code = 'WELCOME';
+    let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
+    fetch(discountApplyUrl)
+      .then(function (response) {
         return response.text();
-      }).then(function(data) {
+      })
+      .then(function (data) {
         console.log(data);
+        cartData();
       });
-    }
+  }
+
+  function cartData() {
+    fetch(window.Shopify.routes.root + 'cart.js', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
 </script>
