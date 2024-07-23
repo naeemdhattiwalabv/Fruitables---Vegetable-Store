@@ -41,6 +41,7 @@
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log(data);
           var discounts = data.items.length ? data.items[0].discounts : [];
           if (discounts.length && discounts[0].title) {
             code.value = discounts[0].title;
