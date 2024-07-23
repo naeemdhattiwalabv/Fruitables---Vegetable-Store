@@ -41,14 +41,14 @@
       })
         .then((response) => response.json())
         .then((data) => {
-          var discounts = data.items.length && data.items[0].discounts;
-          if (discounts.length && discounts[0].title !== '') {
+          var discounts = data.items.length ? data.items[0].discounts : [];
+          if (discounts.length && discounts[0].title) {
             code.value = discounts[0].title;
             removeDiscount.style.display = 'block';
             applyDiscount.style.display = 'none';
-            return true;
           } else {
-            return false;
+            removeDiscount.style.display = 'none';
+            applyDiscount.style.display = 'block';
           }
         })
         .catch((error) => {
@@ -64,35 +64,38 @@
         return;
       }
       let discountApplyUrl = window.location.origin + '/checkout?discount=' + code.value + '&t=' + Date.now();
-      fetch(discountApplyUrl).then((data) => {
-        fetch(window.Shopify.routes.root + 'cart.js', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            var discounts = data.items.length && data.items[0].discounts;
-            if (discounts.length && discounts[0].title !== '') {
-              location.reload();
-            } else {
-              errorNote.style.display = 'block';
-              errorNote.innerHTML = 'Coupon code is not valid!';
-            }
-          })
-          .catch((error) => {
-            console.error('Error:', error);
+      fetch(discountApplyUrl)
+        .then(() => {
+          return fetch(window.Shopify.routes.root + 'cart.js', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
           });
-      });
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          var discounts = data.items.length ? data.items[0].discounts : [];
+          if (discounts.length && discounts[0].title) {
+            location.reload();
+          } else {
+            errorNote.style.display = 'block';
+            errorNote.innerHTML = 'Coupon code is not valid!';
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     }
 
     function removeCoupon() {
       fetch('/discount/CLEAR')
-        .then((response) => response.text())
         .then(() => {
           cartData();
           location.reload();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
         });
     }
   });
