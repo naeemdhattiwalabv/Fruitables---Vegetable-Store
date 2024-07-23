@@ -42,9 +42,10 @@
         console.error('Error:', error);
       });
   }
-  
+
   function applyDiscount() {
     var code = document.getElementById('coupon_code').value;
+    console.log(code);
     var error_note = document.getElementById('error_note');
     if (code == null) {
       error_note.style.display = 'block';
