@@ -296,15 +296,15 @@
                       </fieldset>
                       <script>
                         function searchFilter() {
-                          var input, filter, ul, li, a, i, txtValue{{forloop.index}};
+                          var input, filter, ul, li, a, i, txtValue_{{forloop.index}};
                           input = document.getElementById('search_keyword');
                           filter = input.value.toUpperCase();
                           ul = document.getElementById('cat_list_{{ forloop.index }}');
                           li = ul.getElementsByTagName('li');
                           for (i = 0; i < li.length; i++) {
                             span = li[i].getElementsByTagName('span')[0];
-                            txtValue{{forloop.index}} = span.textContent || span.innerText;
-                            if (txtValue{{forloop.index}}.toUpperCase().indexOf(filter) > -1) {
+                            txtValue_{{forloop.index}} = span.textContent || span.innerText;
+                            if (txtValue_{{forloop.index}}.toUpperCase().indexOf(filter) > -1) {
                               li[i].style.display = '';
                             } else {
                               li[i].style.display = 'none';
