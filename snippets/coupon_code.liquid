@@ -12,6 +12,7 @@
 <script>
   function applyDiscount() {
     var code = document.getElementById('coupon_code').value;
+    var error_note = document.getElementById('error_note');
     if (code != null) {
       let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
       fetch(discountApplyUrl)
@@ -22,6 +23,10 @@
           cartData();
         });
       }
+    }
+    else {
+    
+    }
   }
 
   function removeDiscount() {
