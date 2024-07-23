@@ -23,62 +23,64 @@
 </div>
 
 <script>
-  cartData();
-  var code = document.getElementById('coupon-code');
-  var error_note = document.getElementById('error_note');
-  var apply_discount = document.getElementById('apply_discount');
-  var remove_discount = document.getElementById('remove_discount');
+  document.addEventListener('DOMContentLoaded', function () {
+    var code = document.getElementById('coupon-code');
+    var errorNote = document.getElementById('error-note');
+    var applyDiscount = document.getElementById('apply-discount');
+    var removeDiscount = document.getElementById('remove-discount');
 
-  function removeDiscount() {
-    fetch('/discount/CLEAR')
-      .then(function (response) {
-        return response.text();
-      })
-      .then(function (data) {
-        cartData();
-        location.reload();
-      });
-  }
+    applyDiscount.addEventListener('click', function () {
+      applyCoupon();
+    });
 
-  function cartData() {
-    fetch(window.Shopify.routes.root + 'cart.js', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        var discounts = data['items'][0]['discounts'];
-        if (discounts.length && discounts[0]['title'] != '') {
-          code.value = discounts[0]['title'];
-          remove_discount.style.display = 'block';
-          apply_discount.style.display = 'none';
-        }
-        //return data;
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }
+    removeDiscount.addEventListener('click', function () {
+      removeCoupon();
+    });
 
-  function applyDiscount() {
-    error_note.style.display = 'none';
-    if (code.value == '') {
-      error_note.style.display = 'block';
-      error_note.innerHTML = 'Coupon code is required!';
-      return false;
+    cartData();
+
+    function cartData() {
+      fetch(window.Shopify.routes.root + 'cart.js', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var discounts = data.items.length && data.items[0].discounts;
+          if (discounts.length && discounts[0].title !== '') {
+            code.value = discounts[0].title;
+            removeDiscount.style.display = 'block';
+            applyDiscount.style.display = 'none';
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     }
-    let discountApplyUrl = window.location.href + '/checkout?discount=' + code.value + '&t=' + Date.now();
-    fetch(discountApplyUrl)
-      .then(function (response) {
-        //return response.json();
-      })
-      .then(function (data) {
+
+    function applyCoupon() {
+      errorNote.style.display = 'none';
+      if (code.value === '') {
+        errorNote.style.display = 'block';
+        errorNote.innerHTML = 'Coupon code is required!';
+        return;
+      }
+      let discountApplyUrl = window.location.origin + '/checkout?discount=' + code.value + '&t=' + Date.now();
+      fetch(discountApplyUrl).then(() => {
         cartData();
         location.reload();
       });
-  }
+    }
+
+    function removeCoupon() {
+      fetch('/discount/CLEAR')
+        .then((response) => response.text())
+        .then(() => {
+          cartData();
+          location.reload();
+        });
+    }
+  });
 </script>
