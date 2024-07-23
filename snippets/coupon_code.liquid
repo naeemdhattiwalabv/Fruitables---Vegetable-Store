@@ -20,7 +20,7 @@
     var error_note = document.getElementById('error_note');
     if (code == null) {
       error_note.style.display = 'block';
-      error_note.innerHTML = "Coupon code is required!";
+      error_note.innerHTML = 'Coupon code is required!';
       return false;
     }
     let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
@@ -31,11 +31,10 @@
       .then(function (data) {
         cartData();
       });
-    }
   }
 
   function removeDiscount() {
-    fetch("/discount/CLEAR")
+    fetch('/discount/CLEAR')
       .then(function (response) {
         return response.text();
       })
