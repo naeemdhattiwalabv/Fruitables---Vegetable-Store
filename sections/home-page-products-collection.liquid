@@ -46,15 +46,13 @@
                         <div class="col-md-6 col-lg-4 col-xl-3">
                           <div class="rounded position-relative fruite-item">
                             <div class="fruite-img">
-                              {% for image in product.images %}
-                                <img
-                                  src="{{ image.src | img_url: 'master' }}"
-                                  class="img-fluid w-100 rounded-top"
-                                  alt=""
-                                  width="1200"
-                                  height="1200"
-                                >
-                              {% endfor %}
+                              <img
+                                src="{{ product.featured_image | img_url: 'master' }}"
+                                class="img-fluid w-100 rounded-top"
+                                alt=""
+                                width="1200"
+                                height="1200"
+                              >
                             </div>
                             <div
                               class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -68,12 +66,10 @@
                               </a>
                               <p>{{ product.description }}</p>
                               <div class="d-flex justify-content-between flex-lg-wrap">
-                                <p class="text-dark fs-5 fw-bold mb-0">{{ product.price | money }} / kg</p>
-                                <a
-                                  onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
-                                  class="btn border border-secondary rounded-pill px-3 text-primary"
-                                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
-                                >
+                                <p class="text-dark fs-5 fw-bold mb-0">
+                                  {{ product.price | money }} / {{ product.variants.first.weight_unit }}
+                                </p>
+                                {% render 'quick-add', product: product %}
                               </div>
                             </div>
                           </div>
@@ -93,15 +89,13 @@
                         <div class="col-md-6 col-lg-4 col-xl-3">
                           <div class="rounded position-relative fruite-item">
                             <div class="fruite-img">
-                              {% for image in product.images %}
-                                <img
-                                  src="{{ image.src | img_url: 'master' }}"
-                                  class="img-fluid w-100 rounded-top"
-                                  alt=""
-                                  height="1200"
-                                  width="1200"
-                                >
-                              {% endfor %}
+                              <img
+                                src="{{ product.featured_image | img_url: 'master' }}"
+                                class="img-fluid w-100 rounded-top"
+                                alt=""
+                                height="1200"
+                                width="1200"
+                              >
                             </div>
                             <div
                               class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -115,12 +109,10 @@
                               </a>
                               <p>{{ product.description }}</p>
                               <div class="d-flex justify-content-between flex-lg-wrap">
-                                <p class="text-dark fs-5 fw-bold mb-0">{{ product.price | money }} / kg</p>
-                                <a
-                                  onclick="addToCart({{ product.selected_or_first_available_variant.id }})"
-                                  class="btn border border-secondary rounded-pill px-3 text-primary"
-                                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
-                                >
+                                <p class="text-dark fs-5 fw-bold mb-0">
+                                  {{ product.price | money }} / {{ product.variants.first.weight_unit }}
+                                </p>
+                                {% render 'quick-add', product: product %}
                               </div>
                             </div>
                           </div>
