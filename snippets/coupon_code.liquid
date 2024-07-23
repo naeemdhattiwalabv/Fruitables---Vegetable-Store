@@ -26,6 +26,7 @@
   var error_note = document.getElementById('error_note');
   var applyDiscount = document.getElementById('apply_discount');
   var removeDiscount = document.getElementById('remove_discount');
+  
   function removeDiscount() {
     fetch('/discount/CLEAR')
       .then(function (response) {
