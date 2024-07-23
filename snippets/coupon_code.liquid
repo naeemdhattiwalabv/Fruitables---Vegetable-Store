@@ -23,8 +23,7 @@
 
   function removeDiscount() {
     var code = '';
-    let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
-    fetch(discountApplyUrl)
+    fetch("/discount/CLEAR");
       .then(function (response) {
         return response.text();
       })
