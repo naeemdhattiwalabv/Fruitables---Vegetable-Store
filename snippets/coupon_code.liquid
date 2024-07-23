@@ -61,7 +61,7 @@
         return;
       }
       let discountApplyUrl = window.location.origin + '/checkout?discount=' + code.value + '&t=' + Date.now();
-      console.log(discountApplyUrl);
+      console.log(fetch(discountApplyUrl));
       return false;
       fetch(discountApplyUrl).then((data) => {
         cartData();
