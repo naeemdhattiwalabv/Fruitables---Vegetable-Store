@@ -67,11 +67,7 @@
                               <p>{{ product.description }}</p>
                               <div class="d-flex justify-content-between flex-lg-wrap">
                                 <p class="text-dark fs-5 fw-bold mb-0">
-                                  {% render 'price',
-                                    product: card_product,
-                                    price_class: '',
-                                    show_compare_at_price: true
-                                  %}
+                                  {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
                                 </p>
                                 {% render 'quick-add', product: product %}
                               </div>
@@ -114,11 +110,7 @@
                               <p>{{ product.description }}</p>
                               <div class="d-flex justify-content-between flex-lg-wrap">
                                 <p class="text-dark fs-5 fw-bold mb-0">
-                                  {% render 'price',
-                                    product: card_product,
-                                    price_class: '',
-                                    show_compare_at_price: true
-                                  %}
+                                  {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
                                 </p>
                                 {% render 'quick-add', product: product %}
                               </div>
