@@ -16,6 +16,8 @@
 
 <script>
   cartData();
+  var code = document.getElementById('coupon-code').value;
+  var error_note = document.getElementById('error_note');
   function removeDiscount() {
     fetch('/discount/CLEAR')
       .then(function (response) {
@@ -37,7 +39,10 @@
         return response.json();
       })
       .then((data) => {
-        console.log(data['items'][0]['discounts'][0]['title']);
+        var discounts = data['items'][0]['discounts'];
+        if (discounts.length && discounts[0]['title'] != '') {
+          code = discounts.length && discounts[0]['title'];
+        }
         //return data;
       })
       .catch((error) => {
@@ -46,8 +51,6 @@
   }
 
   function applyDiscount() {
-    var code = document.getElementById('coupon-code').value;
-    var error_note = document.getElementById('error_note');
     error_note.style.display = 'none';
     if (code == '') {
       error_note.style.display = 'block';
