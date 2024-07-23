@@ -21,6 +21,18 @@
       });
   }
 
+  function removeDiscount() {
+    var code = '';
+    let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
+    fetch(discountApplyUrl)
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (data) {
+        cartData();
+      });
+  }
+
   function cartData() {
     fetch(window.Shopify.routes.root + 'cart.js', {
       method: 'GET',
