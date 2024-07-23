@@ -199,6 +199,7 @@
                     if (totalCartSelector)
                       totalCartSelector.innerHTML =
                         '<s>' + data.checkout.total_line_items_price + '</s>' + data.checkout.total_price;
+                        location.reload();
                   } else {
                     if (discountCodeValue) discountCodeValue.innerHTML = '';
                     clearLocalStorage();
