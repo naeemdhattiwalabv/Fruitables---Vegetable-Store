@@ -19,6 +19,7 @@
     var code = document.getElementById('coupon_code').value;
     var error_note = document.getElementById('error_note');
     if (code == null) {
+      error_note.style.display = 'block';
       error_note.innerHTML = "Coupon code is required!"
       return false;
     }
