@@ -296,9 +296,9 @@
                       </fieldset>
                       <script>
                         function searchFilter() {
-                          var input, filter, ul, li, a, i, txtValue;
-                          input = document.getElementById('search_keyword');
-                          filter = input.value.toUpperCase();
+                          var input_{{forloop.index }}, filter, ul, li, a, i, txtValue;
+                          input_{{forloop.index }} = document.getElementById('search_keyword');
+                          filter = input_{{forloop.index }}.value.toUpperCase();
                           ul = document.getElementById('cat_list_{{ forloop.index }}');
                           li = ul.getElementsByTagName('li');
                           for (i = 0; i < li.length; i++) {
