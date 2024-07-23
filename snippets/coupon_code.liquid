@@ -123,12 +123,13 @@
       discountCodeError.innerHTML = '';
       clearLocalStorage();
       fetch('/discount/CLEAR');
+      location.reload();
     }
     function clearLocalStorage() {
       if (discountCodeWrapper) discountCodeWrapper.style.display = 'none';
       if (totalCartSelector) totalCartSelector.innerHTML = JSON.parse(localStorage.discountCode).totalCart;
       localStorage.removeItem('discountCode');
-      location.reload();
+      
     }
     function applyDiscount(code) {
       if (applyBtn) {
