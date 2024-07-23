@@ -770,10 +770,7 @@
                       </div>
                     </div>
                     <div class="d-flex mb-2">
-                      <h5 class="fw-bold me-2">{{ product.price | money_without_trailing_zeros }}</h5>
-                      <h5 class="text-danger text-decoration-line-through">
-                        {{ product.variants.first.compare_at_price | money_without_trailing_zeros }}
-                      </h5>
+                      <h5 class="fw-bold me-2"></h5>
                     </div>
                   </div>
                 </div>
@@ -785,7 +782,8 @@
                     class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100"
                     aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
                   >
-                    {{ 'sections.featured_collection.view_all' | t }}
+                    {{ 'sections.featured_collection.view_all' | t -}}
+                    {%- render 'price', product: product, price_class: '', show_compare_at_price: true %}
                   </a>
                 {%- endif -%}
               </div>
