@@ -3,7 +3,12 @@
   <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" onclick="applyDiscount()" type="button">
     Apply Coupon
   </button>
-  <button class="btn border-secondary rounded-pill px-4 py-3 text-danger" onclick="removeDiscount()" type="button" style="display:none">
+  <button
+    class="btn border-secondary rounded-pill px-4 py-3 text-danger"
+    onclick="removeDiscount()"
+    type="button"
+    style="display:none"
+  >
     Remove Coupon
   </button>
   <p class="mb-0 mt-4 text-danger" id="error_note"></p>
@@ -13,7 +18,10 @@
   function applyDiscount() {
     var code = document.getElementById('coupon_code').value;
     var error_note = document.getElementById('error_note');
-    if (code != null) {
+    if (code == null) {
+      error_note.content = "Coupon code is required!"
+      return false;
+    }
       let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
       fetch(discountApplyUrl)
         .then(function (response) {
@@ -23,9 +31,6 @@
           cartData();
         });
       }
-    }
-    else {
-      error_note.content = "Coupon code is required!"
     }
   }
 
