@@ -11,7 +11,7 @@
   >
     Remove Coupon
   </button>
-  <p class="mb-0 mt-4 text-danger" id="error_note" style="display:none"></p>
+  <p class="mb-0 mt-4 text-danger" id="error_note" style="display:none">123</p>
 </div>
 
 <script>
@@ -23,15 +23,14 @@
       error_note.innerHTML = "Coupon code is required!"
       return false;
     }
-      let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
-      fetch(discountApplyUrl)
-        .then(function (response) {
-          return response.text();
-        })
-        .then(function (data) {
-          cartData();
-        });
-      }
+    let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
+    fetch(discountApplyUrl)
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (data) {
+        cartData();
+      });
     }
   }
 
