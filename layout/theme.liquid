@@ -397,8 +397,9 @@
       function searchFilterPdp() {
         var input, filter, ul, li, a, i, txtValue;
         input = document.getElementById('search_keyword');
-        console.log(input);
+        
         filter = input.value.toUpperCase();
+        console.log(filter);
         ul = document.getElementById('cat_list');
         li = ul.getElementsByTagName('li');
         for (i = 0; i < li.length; i++) {
