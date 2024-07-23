@@ -3,6 +3,9 @@
   <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" onclick="applyDiscount()" type="button">
     Apply Coupon
   </button>
+  <button class="btn border-secondary rounded-pill px-4 py-3 text-danger" onclick="applyDiscount()" type="button">
+    Remove Coupon
+  </button>
 </div>
 
 <script>
@@ -14,7 +17,6 @@
         return response.text();
       })
       .then(function (data) {
-        console.log(data);
         cartData();
       });
   }
