@@ -40,6 +40,7 @@
       })
       .then((data) => {
         var discounts = data['items'][0]['discounts'];
+        console.log(discounts.length);
         if (discounts.length && discounts[0]['title'] != '') {
           code = discounts.length && discounts[0]['title'];
           console.log('test');
