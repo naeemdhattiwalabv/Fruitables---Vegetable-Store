@@ -26,7 +26,7 @@
   var error_note = document.getElementById('error_note');
   var applyDiscount = document.getElementById('apply_discount');
   var removeDiscount = document.getElementById('remove_discount');
-  
+
   function removeDiscount() {
     fetch('/discount/CLEAR')
       .then(function (response) {
@@ -49,7 +49,6 @@
       })
       .then((data) => {
         var discounts = data['items'][0]['discounts'];
-        console.log(discounts.length);
         if (discounts.length && discounts[0]['title'] != '') {
           code.value = discounts[0]['title'];
           removeDiscount.style.display = 'block';
