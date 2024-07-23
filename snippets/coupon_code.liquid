@@ -16,7 +16,7 @@
 
 <script>
   cartData();
-  var code = document.getElementById('coupon-code').value;
+  var code = document.getElementById('coupon-code');
   var error_note = document.getElementById('error_note');
   function removeDiscount() {
     fetch('/discount/CLEAR')
