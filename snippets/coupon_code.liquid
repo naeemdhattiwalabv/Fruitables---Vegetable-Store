@@ -54,12 +54,12 @@
 
   function applyDiscount() {
     error_note.style.display = 'none';
-    if (code == '') {
+    if (code.value == '') {
       error_note.style.display = 'block';
       error_note.innerHTML = 'Coupon code is required!';
       return false;
     }
-    let discountApplyUrl = window.location.href + '/checkout?discount=' + code + '&t=' + Date.now();
+    let discountApplyUrl = window.location.href + '/checkout?discount=' + code.value + '&t=' + Date.now();
     fetch(discountApplyUrl)
       .then(function (response) {
         return response.json();
