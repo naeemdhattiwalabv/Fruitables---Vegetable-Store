@@ -42,7 +42,7 @@
         var discounts = data['items'][0]['discounts'];
         console.log(discounts.length);
         if (discounts.length && discounts[0]['title'] != '') {
-          code = discounts[0]['title'];
+          code.value = discounts[0]['title'];
           console.log(code);
         }
         //return data;
