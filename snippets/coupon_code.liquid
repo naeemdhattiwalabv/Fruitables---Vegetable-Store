@@ -19,6 +19,7 @@
     .catch((error) => {
       console.error('Error:', error);
     });
+
     function applyDiscount() {
       var code = "WELCOME";
       let discountApplyUrl = window.location.href+"/checkout?discount="+code+"&t="+Date.now();
@@ -28,4 +29,5 @@
       }).then(function(data) {
         console.log(data);
       });
+    }
 </script>
