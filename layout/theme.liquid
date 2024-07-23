@@ -393,47 +393,41 @@
           .catch((error) => console.error('Error:', error));
       }
     </script>
-    {% if template.name == 'product' %}
-      <script>
-        function searchFilter() {
-          var input, filter, ul, li, a, i, txtValue;
-          input = document.getElementById('search_keyword');
-          filter = input.value.toUpperCase();
-          ul = document.getElementById('cat_list');
-          li = ul.getElementsByTagName('li');
+    <script>
+      function searchFilter() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('search_keyword');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById('cat_list');
+        li = ul.getElementsByTagName('li');
 
-          // Loop through all list items, and hide those who don't match the search query
-          for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName('a')[0];
-            txtValue = a.textContent || a.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = '';
-            } else {
-              li[i].style.display = 'none';
-            }
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName('a')[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = '';
+          } else {
+            li[i].style.display = 'none';
           }
         }
-      </script>
-    {% else %}
-      <script>
-        function searchFilter() {
-          var input, filter, ul, li, a, i, txtValue;
-          input = document.getElementById('search_keyword');
-          filter = input.value.toUpperCase();
-          ul = document.getElementById('cat_list');
-          li = ul.getElementsByTagName('li');
-          for (i = 0; i < li.length; i++) {
-            span = li[i].getElementsByTagName('span')[0];
-            txtValue = span.textContent || span.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = '';
-            } else {
-              li[i].style.display = 'none';
-            }
+      }
+      function searchFilterPdp() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('search_keyword');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById('cat_list');
+        li = ul.getElementsByTagName('li');
+        for (i = 0; i < li.length; i++) {
+          span = li[i].getElementsByTagName('span')[0];
+          txtValue = span.textContent || span.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = '';
+          } else {
+            li[i].style.display = 'none';
           }
         }
-      </script>
-    {% endif %}
+    </script>
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
