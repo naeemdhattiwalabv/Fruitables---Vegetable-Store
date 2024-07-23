@@ -28,7 +28,9 @@
                       {{ product.metafields.judgeme.badge }}
                     </div>
                   </div>
-                  <h4 class="mb-3">{{ product.price | money }}</h4>
+                  <h4 class="mb-3">
+                    {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
+                  </h4>
                   {% render 'quick-add', product: product %}
                 </div>
               </div>
@@ -51,7 +53,9 @@
                     {{ product.metafields.judgeme.badge }}
                   </div>
                 </div>
-                <h4 class="mb-3">{{ product.price | money }}</h4>
+                <h4 class="mb-3">
+                  {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
+                </h4>
                 {% render 'quick-add', product: product %}
               </div>
             </div>
