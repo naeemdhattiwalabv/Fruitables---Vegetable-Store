@@ -25,17 +25,12 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var code = document.getElementById('coupon-code');
-    var errorNote = document.getElementById('error-note');
-    var applyDiscount = document.getElementById('apply-discount');
-    var removeDiscount = document.getElementById('remove-discount');
+    var errorNote = document.getElementById('error_note');
+    var applyDiscount = document.getElementById('apply_discount');
+    var removeDiscount = document.getElementById('remove_discount');
 
-    applyDiscount.addEventListener('click', function () {
-      applyCoupon();
-    });
-
-    removeDiscount.addEventListener('click', function () {
-      removeCoupon();
-    });
+    applyDiscount.addEventListener('click', applyCoupon);
+    removeDiscount.addEventListener('click', removeCoupon);
 
     cartData();
 
