@@ -178,7 +178,6 @@
                   if (data.checkout && data.checkout.applied_discounts.length > 0) {
                     let discountApplyUrl = '/discount/' + code + '?v=' + Date.now() + '&redirect=/checkout/';
                     fetch(discountApplyUrl, {}).then(function (response) {
-                      location.reload();
                       return response.text();
                     });
                     if (discountCodeWrapper) discountCodeWrapper.style.display = 'inline';
