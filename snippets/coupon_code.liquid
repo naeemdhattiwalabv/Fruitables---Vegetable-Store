@@ -117,13 +117,13 @@
       clearBtn.addEventListener('click', function (e) {
         e.preventDefault();
         clearDiscount();
+        location.reload();
       });
     function clearDiscount() {
       discountCodeValue.innerHTML = '';
       discountCodeError.innerHTML = '';
       clearLocalStorage();
       fetch('/discount/CLEAR');
-      location.reload();
     }
     function clearLocalStorage() {
       if (discountCodeWrapper) discountCodeWrapper.style.display = 'none';
