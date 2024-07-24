@@ -244,7 +244,8 @@
     <div class="row">
       <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
         <span class="text-light">
-          <small>&copy; {{ shop.name | link_to: routes.root_url | append: "," }}</small>,
+          <i class="fas fa-copyright text-light me-2"></i>
+          <small>{{ shop.name | link_to: routes.root_url | append: "," }}</small>,
           <small>{{ 'All right reserved.' }}</small>
         </span>
       </div>
