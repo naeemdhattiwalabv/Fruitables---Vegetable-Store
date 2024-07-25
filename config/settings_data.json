@@ -244,7 +244,7 @@
       },
       "scheme-4": {
         "settings": {
-          "background": "#121212",
+          "background": "#ffb524",
           "background_gradient": "radial-gradient(rgba(255, 181, 36, 1), rgba(255, 204, 75, 1) 100%)",
           "text": "#ffffff",
           "button": "#ffffff",
