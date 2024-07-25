@@ -113,7 +113,7 @@
                 <p>{{ recommendation.description }}</p>
                 <div class="d-flex justify-content-between flex-lg-wrap">
                   <p class="text-dark fs-5 fw-bold">
-                    {{ recommendation.price | money }} / {{ recommendation.variants.first.weight_unit }}
+                    {% render 'price', product: recommendation, price_class: '', show_compare_at_price: true %}
                   </p>
                   <a
                     onclick="addToCart({{ recommendation.selected_or_first_available_variant.id }})"
