@@ -115,11 +115,7 @@
                   <p class="text-dark fs-5 fw-bold">
                     {% render 'price', product: recommendation, price_class: '', show_compare_at_price: true %}
                   </p>
-                  <a
-                    onclick="addToCart({{ recommendation.selected_or_first_available_variant.id }})"
-                    class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
-                  >
+                  {% render 'quick-add', product: recommendation %}
                 </div>
               </div>
             </div>
