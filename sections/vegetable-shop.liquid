@@ -19,14 +19,14 @@
               {%- if product.available == false -%}
                 <span
                   id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
-                  class="badge badge--bottom-left bg-primary"
+                  class=" badge--bottom-left bg-primary"
                 >
                   {{- 'products.product.sold_out' | t -}}
                 </span>
               {%- elsif product.compare_at_price > product.price and product.available -%}
                 <span
                   id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
-                  class="badge badge--bottom-left bg-primary"
+                  class=" badge--bottom-left bg-primary"
                 >
                   {{- 'products.product.on_sale' | t -}}
                 </span>
