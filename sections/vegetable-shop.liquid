@@ -14,15 +14,32 @@
               height="1200"
             >
           </div>
-          <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-            {{ product.tags }}
+          <div class="card__badge {{ settings.badge_position }}">
+            {%- if product.available == false -%}
+              <span
+                id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
+                class="badge--bottom-left bg-primary"
+              >
+                {{- 'products.product.sold_out' | t -}}
+              </span>
+            {%- elsif product.compare_at_price > product.price and product.available -%}
+              <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+                <span
+                  id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
+                  class="badge--bottom-left bg-primary"
+                >
+                  {{- 'products.product.on_sale' | t -}}
+                </span>
+              </div>
+            {%- endif -%}
           </div>
+
           <div class="p-4 rounded-bottom">
             <h4>{{ product.title }}</h4>
             <p>{{ product.description }}</p>
             <div class="d-flex justify-content-between flex-lg-wrap">
               <p class="text-dark fs-5 fw-bold mb-0">
-                {{ product.price | money_without_trailing_zeros }} / {{ product.variants.first.weight_unit }}
+                {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
               </p>
               {% render 'quick-add', product: product %}
             </div>

@@ -86,24 +86,36 @@
                   width="1200"
                 >
               </div>
-              <div
-                class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                style="top: 10px; right: 10px;"
-              >
-                {{ recommendation.tags }}
+              <div class="card__badge {{ settings.badge_position }}">
+                {%- if recommendation.available == false -%}
+                  <span
+                    id="NoMediaStandardBadge-{{ section.id }}-{{ recommendation.id }}"
+                    class="badge--bottom-left bg-primary"
+                  >
+                    {{- 'products.product.sold_out' | t -}}
+                  </span>
+                {%- elsif recommendation.compare_at_price > recommendation.price and recommendation.available -%}
+                  <div
+                    class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                    style="top: 10px; right: 10px;"
+                  >
+                    <span
+                      id="NoMediaStandardBadge-{{ section.id }}-{{ recommendation.id }}"
+                      class="badge--bottom-left bg-primary"
+                    >
+                      {{- 'products.product.on_sale' | t -}}
+                    </span>
+                  </div>
+                {%- endif -%}
               </div>
               <div class="p-4 pb-0 rounded-bottom">
                 <h4>{{ recommendation.title }}</h4>
                 <p>{{ recommendation.description }}</p>
                 <div class="d-flex justify-content-between flex-lg-wrap">
                   <p class="text-dark fs-5 fw-bold">
-                    {{ recommendation.price | money }} / {{ recommendation.variants.first.weight_unit }}
+                    {% render 'price', product: recommendation, price_class: '', show_compare_at_price: true %}
                   </p>
-                  <a
-                    onclick="addToCart({{ recommendation.selected_or_first_available_variant.id }})"
-                    class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a
-                  >
+                  {% render 'quick-add', product: recommendation %}
                 </div>
               </div>
             </div>
