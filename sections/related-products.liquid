@@ -87,20 +87,20 @@
                 >
               </div>
               <div class="card__badge {{ settings.badge_position }}">
-                {%- if product.available == false -%}
+                {%- if recommendation.available == false -%}
                   <span
-                    id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
+                    id="NoMediaStandardBadge-{{ section.id }}-{{ recommendation.id }}"
                     class="badge--bottom-left bg-primary"
                   >
                     {{- 'products.product.sold_out' | t -}}
                   </span>
-                {%- elsif product.compare_at_price > product.price and product.available -%}
+                {%- elsif recommendation.compare_at_price > recommendation.price and recommendation.available -%}
                   <div
                     class="text-white bg-primary px-3 py-1 rounded position-absolute"
                     style="top: 10px; right: 10px;"
                   >
                     <span
-                      id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
+                      id="NoMediaStandardBadge-{{ section.id }}-{{ recommendation.id }}"
                       class="badge--bottom-left bg-primary"
                     >
                       {{- 'products.product.on_sale' | t -}}
