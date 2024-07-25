@@ -14,25 +14,26 @@
               height="1200"
             >
           </div>
-          <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-            <div class="card__badge {{ settings.badge_position }}">
-              {%- if product.available == false -%}
+          <div class="card__badge {{ settings.badge_position }}">
+            {%- if product.available == false -%}
+              <span
+                id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
+                class="badge--bottom-left bg-primary"
+              >
+                {{- 'products.product.sold_out' | t -}}
+              </span>
+            {%- elsif product.compare_at_price > product.price and product.available -%}
+              <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
                 <span
                   id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
-                  class=" badge--bottom-left bg-primary"
-                >
-                  {{- 'products.product.sold_out' | t -}}
-                </span>
-              {%- elsif product.compare_at_price > product.price and product.available -%}
-                <span
-                  id="NoMediaStandardBadge-{{ section.id }}-{{ product.id }}"
-                  class=" badge--bottom-left bg-primary"
+                  class="badge--bottom-left bg-primary"
                 >
                   {{- 'products.product.on_sale' | t -}}
                 </span>
-              {%- endif -%}
-            </div>
+              </div>
+            {%- endif -%}
           </div>
+
           <div class="p-4 rounded-bottom">
             <h4>{{ product.title }}</h4>
             <p>{{ product.description }}</p>
