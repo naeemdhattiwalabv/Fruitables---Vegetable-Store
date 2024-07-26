@@ -204,7 +204,7 @@
                                 style="--animation-order: {{ forloop.index }};"
                               {% endif %}
                             >
-                              <h6 style="display:none">{{ product.title }}</h6>
+                              <h6>{{ product.title }}</h6>
                               {% render 'card-product',
                                 card_product: product,
                                 media_aspect_ratio: section.settings.image_ratio,
