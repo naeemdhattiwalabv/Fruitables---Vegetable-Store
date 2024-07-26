@@ -414,7 +414,7 @@
         div = document.getElementById('product-grid');
         childDiv = div.getElementsByTagName('div');
         for (i = 0; i < childDiv.length; i++) {
-          span = childDiv[i].getElementsByTagName('a')[0];
+          span = childDiv[i].getElementsByTagName('h4')[1];
           txtValue = span.textContent || span.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             childDiv[i].style.display = '';
