@@ -197,8 +197,7 @@
                             {%- if forloop.index > 2 -%}
                               {%- assign lazy_load = true -%}
                             {%- endif -%}
-                            <div
-                              id="product-grid-content"
+                            <li
                               class="col-md-6 col-lg-6 col-xl-4 grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} col-md-6 col-lg-6 col-xl-4"
                               {% if settings.animations_reveal_on_scroll %}
                                 data-cascade
@@ -218,7 +217,7 @@
                                 quick_add: section.settings.quick_add,
                                 section_id: section.id
                               %}
-                            </div>
+                            </li>
                             {%- assign skip_card_product_styles = true -%}
                           {%- endfor -%}
                         </div>
