@@ -180,7 +180,7 @@
                         class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
                       >
                         <div class="loading-overlay gradient"></div>
-                        <div
+                        <ul
                           id="product-grid"
                           data-id="{{ section.id }}"
                           class="
@@ -220,7 +220,7 @@
                             </li>
                             {%- assign skip_card_product_styles = true -%}
                           {%- endfor -%}
-                        </div>
+                        </ul>
                         <div class="col-12">
                           {%- if paginate.pages > 1 -%}
                             {% render 'new-pagination', paginate: paginate, anchor: '' %}
