@@ -408,13 +408,13 @@
         }
       }
       function searchProduct() {
-        var input, filter, div, childDiv, spana, i, txtValue;
+        var input, filter, div, childDiv, span, i, txtValue;
         input = document.getElementById('search_product');
         filter = input.value.toUpperCase();
         div = document.getElementById('product-grid');
         childDiv = div.getElementsByTagName('div');
         for (i = 0; i < childDiv.length; i++) {
-          span = childDiv[i].getElementsByTagName('span')[0];
+          span = childDiv[i].getElementsByTagName('h6')[0];
           txtValue = span.textContent || span.innerText;
           console.log(txtValue);
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
