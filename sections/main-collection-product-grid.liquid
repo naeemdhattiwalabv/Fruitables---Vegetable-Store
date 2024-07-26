@@ -140,16 +140,20 @@
                   </div>
                 </div>
                 <div class="col-lg-9">
-                  <div class="input-group w-100 mx-auto d-flex">
-                    <input
-                      type="search"
-                      class="form-control p-3"
-                      id="search_keyword"
-                      onkeyup="searchFilter()"
-                      placeholder="keywords"
-                      aria-describedby="search-icon-1"
-                    >
-                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                  <div class="row g-4">
+                    <div class="col-xl-3">
+                      <div class="input-group w-100 mx-auto d-flex">
+                        <input
+                          type="search"
+                          class="form-control p-3"
+                          id="search_keyword"
+                          onkeyup="searchFilter()"
+                          placeholder="keywords"
+                          aria-describedby="search-icon-1"
+                        >
+                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                      </div>
+                    </div>
                   </div>
                   <div
                     class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
