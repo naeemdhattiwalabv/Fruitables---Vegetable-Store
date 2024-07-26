@@ -412,7 +412,7 @@
         input = document.getElementById('search_product');
         filter = input.value.toUpperCase();
         div = document.getElementById('product-grid');
-        childDiv = div.getElementsById('li');
+        childDiv = div.getElementsByTagName('li');
         console.log(childDiv.length);
         for (i = 0; i < childDiv.length; i++) {
           span = childDiv[i].getElementsByTagName('h6')[0];
