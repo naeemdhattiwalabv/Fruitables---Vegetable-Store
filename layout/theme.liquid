@@ -412,17 +412,17 @@
         input = document.getElementById('search_product');
         filter = input.value.toUpperCase();
         console.log(filter);
-        {% comment %} ul = document.getElementById('cat_list');
-        li = ul.getElementsByTagName('li');
-        for (i = 0; i < li.length; i++) {
-          span = li[i].getElementsByTagName('span')[0];
+        div = document.getElementById('product-grid');
+        childDiv = div.getElementsByTagName('div');
+        for (i = 0; i < childDiv.length; i++) {
+          span = childDiv[i].getElementsByTagName('a')[1];
           txtValue = span.textContent || span.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = '';
+            childDiv[i].style.display = 'blank';
           } else {
-            li[i].style.display = 'none';
+            childDiv[i].style.display = 'none';
           }
-        }{% endcomment %}
+        }
       }
     </script>
     {%- if settings.predictive_search_enabled -%}
