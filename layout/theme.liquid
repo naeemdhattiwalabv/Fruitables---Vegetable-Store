@@ -414,9 +414,9 @@
         div = document.getElementById('product-grid');
         childDiv = div.getElementsByTagName('div');
         for (i = 0; i < childDiv.length; i++) {
-          span = childDiv[i].getElementsByTagName('input')[0];          
-          txtValue = span.value || span.value;
-          console.log(span);
+          span = childDiv[i].getElementsByTagName('span')[0];
+          txtValue = span.textContent || span.innerText;
+          console.log(txtValue);
           {% comment %} if (txtValue.toUpperCase().indexOf(filter) > -1) {
             childDiv[i].style.display = '';
           } else {
