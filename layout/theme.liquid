@@ -417,7 +417,7 @@
           span = childDiv[i].getElementsByTagName('a')[0];
           txtValue = span.textContent || span.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            childDiv[i].style.display = 'blank';
+            childDiv[i].style.display = '';
           } else {
             childDiv[i].style.display = 'none';
           }
