@@ -414,7 +414,7 @@
         div = document.getElementById('product-grid');
         childDiv = div.getElementsByTagName('div');
         for (i = 0; i < childDiv.length; i++) {
-          span = childDiv[i].getElementsByTagName('h6')[0];
+          span = childDiv[0].getElementsByTagName('h6')[0];
           txtValue = span.textContent || span.innerText;
           console.log(txtValue);
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
