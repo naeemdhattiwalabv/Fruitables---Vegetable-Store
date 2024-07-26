@@ -414,14 +414,14 @@
         div = document.getElementById('product-grid');
         childDiv = div.getElementsByTagName('div');
         for (i = 0; i < childDiv.length; i++) {
-          span = childDiv[i].getElementsByTagName('input')[0];
-          console.log(span);
+          span = childDiv[i].getElementsByTagName('input')[0];          
           txtValue = span.value || span.value;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          console.log(span);
+          {% comment %} if (txtValue.toUpperCase().indexOf(filter) > -1) {
             childDiv[i].style.display = '';
           } else {
             childDiv[i].style.display = 'none';
-          }
+          } {% endcomment %}
         }
       }
     </script>
