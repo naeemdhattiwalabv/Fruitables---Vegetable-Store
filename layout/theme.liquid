@@ -406,22 +406,23 @@
             li[i].style.display = 'none';
           }
         }
-        function searchProduct() {
-          var input, filter, ul, li, a, i, txtValue;
-          input = document.getElementById('search_product');
-          filter = input.value.toUpperCase();
-          console.log(filter);
-          {% comment %} ul = document.getElementById('cat_list');
-          li = ul.getElementsByTagName('li');
-          for (i = 0; i < li.length; i++) {
-            span = li[i].getElementsByTagName('span')[0];
-            txtValue = span.textContent || span.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = '';
-            } else {
-              li[i].style.display = 'none';
-            } {% endcomment %}
+      }
+      function searchProduct() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('search_product');
+        filter = input.value.toUpperCase();
+        console.log(filter);
+        {% comment %} ul = document.getElementById('cat_list');
+        li = ul.getElementsByTagName('li');
+        for (i = 0; i < li.length; i++) {
+          span = li[i].getElementsByTagName('span')[0];
+          txtValue = span.textContent || span.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = '';
+          } else {
+            li[i].style.display = 'none';
           }
+        }{% endcomment %}
       }
     </script>
     {%- if settings.predictive_search_enabled -%}
