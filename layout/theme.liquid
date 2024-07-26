@@ -415,13 +415,13 @@
         childDiv = div.getElementsByTagName('li');
         console.log(childDiv.length);
         for (i = 0; i < childDiv.length; i++) {
-          span = childDiv[0].getElementsByTagName('h6')[0];
+          span = childDiv[i].getElementsByTagName('h6')[0];
           txtValue = span.innerText;
           console.log(txtValue);
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            childDiv[0].style.display = '';
+            childDiv[i].style.display = '';
           } else {
-            childDiv[0].style.display = 'none';
+            childDiv[i].style.display = 'none';
           }
         }
       }
