@@ -418,9 +418,9 @@
           txtValue = span.textContent || span.innerText;
           console.log(txtValue);
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            childDiv[i].style.display = '';
+            childDiv[0].style.display = '';
           } else {
-            childDiv[i].style.display = 'none';
+            childDiv[0].style.display = 'none';
           }
         }
       }
