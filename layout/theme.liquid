@@ -416,12 +416,12 @@
         for (i = 0; i < childDiv.length; i++) {
           span = childDiv[i].getElementsByTagName('input')[0];
           console.log(span);
-          {% comment %} txtValue = span.textContent || span.innerText;
+          txtValue = span.value || span.value;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             childDiv[i].style.display = '';
           } else {
             childDiv[i].style.display = 'none';
-          } {% endcomment %}
+          }
         }
       }
     </script>
