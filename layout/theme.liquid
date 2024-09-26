@@ -7,8 +7,8 @@
     <meta name="theme-color" content="">
     {% if current_page > 1 %}
       {% assign canonical_url = canonical_url | split: "?" %}
-      {% assign result_string = canonical_url[0] %}
-      <link rel="canonical" href="{{ result_string }}">
+      {% assign canonical_url = canonical_url[0] %}
+      <link rel="canonical" href="{{ canonical_url }}">
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
