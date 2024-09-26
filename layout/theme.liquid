@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     {% if current_page > 1 %}
-      {% assign test "?page=" %}
-      {{ test }}
+      {% assign page123 = "?page=" %}
+      {{ page123 }}
       <link rel="canonical" href="{{ canonical_url | remove: '?page=2' }}">
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
