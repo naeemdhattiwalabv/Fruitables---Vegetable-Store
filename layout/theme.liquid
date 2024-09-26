@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     {% if current_page > 1 %}
-      <link rel="canonical" href="{{ canonical_url | remove: '?page={{ current_page }}' }}">
+      {% assign original_string = "example_text@remove_this" %}
+{% assign split_string = original_string | split: "@" %}
+{% assign result_string = split_string[0] %}
+
+{{ result_string }}
+
+      <link rel="canonical" href="{{ canonical_url | remove: '?page=' }}">
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
