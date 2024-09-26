@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     {% if current_page > 1 %}
+      {{ 'test' }}
       {% assign canonical_url = canonical_url | split: "?" | first %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% else %}
