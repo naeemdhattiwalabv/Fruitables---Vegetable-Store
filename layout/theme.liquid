@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     {% if current_page > 1 %}
-      <link rel="canonical" href="{{ canonical_url | remove: '?page={{ current_page }}' | append: '' }}">
+      <link rel="canonical" href="{{ canonical_url | remove: '?page=' | split: '&' | first }}">
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
