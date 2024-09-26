@@ -140,6 +140,20 @@
                   </div>
                 </div>
                 <div class="col-lg-9">
+                  <br>
+                  <div class="row g-4">
+                    <div class="input-group w-100 mx-auto d-flex">
+                      <input
+                        type="text"
+                        class="form-control p-3 col-md-6 col-lg-6 col-xl-4"
+                        id="search_product"
+                        onkeyup="searchProduct()"
+                        placeholder="Search Product"
+                        aria-describedby="search-icon-1"
+                      >
+                    </div>
+                  </div>
+                  <br>
                   <div
                     class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                     id="ProductGridContainer"
@@ -170,7 +184,7 @@
                         class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
                       >
                         <div class="loading-overlay gradient"></div>
-                        <div
+                        <ul
                           id="product-grid"
                           data-id="{{ section.id }}"
                           class="
@@ -187,13 +201,14 @@
                             {%- if forloop.index > 2 -%}
                               {%- assign lazy_load = true -%}
                             {%- endif -%}
-                            <div
+                            <li
                               class="col-md-6 col-lg-6 col-xl-4 grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} col-md-6 col-lg-6 col-xl-4"
                               {% if settings.animations_reveal_on_scroll %}
                                 data-cascade
                                 style="--animation-order: {{ forloop.index }};"
                               {% endif %}
                             >
+                              <h6 style="display:none">{{ product.title }}</h6>
                               {% render 'card-product',
                                 card_product: product,
                                 media_aspect_ratio: section.settings.image_ratio,
@@ -206,10 +221,10 @@
                                 quick_add: section.settings.quick_add,
                                 section_id: section.id
                               %}
-                            </div>
+                            </li>
                             {%- assign skip_card_product_styles = true -%}
                           {%- endfor -%}
-                        </div>
+                        </ul>
                         <div class="col-12">
                           {%- if paginate.pages > 1 -%}
                             {% render 'new-pagination', paginate: paginate, anchor: '' %}
