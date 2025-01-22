@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "home_page_banner": {
@@ -15,24 +15,24 @@
         "homepage_banner_slider_dAyzAf": {
           "type": "homepage_banner_slider",
           "settings": {
-            "slider_image": "shopify:\/\/shop_images\/hero-img-1.png",
-            "slider_url": "shopify:\/\/collections\/fruits",
+            "slider_image": "shopify://shop_images/hero-img-1.png",
+            "slider_url": "shopify://collections/fruits",
             "button_text": "Fruits"
           }
         },
         "homepage_banner_slider_8NkaJr": {
           "type": "homepage_banner_slider",
           "settings": {
-            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
-            "slider_url": "shopify:\/\/collections\/vegetables",
+            "slider_image": "shopify://shop_images/hero-img-2.jpg",
+            "slider_url": "shopify://collections/vegetables",
             "button_text": "Vegtables"
           }
         },
         "homepage_banner_slider_ezpimw": {
           "type": "homepage_banner_slider",
           "settings": {
-            "slider_image": "shopify:\/\/shop_images\/hero-img-2.jpg",
-            "slider_url": "shopify:\/\/products\/apricots",
+            "slider_image": "shopify://shop_images/hero-img-2.jpg",
+            "slider_url": "shopify://products/apricots",
             "button_text": "Apricots"
           }
         }
@@ -61,7 +61,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -93,7 +93,7 @@
         "featured_section_MnfQE3": {
           "type": "featured_section",
           "settings": {
-            "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"><\/i>",
+            "featured_icon": "<i class=\"fas fa-car-side fa-3x text-white\"></i>",
             "featured_heading": "Free Shipping",
             "featured_content": "Free on order over $300"
           }
@@ -101,7 +101,7 @@
         "featured_section_CPaH8F": {
           "type": "featured_section",
           "settings": {
-            "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"><\/i>",
+            "featured_icon": "<i class=\"fas fa-user-shield fa-3x text-white\"></i>",
             "featured_heading": "Security Payment",
             "featured_content": "100% security payment"
           }
@@ -109,7 +109,7 @@
         "featured_section_PidfC4": {
           "type": "featured_section",
           "settings": {
-            "featured_icon": "<i class=\"fas fa-exchange-alt fa-3x text-white\"><\/i>",
+            "featured_icon": "<i class=\"fas fa-exchange-alt fa-3x text-white\"></i>",
             "featured_heading": "30 Day Return",
             "featured_content": "30 day money guarantee"
           }
@@ -117,8 +117,8 @@
         "featured_section_NYYgM3": {
           "type": "featured_section",
           "settings": {
-            "featured_icon": "<i class=\"fa fa-phone-alt fa-3x text-white\"><\/i>",
-            "featured_heading": "24\/7 Support",
+            "featured_icon": "<i class=\"fa fa-phone-alt fa-3x text-white\"></i>",
+            "featured_heading": "24/7 Support",
             "featured_content": "Support every time fast"
           }
         }
@@ -129,8 +129,7 @@
         "featured_section_PidfC4",
         "featured_section_NYYgM3"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "home_page_products_collection": {
       "type": "home-page-products-collection",
@@ -173,8 +172,7 @@
         "product_collection_VpreMb",
         "product_collection_VArKhW"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -208,15 +206,15 @@
     "deal_section_fLRf7p": {
       "type": "deal-section",
       "settings": {
-        "image_1": "shopify:\/\/shop_images\/featur-1.jpg",
+        "image_1": "shopify://shop_images/featur-1.jpg",
         "link_1": "#",
         "title_1": "Fresh Apples",
         "promotion_1": "20% OFF",
-        "image_2": "shopify:\/\/shop_images\/featur-2.jpg",
+        "image_2": "shopify://shop_images/featur-2.jpg",
         "link_2": "",
         "title_2": "Tasty Fruits",
         "promotion_2": "Free delivery",
-        "image_3": "shopify:\/\/shop_images\/featur-3.jpg",
+        "image_3": "shopify://shop_images/featur-3.jpg",
         "link_3": "",
         "title_3": "Exotic Vegetable",
         "promotion_3": "Discount $30"
@@ -249,7 +247,7 @@
         "fact_section_GKteej": {
           "type": "fact_section",
           "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "icon": "<i class=\"fa fa-users text-secondary\"></i>",
             "fact_name": "satisfied customers",
             "fact_value": "1963"
           }
@@ -257,7 +255,7 @@
         "fact_section_C8VwiF": {
           "type": "fact_section",
           "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "icon": "<i class=\"fa fa-users text-secondary\"></i>",
             "fact_name": "quality of service",
             "fact_value": "99%"
           }
@@ -265,7 +263,7 @@
         "fact_section_U3n9Vd": {
           "type": "fact_section",
           "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "icon": "<i class=\"fa fa-users text-secondary\"></i>",
             "fact_name": "quality certificate",
             "fact_value": "33"
           }
@@ -273,7 +271,7 @@
         "fact_section_KX4CfM": {
           "type": "fact_section",
           "settings": {
-            "icon": "<i class=\"fa fa-users text-secondary\"><\/i>",
+            "icon": "<i class=\"fa fa-users text-secondary\"></i>",
             "fact_name": "Available Products",
             "fact_value": "789"
           }
@@ -285,8 +283,7 @@
         "fact_section_U3n9Vd",
         "fact_section_KX4CfM"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "testimonial_section": {
       "type": "testimonial-section",
@@ -297,8 +294,8 @@
             "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,",
             "client_name": "Leena",
             "client_profession": "CEO",
-            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
-            "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
+            "client_image": "shopify://shop_images/testimonial-1.jpg",
+            "client_rating": "<i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star\"></i>"
           }
         },
         "client_section_3n8xRA": {
@@ -307,8 +304,8 @@
             "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,",
             "client_name": "Andy",
             "client_profession": "CMO",
-            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
-            "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
+            "client_image": "shopify://shop_images/testimonial-1.jpg",
+            "client_rating": "<i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star\"></i>"
           }
         },
         "client_section_XeWrxC": {
@@ -317,8 +314,8 @@
             "client_comment": "Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's standard dummy text ever since the 1500s,",
             "client_name": "Reena",
             "client_profession": "CTO",
-            "client_image": "shopify:\/\/shop_images\/testimonial-1.jpg",
-            "client_rating": "<i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star text-primary\"><\/i>                                         <i class=\"fas fa-star\"><\/i>"
+            "client_image": "shopify://shop_images/testimonial-1.jpg",
+            "client_rating": "<i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star text-primary\"></i>                                         <i class=\"fas fa-star\"></i>"
           }
         }
       },
