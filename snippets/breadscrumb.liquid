@@ -16,7 +16,7 @@
         <li class="breadcrumb-item active text-white">
           {{ product.title }}
         </li>
-      {% when 'collection' and collection.handle %}
+      {% when 'collection' %}
         {% if current_tags %}
           <li class="breadcrumb-item active text-white">{{ collection.title | link_to: collection.url }}</li>
           <li class="breadcrumb-item active text-white">
@@ -54,3 +54,13 @@
     {% endcase %}
   </ol>
 {% endunless %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% when 'collection' and collection.handle %}"
+  to: "{% when 'collection' %}"
+  position: 678..701
+{% endcomment %}
